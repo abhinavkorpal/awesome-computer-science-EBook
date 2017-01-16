@@ -1,0 +1,2629 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- base href="http://www.research.att.com/~bs/bs_faq.html" -->
+<title> Stroustrup: FAQ </title>
+</head><body bgcolor="#fffbfb">
+<center>
+<a href="http://www.research.att.com/%7Ebs/homepage.html">home</a>
+|
+<a href="http://www.research.att.com/%7Ebs/C++.html">C++</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bs_faq.html">FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html">technical FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/papers.html">publications</a>
+|
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a>
+|
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming</a>
+|
+<a href="http://www.research.att.com/%7Ebs/dne.html">D&amp;E</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bio.html">bio</a>
+|
+<a href="http://www.research.att.com/%7Ebs/interviews.html">interviews</a>
+|
+<a href="http://www.research.att.com/%7Ebs/applications.html">applications</a>
+|
+<a href="http://www.research.att.com/%7Ebs/glossary.html">glossary</a>
+|
+<a href="http://www.research.att.com/%7Ebs/compilers.html">compilers</a>
+|
+<a href="http://www.cs.tamu.edu/">Texas A&amp;M University</a>
+|
+<a href="http://www.research.att.com/">AT&amp;T Research</a>
+</center>
+<center>
+<h1><a href="http://www.research.att.com/%7Ebs/homepage.html">Bjarne Stroustrup</a>'s FAQ</h1>
+</center>
+<p align="right">
+Modified March 7, 2010
+</p><p>
+These are questions that people ask me often.
+If you have better questions or comments on the answers,
+feel free to email me bs@research.att.com.
+Please remember that I can't spend all of my time improving my homepages.
+</p><p>
+This page concentrates on personal opinions and general questions related to
+philosophy.
+For questions that more directly relate to C++ language features and the
+use of C++, see my
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html">C++ style and technique FAQ</a>.
+For C++ terminology and concepts, see my
+<a href="http://www.research.att.com/%7Ebs/glossary.html">C++ glossary</a>.
+For links to useful sources of C++ information, see
+<a href="http://www.research.att.com/%7Ebs/C++.html">my C++ page</a> and
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">my C++0x FAQ</a>.
+For information about my books (incl. reviews and support information), see
+<a href="http://www.research.att.com/%7Ebs/books.html">my book list</a>.
+For papers and ISBNs for translations of my books, see
+<a href="http://www.research.att.com/%7Ebs/papers.html">my publication list</a>.
+</p><p>
+Some of my FAQ has been translated into Chinese; see
+<a href="http://www.research.att.com/%7Ebs/bsfaqcn.html">here (simplified)</a>
+and
+<a href="http://william.cswiz.org/CPPbook/bs_faq.html">here (traditional)</a>.
+</p><h1>Index</h1>
+<ul>
+<li><a href="#general">General</a>
+</li><li><a href="#learning">Learning C++</a>
+</li><li><a href="#standard">Standardization</a>
+</li><li><a href="#books">Books</a>
+</li><li><a href="#other">Other languages</a>
+</li><li><a href="#C">C and C++</a>
+</li><li><a href="#history">History of C++</a>
+</li><li><a href="#etc.">Etc. C++ questions</a>
+</li><li><a href="#personal">Personal</a>
+</li></ul>
+<p>
+</p><ul>
+<li>
+<a name="general">General</a>:
+<ul>
+<li>
+<a href="#class">
+What's so great about classes?</a>
+</li><li>
+<a href="#oop">
+What is "OOP" and what's so great about it?</a>
+</li><li>
+<a href="#generic">
+What is "generic programming" and what's so great about it?</a>
+</li><li>
+<a href="#what-is">
+What is C++?</a>
+</li><li>
+<a href="#unsafe">
+Why does C++ allow unsafe code?</a>
+</li><li>
+<a href="#multiparadigm">
+What is "multiparadigm programming"?</a>
+</li><li>
+<a href="#decline">
+Is C++ in decline?</a>
+</li><li>
+<a href="#improve">
+What's being done to improve C++?</a>
+</li><li>
+<a href="#true">
+Is it true that ...?</a>
+</li></ul>
+</li><li>
+<a name="learning">Learning C++</a>:
+<ul>
+<li>
+<a href="#best-book">
+What is the best book to learn C++ from?</a>
+</li><li>
+<a href="#How-long">
+How long does it take to learn C++?</a>
+</li><li>
+<a href="#prerequisite">
+Knowing C is a prerequisite for learning C++, right?</a>
+</li><li>
+<a href="#learn-pure">
+Should I learn a pure OO language before C++ to become a real OO programmer?</a>
+</li><li>
+<a href="#how-to-start">
+How do I start learning C++?</a>
+</li><li>
+<a href="#homework">
+Will you help me with my homework?</a>
+</li><li>
+<a href="#free">
+Where can I get a free C++ compiler?</a>
+</li><li>
+<a href="#improve-my-C++-programs">
+What's the best way to improve my C++ programs?</a>
+</li><li>
+<a href="#which-programming-language">
+Does it matter which programming language I use?</a>
+</li><li>
+<a href="#background">
+Where can I learn about the background of C++?</a>
+</li></ul>
+</li><li>
+<a name="standard">Standardization</a>:
+<ul>
+<li>
+<a href="#spoil-C++">
+Did the ANSI/ISO standards committee spoil C++?</a>
+</li><li>
+<a href="#When-standard">
+When will we have a C++ standard?</a>
+</li><li>
+<a href="#machine-readable-standard">
+Where can I get a machine-readable version of the standard?</a>
+</li><li>
+<a href="#remove-from-C++">
+Are there any features you'd like to remove from C++?</a>
+</li><li>
+<a href="#garbage-collection">
+Why doesn't C++ have garbage collection?</a>
+</li><li>
+<a href="#gui">
+Why doesn't C++ have a GUI?</a>
+</li><li>
+<a href="#threads">
+Why doesn't C++ support threads?</a>
+</li><li>
+<a href="#C++03">
+What is the difference between C++98 and C++03?</a>
+</li><li>
+<a href="#When-next-standard">
+What will C++0x look like?</a>
+</li></ul>
+</li><li>
+<a name="books">Books</a>:
+<ul>
+<li>
+<a href="#ARM">
+When will we have a new ARM?</a>
+</li><li>
+<a href="#4th">
+When will you publish a 4th edition of "The C++ Programming Language"?</a>
+</li><li>
+<a href="#SE">
+Should I buy the "Special Edition" of "The C++ Programming Language"?</a>
+</li><li>
+<a href="#machinereadable">
+Where do I find free machine-readable copies of your books?</a>
+</li><li>
+<a href="#3rd-programming">
+What's the difference between the "TC++PL" and "Programming" books?</a>
+</li></ul>
+</li><li>
+<a name="other">Other languages</a>:
+<ul>
+<li>
+<a href="#Java">
+Is Java the language you would have designed if you didn't have to be compatible with C?</a>
+</li><li>
+<a href="#Csharp">
+What do you think of C#?</a>
+</li><li>
+<a href="#CppCLI">
+What do you think of C++/CLI?</a>
+</li><li>
+<a href="#EC++">
+What do you think of EC++?</a>
+</li><li>
+<a href="#from-Smalltalk">
+C++ got its Object-Oriented concepts from Smalltalk?</a>
+</li><li>
+<a href="#Ada">
+Do you really recommend Ada over C++ for larger projects?</a>
+</li><li>
+<a href="#compare">
+Would you compare C++ to "some language"?</a>
+</li><li>
+<a href="#Others-do-compare">
+Others do compare their languages to C++; doesn't that annoy you?</a>
+</li><li>
+<a href="#diatribes">
+You won't compare C++ to other languages, but you write diatribes about C++?</a>
+</li><li>
+<a href="#advanced">
+How can a legacy language like C++ compete with modern, advanced languages?</a>
+</li><li>
+<a href="#portability">
+Why are you so keen on portability?</a>
+</li></ul>
+</li><li>
+<a name="C">C and C++</a>:
+<ul>
+<li>
+<a href="#C-is-better">
+C is better than C++ for small projects, right?</a>
+</li><li>
+<a href="#C-is-subset">
+Is C a subset of C++?</a>
+</li><li>
+<a href="#difference">
+What is the difference between C and C++?</a>
+</li><li>
+<a href="#merge">
+Do you really think that C and C++ could be merged into a single language?</a>
+</li><li>
+<a href="#C-slash">
+What do you think of C/C++?</a>
+</li><li>
+<a href="#Hello-world">
+Why is the code generated for the "Hello world" program
+ten times larger for C++ than for C?</a>
+</li><li>
+<a href="#whyC">
+Why did you make C++ (almost) compatible with C?</a>
+</li></ul>
+</li><li>
+<a name="history">History of C++</a>:
+<ul>
+<li>
+<a href="#invention">
+When was C++ invented?</a>
+</li><li>
+<a href="#why">
+Why did you invent C++?</a>
+</li><li>
+<a href="#why-ATT">
+Why did AT&amp;T support the development of C++?</a>
+</li><li>
+<a href="#revenues">
+Do you own C++?</a>
+</li><li>
+<a href="#name">
+Where did the name "C++" come from?</a>
+</li><li>
+<a href="#bootstrapping">
+Which language did you use to write C++?</a>
+</li></ul>
+</li><li>
+<a name="etc.">Etc. C++ questions</a>:
+<ul>
+<li>
+<a href="#big">
+Why is C++ so BIG?</a>
+</li><li>
+<a href="#Object-Oriented-language">
+Is C++ an Object-Oriented language?</a>
+</li><li>
+<a href="#legacy">
+What is "legacy code"?</a>
+</li><li>
+<a href="#number-of-C++-users">
+Is the number of C++ users still doubling every year?</a>
+</li><li>
+<a href="#use-C++">
+Does anyone use C++ these days?</a>
+</li><li>
+<a href="#use-C++-for-OS">
+Why isn't C++ used for Operating Systems?</a>
+</li><li>
+<a href="#boost">
+What do you think of Boost?</a>
+</li><li>
+<a href="#metaprogramming">
+What do you think of template metaprogramming?</a>
+</li><li>
+<a href="#C++success">
+Did you expect C++ to become such a success?</a>
+</li><li>
+<a href="#certification">
+What's a good certification for C++ programmers?</a>
+</li><li>
+<a href="#recommend">
+What C++ compiler do you recommend? Which libraries?</a>
+</li></ul>
+</li><li>
+<a name="personal">Personal</a>:
+<ul>
+<li>
+<a href="#pronounce">
+How do you pronounce "Bjarne Stroustrup"?</a>
+</li><li>
+<a href="#ask">
+Can I ask you a question?</a>
+</li><li>
+<a href="#email">
+Why don't you answer your email?</a>
+</li><li>
+<a href="#looks">
+Why don't you make your website look modern?</a>
+</li><li>
+<a href="#impostor">
+Is "bjarne" an impostor?</a>
+</li><li>
+<a href="#Swedish">
+You are Swedish?</a>
+</li><li>
+<a href="#really-say-that">Did you really say that?</a>
+</li><li>
+<a href="#IEEE">
+Did you really give an interview to IEEE?</a>
+</li><li>
+<a href="#working-on-now">
+What are you working on now?</a>
+</li></ul>
+</li></ul>
+
+
+<p>
+</p><hr>
+<h2><a name="pronounce">
+How do you pronounce "Bjarne Stroustrup?"</a></h2>
+It can be difficult for non-Scandinavians.
+The best suggestion I have heard yet was "start by saying it a few times
+in Norwegian, then stuff a potato down your throat and do it again :-)"
+Here is a
+<a href="http://www.research.att.com/%7Ebs/pronounciation.wav">wav file</a>.
+<p>
+For people who can't receive sound, here is a suggestion:
+Both of my names are pronounced with two syllables: Bjar-ne
+Strou-strup.
+Neither the B nor the J in my first name are stressed and the NE
+is rather weak so maybe Be-ar-neh or By-ar-ne would give an idea.
+The first U in my second name really should have been a V making the
+first syllable end far down the throat: Strov-strup.
+The second U is a bit like the OO in OOP, but still short; maybe
+Strov-stroop will give an idea.
+</p><p>
+Yes, this probably is the most frequently asked question :-)
+</p><p>
+P.S. My first name is Bjarne - not Bjorn (not a name),
+Bjørn (a related but different name), nor Barney (an unrelated name).
+My second name is Stroustrup - not Stroustroup, Stroustrop, Strustrup,
+Strustrop, Strustroup, Straustrup, nor Straustroup (documents using each of
+these misspellings can be found using google).
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="ask">
+Can I ask you a question?</a></h2>
+Certainly.
+I try to answer my email.
+However, please try to avoid asking a question that is answered in my
+homepages.
+Also, please don't rely on a prompt answer.
+I get a <b>lot</b> of email.
+<p>
+Here are links to
+</p><ul>
+<li><a href="http://www.research.att.com/%7Ebs/bio.html">biographical information</a>
+</li><li><a href="http://www.research.att.com/%7Ebs/C++.html">C++ information and links</a>
+</li><li><a href="http://www.research.att.com/%7Ebs/papers.html">papers</a> (incl. a few that can be downloaded)
+</li><li><a href="http://www.research.att.com/%7Ebs/books.html">books</a> (incl. reviews, errata, and a few chapters that can be downloaded)
+</li><li><a href="http://www.research.att.com/%7Ebs/interviews.html">interviews</a>
+</li></ul>
+<p>
+
+
+
+</p><hr>
+<h2><a name="email">
+Why don't you answer your email?</a></h2>
+I do, but I get a lot of email.
+I estimate that I reply to more than 95% of the (non spam) messages I receive.
+However, sometimes I get overwhelmed.
+Some messages are lost in my mailbox, some are delayed until I can find time,
+some are delayed until I get around to answering a set of related messages
+(this often happens to comments about potential errors in my books).
+Unfortunately, longer and more thoughtful messages are more likely to get
+delayed than simple ones that have simple answers.
+<p>
+Also, if you mail me, please try to make sure that I can reply to you.
+I really hate it when I have written and sent a reply, just to find that the
+return address is invalid or inaccessible. 
+</p><p>
+Two kinds of messages have a relatively high chance of getting lost: homework
+questions and questions of the form "how do I use this proprietary library?".
+I'm a bit sad about not answering the latter questions because often the
+person asking doesn't understand that the DOS, Windows, or whatever interface
+from C++ is not part of the C++ standard (and I cannot keep up with the huge
+number of
+<a href="http://www.trumphurst.com/cpplibs1.html">C++ libraries</a>).
+If you fail to receive an answer,
+please consider if your question was of one of these kinds.
+</p><p>
+Also, unless you give your name, I am now likely to delete the message unread.
+This is a new policy.
+I was never a great fan of pseudonyms,
+but I find that the chance of a polite
+technical conversation with the kind of person who thinks it cool to hide behind a name like
+suuupergeeek or coolGuy3 is getting too low for me to bother trying.
+</p><p>
+
+</p><hr>
+<h2><a name="looks">Why don't you make your website look modern?</a></h2>
+I'm a "contents provider" not a website designer.
+I can use my time to improve the contents or the looks, but not both.
+<p>
+What looks "cool and modern" to someone is often considered bad
+taste by someone else, and fashions change fast.
+Also,
+very plain html downloads and displays faster than anything else, and many
+people still suffer from slow web connections.
+</p><p>
+
+</p><hr>
+<h2><a name="impostor">Is "bjarne" an impostor?</a></h2>
+Probably not.
+Most of the newsgroup postings, interviews, etc. claiming to come from me
+do come from me.
+The obvious exception is the infamous <a href="#IEEE">IEEE "interview"</a>,
+which I find rather unfunny.
+I have been known to post to newsgroups from my gmail account where my user-id is "Bjarne";
+somehow, that seems to confuse some people.
+If in doubt, consider the style and contents of the suspect message, check for other
+postings in the forum, or ask.
+<p>
+
+</p><hr>
+<h2><a name="class">What is so great about classes?</a></h2>
+<p>
+Classes are there to help you organize your code and to reason about your programs.
+You could roughly equivalently say that classes are there to help you avoid making mistakes
+and to help you find bugs after you do make a mistake.
+In this way, classes significantly helps maintenance.
+</p><p>
+A class is the representation of an idea, a concept, in the code. An object of a class represents
+a particular example of the idea in the code. Without classes, a reader of the code would have
+to guess about the relationships among data items and functions - classes make such relationships
+explicit and "understood" by compilers. With classes, more of the high-level structure of your
+program is reflected in the code, not just in the comments.
+</p><p>
+A well-designed class presents a clean and simple interface to its users, hiding its
+representation and saving its users from having to know about that representation.
+If the representation shouldn't be hidden - say, because users should be able to change
+any data member any way they like - you can think of that class as "just a plain old data structure";
+for example:
+</p><pre>	struct Pair {
+      		Pair(const string&amp; n, const string&amp; v) : name(n), value(v) { }
+      		string name, value;
+	};
+</pre>
+Note that even data structures can benefit from auxiliary functions, such as constructors.
+<p>
+When designing a class, it is often useful to consider what's true for every object of the
+class and at all times. Such a property is called an invariant. For example, the invariant
+of a vector could be that its representation consists of a pointer to a number of elements
+and that number of elements is stored in an integer. It is the job of every constructor to
+establish the class invariant, so that every member function can rely on it.
+Every member function must leave the invariant valid upon exit.
+This kind of thinking is particularly useful for classes that manage resource,
+such as locks, sockets, and files. For example, a file handle class will have the invariant
+that it holds a pointer to an open file. The file handle constructor opens the file.
+Destructors free resources acquired by constructors. For example, the destructor for
+a file handle closes the file opened by the constructor:
+</p><pre>	class File_handle {
+	public:
+		File_handle(const char* n, const char* rw)
+			{ f = fopen(n,rw); if (f==0) throw Open_failure(n); }
+		~File_handle() { fclose(f); } // destructor
+		// ...
+	private:
+		FILE* f;
+	};
+</pre>
+If you haven't programmed with classes, you will find parts of this explanation obscure and
+you'll underestimate the usefulness of classes. Look for examples. Like all good textbooks,
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a> has lots of examples;
+for example, see
+<a href="http://www.research.att.com/%7Ebs/tour2.pdf">A Tour of the Standard Library</a>.
+Most modern C++ libraries consist (among other things) of classes and a library tutorial
+is one of the best places to look for examples of useful classes.
+<p>
+
+
+
+</p><hr>
+<h2><a name="oop">What is "OOP" and what's so great about it?</a></h2>
+<p>
+There are lots of definitions of "object oriented", "object-oriented programming",
+and "object-oriented programming languages". For a longish explanation of what
+I think of as "object oriented", read
+<a href="http://www.research.att.com/%7Ebs/oopsla.pdf">Why C++ isn't just an object-oriented programming language</a>.
+That said, object-oriented programming is a style of programming originating with
+Simula (about 40 years ago!) relying of encapsulation, inheritance, and polymorphism.
+In the context of C++ (and many other languages with their roots in Simula),
+it means programming using class hierarchies and virtual functions to allow
+manipulation of objects of a variety of types through well-defined interfaces
+and to allow a program to be extended incrementally through derivation.
+</p><p>
+See <a href="#class">What's so great about classes?</a>
+for an idea about what great
+about "plain classes". The point about arranging classes into a class hierarchy
+is to express hierarchical relationships among classes and use those relationships to simplify code.
+</p><p>
+To really understand OOP, look for some examples. For example, you might have
+two (or more) device drivers with a common interface:
+</p><pre>	class Driver {	// common driver interface
+	public:
+		virtual int read(char* p, int n) = 0;	// read max n characters from device to p
+							// return the number of characters read
+		virtual bool reset() = 0;	// reset device
+		virtual Status check() = 0;	// read status
+	};
+</pre>
+This Driver is simply an interface.
+It is defined with no data members and a set of pure virtual functions.
+A Driver can be used through this interface and many different kinds of drivers
+can implement this interface:
+<pre>	class Driver1 : public Driver { // a driver
+	public:
+		Driver1(Register);	// constructor
+		int read(char*, int n);	
+		bool reset();
+		Status check();
+	private:
+		// implementation details, incl. representation
+	};
+
+	class Driver2 : public Driver { // another driver
+	public:
+		Driver2(Register);
+		int read(char*, int n);	
+		bool reset();
+		Status check();
+	private:
+		// implementation details, incl., representation
+	};
+</pre>
+Note that these drivers hold data (state) and objects of them can be created.
+They implement the functions defined in Driver. We can imagine a driver being used like this:
+<pre>	void f(Driver&amp; d)	// use driver
+	{
+		Status old_status = d.check();	
+		// ...
+		d.reset();
+		char buf[512];
+		int x = d.read(buf,512);
+		// ...
+	}
+</pre>
+The key point here is that f() doesn't need to know which kind of driver it uses;
+all it needs to know is that it is passed a Driver;
+that is, an interface to many different kinds of drivers.
+We could invoke f() like this:
+<pre>	void g()
+	{
+		Driver1 d1(Register(0xf00));	// create a Driver1 for device
+						// with device register at address 0xf00
+
+		Driver2 d2(Register(0xa00));	// create a Driver2 for device
+						// with device register at address 0xa00
+		// ...
+		int dev;
+		cin &gt;&gt; dev;
+
+		if  (dev==1) 
+			f(d1);	// use d1
+		else
+			f(d2);	// use d2
+		// ...
+	}
+</pre>
+Note that when f() uses a Driver the right kind of operations are implicitly chosen at run time.
+For example, when f() is passed d1, d.read() uses Driver1::read(), whereas when f() is passed d2,
+d.read() uses Driver2::read(). This is sometimes called run-time dispatch or dynamic dispatch.
+In this case there is no way that f() could know the kind of device it is called with because
+we choose it based on an input.
+<p>
+Please note that object-oriented programming is not a panacea. "OOP" does not simply mean "good"
+- if there are no inherent hierarchical relationships among the fundamental concepts in your problem
+then no amount of hierarchy and virtual functions will improve your code. The strength of OOP
+is that there are many problems that can be usefully expressed using class hierarchies - the main
+weakness of OOP is that too many people try to force too many problems into a hierarchical mould.
+Not every program should be object-oriented. As alternatives, consider
+<a href="#class">plain classes</a>,
+<a href="#generic">generic programming</a>,
+and free-standing functions (as in math, C, and Fortran).
+</p><p>
+
+
+</p><hr>
+<h2><a name="generic">What is "generic programming" and what's so great about it?</a></h2>
+<p>
+Generic programming is programming based on parameterization:
+You can parameterize a type with another
+(such as a vector with its element types) and an algorithm with another
+(such as a sort function with
+a comparison function). The aim of generic programming is to generalize a useful algorithm or data
+structure to its most general and useful form. For example, a vector of integers is fine and so is
+a function that finds the largest value in a vector of integers. However, a generic solution that
+provides a vector of any type the user cares to use and a function that finds the largest value in
+any vector is better still:
+</p><pre>	vector&lt;string&gt;::iterator p = find(vs.begin(), vs.end(), "Grail");
+
+	vector&lt;int&gt;::iterator q = find(vi.begin(), vi.end(), 42);
+</pre>
+These examples are from the STL (the containers and algorithms part of the ISO C++ standard library);
+for a brief introduction, see
+<a href="http://www.research.att.com/%7Ebs/tour2.pdf">A Tour of the Standard Library</a> from
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a>.
+<p>
+Generic programming is in some ways more flexible than object-oriented programming.
+In particular, it does not depend on hierarchies.
+For example, there is no hierarchical
+relationship between an int and a string.
+Generic programming is generally more structured than OOP;
+in fact, a common term used to describe generic programming is "parametric polymorphism",
+with "ad hoc polymorphism"
+being the corresponding term for object-oriented programming.
+In the context of C++, generic programming
+resolves all names at compile time; it does not involve dynamic (run-time) dispatch.
+This has led generic programming to become dominant in areas where run-time performance is important.
+</p><p>
+Please note that generic programming is not a panacea.
+There are many parts of a program that need no parameterization and many examples
+where run-time dispatch (OOP) is needed.
+</p><p>
+
+
+</p><hr>
+<h2><a name="unsafe">Why does C++ allow unsafe code?</a></h2>
+That is, why does C++ support operations that can be used to violate the rules of static
+(compile-time) type safety?
+<ul>
+<li> to access hardware directly
+	(e.g. to treat an integer as a pointer to (address of) a device register)
+</li><li> to achieve optimal run-time and space performance
+	(e.g. unchecked access to elements of an array and unchecked access to
+	an object through a pointer)
+</li><li> to be compatible with C
+</li></ul>
+That said, it is a good idea to avoid unsafe code like the plague whenever you don't actually need
+one of those three features:
+<ul>
+<li>	don't use casts
+</li><li>	keep arrays out of interfaces (hide them in the innards of high-performance functions
+	and classes where they are needed and write the rest of the program using proper
+	strings, vectors, etc.)
+</li><li>	avoid void* (keep them inside low-level functions and data structures if
+	you really need them and present type safe interfaces, usually templates, to your users)
+</li><li>	avoid unions
+</li><li>	if you have any doubts about the validity of a pointer, use a smart pointer instead,
+</li><li>	don't use "naked" news and deletes (use containers, resource handles, etc., instead)
+</li><li>	don't use ...-style variadic functions ("printf style")
+</li><li>	Avoid <a href="http://www.research.att.com/%7Ebs/bs_faq2.html#macro">macros</a> excpt for include guards
+</li></ul>
+Almost all C++ code can follow these simple rules.
+Please don't be confused by the fact that you cannot follow these rules if you write C code or
+C-style code in C++.
+<p>
+
+
+</p><hr>
+<h2><a name="best-book">What is the best book to learn C++ from?</a></h2>
+There is no one book that is best for every person.
+There couldn't be one.
+People are too different in the way they learn, in what they
+already know, in what they need, in what they want, and in what kind of
+effort
+they are willing to make.
+There are quite a few excellent books on C++.
+Have a look at
+<a href="http://www.accu.org/">the ACCU (The Association of C and C++ Users) site</a>.
+This is one of the best sites for book recommendations by experienced
+programmers who are not afraid to speak their mind (booksellers tend to
+give rosy reviews, and reviews of the form "This book is perfect,
+I love it, I have read almost three chapters, and can't wait to read
+more" are worse than useless - why anyone would take advice on how to learn
+C++ from someone who completely lacks C++ experience beats me).
+The ACCU rates books for level of experience required and overall quality.
+<p>
+For people who haven't programmed before or come from another language and want a
+relatively gentle introduction to modern C++, consider
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a>.
+This is the book I wrote for a freshman (1st year university students) programming class
+and it has benefitted from three years of classroom use.
+</p><p>
+For people who are programmers and willing to learn new concepts
+and techniques from a classical textbook, I recommend
+<a href="http://www.research.att.com/%7Ebs/3rd.html"> The C++ Programming Language (3rd edition)</a>.
+See
+<a href="http://www.research.att.com/%7Ebs/about_3rd.html">a note about the structure, contents, and aims
+of "The C++ Programming Language (3rd edition)"</a>:
+The book is aimed at programmers with some experience and a wish to master C++.
+It is not aimed at non-programmers trying to learn their first programming language
+or casual programmers trying to gain a superficial understanding of C++ as fast
+as possible.
+Consequently, this book focuses on concepts and techniques and goes to some pain to
+be complete and precise.
+It describes "pure C++," that is, the language independently of
+any particular software development environment or foundation
+library (except the standard library, of course).
+</p><p>
+If you want to know why C++ is the way it is, have a look at
+<a href="http://www.research.att.com/%7Ebs/dne.html"> The Design and Evolution of C++</a>
+(D&amp;E). Understanding the design criteria and constraints
+helps writing better programs.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="How-long">How long does it take to learn C++?</a></h2>
+That depends on what you mean by "learning."
+If you are a C programmer you can learn enough C++ to make you more
+effective at C-style programming in a day.
+<p>
+At <a href="http://www.cs.tamu.edu/">TAMU</a>,
+we use <a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a>
+to get freshmen (1st year students) through the fundamentals of C++ and the
+programming techniques it support (notably
+<a href="#oop">object-oriented programming</a> and
+<a href="#generic">generic programming</a>)
+in a semester.
+</p><p>
+On the other hand, if you want to be fully comfortable with all the
+major C++ language constructs, with data abstraction, Object-Oriented
+programming, generic programming, Object-Oriented design, etc., you can
+easily spend a year or two - if you aren't already acquainted with
+those techniques (say, from Java or C#).
+</p><p>
+Is that then the time it takes to learn C++?
+Maybe, but then again, that is the timescale we have to consider to
+become better designers and programmers. If a dramatic change of the
+way
+we work and think about building systems isn't our aim, then
+why bother to learn a new language?
+Compared to the time required to learn to play the piano well or to
+become fluent in a foreign (natural) language, learning a new and
+different programming language and programming style is easy.
+</p><p>
+For more observations about learning C++ see
+<a href="http://www.research.att.com/%7Ebs/dne.html"> D&amp;E</a> or
+<a href="http://www.research.att.com/%7Ebs/learn.html">a note from comp.lang.c++</a>
+that I wrote some time ago.
+</p><p>
+
+
+</p><hr>
+<h2><a name="prerequisite">
+Knowing C is a prerequisite for learning C++, right?</a></h2>
+Wrong. The common subset of C and C++ is easier to learn than C.
+There will be less type errors to catch manually (the C++ type
+system is stricter and more expressive), fewer tricks
+to learn (C++ allows you to express more things without
+circumlocution),
+and better libraries available.
+The best initial subset of C++ to learn is not "all of C".
+<p>
+See
+<a href="http://www.research.att.com/%7Ebs/new_learning.pdf">Learning Standard C++ as a New Language</a>
+for a discussion of the choice of C++ constructs, techniques, and libraries
+for early learning.
+For an example of books that takes that approach systematically, see
+Stroustrup: <a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a> and
+Koenig&amp;Moo: "Accelerated C++" from Addison Wesley's
+<a href="http://www.awl.com/cseng/series/indepth/index.shtml">C++ In Depth</a> series.
+</p><p>
+</p><hr>
+<h2><a name="learn-pure">
+Should I learn a pure OO language before C++ to become a real OO programmer?</a></h2>
+No. Learning something new is almost always a good idea.
+However, each language is different and has it's own styles and quirks.
+Code written in some supposedly "pure" OO style modeled on some other language (quirks and all)
+is often sub-optimal and frustrating when too literally transcribed into C++.
+Also, "writing <b>just</b> pure Object-oriented code" is not one of my ideals; see my OOPSLA keynote
+<a href="http://www.research.att.com/%7Ebs/oopsla.pdf">
+Why C++ isn't just an Object-Oriented Programming Language</a>.
+If you want to become a good C++ programmer and don't have a few months
+to spare, concentrate on C++ and the concepts it embodies.
+<p>
+</p><hr>
+<h2><a name="how-to-start">How do I start learning C++?</a></h2>
+Naturally,
+that strongly depends on what you already know and your reasons for
+learning C++.
+If you are a novice at programming, I strongly recommend that you find 
+an experienced programmer to help you.
+Otherwise, the inevitable mistakes about language concepts and practical
+problems with the implementation you use can magnify into serious frustrations.
+<p>
+You'll need a textbook for learning C++.
+This is the case even when your implementation comes with ample on-line
+documentation.
+The reason is that 
+language and library documentation together with sample code are not good
+teachers of concepts.
+Typically such sources are silent about why things are the way they are and
+what benefits you can expect (and which you shouldn't expect) from a technique.
+Focus on concepts and techniques rather than language-technical details.
+</p><p>
+When choosing a book, look for one that presents Standard C++ and use the
+standard library facilities in an integrated manner from the start.
+For example, reading a string from input should look something like
+</p><pre>	string s;	// Standard C++ style
+	cin &gt;&gt; s;
+</pre>
+and not like this
+<pre>	char s[MAX];	/* Standard C style */
+	scanf("%s",s);
+</pre>
+Look for book recommendations from programmers with solid C++ experience.
+<p>
+I recommend
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a>,
+but remember that
+<a href="#best-book">no one book is the best for everyone</a>.
+Have a look at the
+<a href="http://www.accu.org/">book reviews</a>
+on the ACCU (The Association of C and C++ Users) site.
+</p><p>
+Aim to write idiomatic C++: avoid simply writing code in the style of your
+previous language using C++ syntax; there is little to be gained from
+simply changing syntax.
+</p><p>
+
+
+</p><hr>
+<h2><a name="homework">Will you help me with my homework?</a></h2>
+No. Sorry. I don't do (other people's) homework.
+I get too many requests for help with homework and help with finding
+bugs in student programs to be able to find the time.
+Anyway, having a distant expert fix your programs is not the best way to learn.
+Try finding a local person with C++ experience that you can ask for
+guidance.
+A good mentor is the best help a student can have; maybe that's why they
+are not easy to find.
+<p>
+Also, no, I will not suggest "a good project for a student to work on".
+My experience is that learning enough about a student and
+his/her course to know what level of difficulty is required and what kind of
+project is of interest takes time.
+To think of a good project is then non-trivial,
+and to explain exactly what the project is and how to approach it can take
+several messages and several hours. I just don't have that kind of time.
+Remember, these request come at least weekly. Finally, some students seem
+to have the idea that if I suggest a project, I am morally obliged to
+provide quite detailed help in its completion.
+</p><p>
+Ideas: Look at the exercises in
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL3</a>
+or other good textbooks. Many of those exercises are designed to keep a student
+busy for several days, and reading those exercises can inspire an enterprising
+student to so something similar.
+Or look at the non-computer-science part of your world: Maybe a biology project
+could use support for a new measurement device or a friend studying history
+could use an improved database interface. Many of the best projects and the
+best uses of computers are outside traditional computer science.
+</p><p>
+See also <a href="http://www.research.att.com/%7Ebs/bs_faq2.html">my C++ style and techniques FAQ</a>.
+Real novices facing their first "read some data, do something to it, and
+produce some output" exercise might be interested in
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html#simple-program">a very simple program</a>
+or
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html#read-string">a program reading a string from input</a>.
+</p><p>
+
+
+</p><hr>
+<h2><a name="free">Where can I get a free C++ compiler?</a></h2>
+From lots of places; see
+<a href="http://www.research.att.com/%7Ebs/compilers.html">my C++ compilers list</a>.
+<p>
+
+
+</p><hr>
+<h2><a name="Swedish">You are Swedish?</a></h2>
+No. I'm Danish. Have a look at my
+<a href="http://www.research.att.com/%7Ebs/bio.html">biography</a>.
+<p>
+
+
+</p><hr>
+<h2><a name="improve-my-C++-programs">
+What's the best way to improve my C++ programs?</a></h2>
+I couldn't say. That depends on how you use it.
+Most people underestimate abstract classes and templates.
+Conversely, most people seriously overuse casts and macros.
+Have a look at one of my
+<a href="http://www.research.att.com/%7Ebs/papers.html">papers</a> or
+<a href="http://www.research.att.com/%7Ebs/books.html">books</a> for ideas.
+One way of thinking of abstract classes and templates is as
+interfaces that allow a more clean and logical presentation
+of services than is easy to provide through functions or
+single-rooted class hierarchies.
+See my
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html">Style and techniques FAQ</a> for some specific examples and ideas.
+<p>
+
+
+
+</p><hr>
+<h2><a name="which-programming-language">
+Does it matter which programming language I use?</a></h2>
+Yes, but don't expect miracles.
+Some people seem to believe that a programming language can or at least
+should
+solve most of their problems with system building.
+They are condemned to search forever for the perfect programming
+language
+and become repeatedly disappointed.
+Others dismiss programming languages as unimportant "implementation
+details"
+and put their money into development processes and design methods.
+They are condemned to program in COBOL, C, and proprietary design
+languages
+forever.
+A good language - such as C++ - can do a lot for a designer and a
+programmer,
+as long as its strengths and limitations are clearly understood and
+respected.
+<p>
+
+
+</p><hr>
+<h2><a name="spoil-C++">
+Did the ANSI/ISO standards committee spoil C++?</a></h2>
+No. They/we did a good job.
+You can quibble with details (and I do, sometimes loudly), but I'm happy with the
+language and the
+new standard library.
+ISO C++ is a better and more coherent language than earlier versions of
+C++.
+You can write much more elegant and maintainable C++ programs today
+than was
+possible when the standards process started.
+The new standard library is also a real boon.
+The provision of strings, lists, vectors, maps, and basic algorithms
+for
+such fundamental types makes a major difference to the way one can
+approach
+C++.
+See the library chapters of
+<a href="http://www.research.att.com/%7Ebs/3rd.html"> The C++ Programming Language (3rd edition)</a>
+(Chapter 3: <a href="http://www.research.att.com/%7Ebs/3rd_tour2.pdf"> A Tour of The Standard Library</a>
+is available electronically)
+or
+<a href="http://www.research.att.com/%7Ebs/papers.html">one of my recent papers</a>.
+<p>
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a> will be even better.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="When-standard">When will we have a C++ standard?</a></h2>
+We have one! The final technical vote took place
+November 14, 1997, about 10:30am.
+See
+<a href="http://www.research.att.com/%7Ebs/iso_release.html">a press release from the ISO C++ standards
+committee</a>.
+After the technical vote, the standard was ratified in 1998 by a 22-0 national vote.
+The standard is ISO/IEC 14882.
+A minor revision was issued in 2004; see my <a href="http://www.research.att.com/%7Ebs/C++.html">C++ page</a>.
+<p>
+This is the language and standard library described in
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd edition)</a>.
+The C++ compiler and library suppliers are already shipping
+implementations that are quite close to the draft standard.
+</p><p>
+The first draft of the next standard,
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a>,
+is in public review and the final vote is expected in 2010.
+</p><p>
+
+
+</p><hr>
+<h2><a name="machine-readable-standard">
+Where can I get a machine-readable version of the standard?</a></h2>
+<p>
+The C++ standard (ISO/IEC 14882) is available for downloading at the
+<a href="http://webstore.ansi.org/">the ANSI Electronic Store</a>.
+Search for "14882", to find "INCITS/ISO/IEC 14882-2003 Programming Languages - C++"
+The cost is (as I write this) US$30.00 payable on-line via credit card.
+The downloaded document is in PDF form, about 3Mb total size.
+</p><p>
+<a href="ftp://ftp.research.att.com/pub/c++std/WP/CD2">The draft
+standard as it
+were in later stages of the standards process</a> can be downloaded for free.
+</p><p>
+Be warned that the standard is not a tutorial;
+even expert programmers will do better learning about C++ and new C++ features from a textbook.
+</p><p>
+See <a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">my C++0x FAQ</a> for references to C++0x material.
+</p><p>
+
+
+</p><hr>
+<h2><a name="remove-from-C++">
+Are there any features you'd like to remove from C++?</a></h2>
+Not really.
+People who ask this kind of question usually think of one of the major
+features such as multiple inheritance,
+exceptions, templates, or run-time type identification.
+C++ would be incomplete without those.
+I have reviewed their design over the years, and together with the
+standards
+committee I have improved some of their details,
+but none could be removed without doing damage.
+<p>
+Most of the features I dislike from a language-design perspective
+(e.g., the declarator syntax and array decay) are part
+of the C subset of C++ and couldn't be removed without doing harm to
+programmers working under real-world conditions.
+C++'s C compatibility was a key language design decision rather than a
+marketing gimmick.
+Compatibility has been difficult to achieve and maintain,
+but real benefits to real programmers resulted, and still result today.
+By now, C++ has features that allow a programmer to refrain from using
+the most troublesome C features. For example, standard library
+containers
+such as vector, list, map, and string can be used to avoid most tricky
+low-level pointer manipulation.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="C++03">
+What is the difference between C++98 and C++03?</a></h2>
+From a programmer's view there is none.
+The C++03 revision of the standard was a bug fix release for implementers to ensure greater
+consistency and portability.
+In particular, tutorial and reference material describing C++98 and C++03 can be used interchangeably
+by all except compiler writers and standards gurus.
+<p>
+Personally, I tend not to use the term "C++03" because it is easily confused with "C++0x"
+and could give the impression that C++98 is outdated.
+
+
+
+</p><hr>
+<h2><a name="When-next-standard">
+What will C++0x look like?</a></h2>
+See my <a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x FAQ</a>.
+The aim is for the 'x' in C++0x to become '9': C++09, rather than (say) C++0xA (hexadecimal :-).
+<p>
+Note that the C++ language will remain stable because
+compatibility is always a major concern.
+The committee tries hard not to break your (standard conforming) code.
+</p><p>
+I briefly presented some of my ideas at <a href="http://www.research.att.com/%7Ebs/C++0x_panel.pdf">a panel at SD2001w</a>
+and in slightly greater detail in
+<a href="http://www.research.att.com/%7Ebs/C++0x_keynote.pdf">a keynote at the Spring 2002 ACCU conference</a>.
+See also, my rules of thumb for
+<a href="http://www.research.att.com/%7Ebs/rules.pdf">The Design of C++0x</a>
+and other recent papers on my
+<a href="http://www.research.att.com/%7Ebs/papers.html">publications page</a>.
+For more a complete list of proposals, see
+<a href="http://www.open-std.org/jtc1/sc22/wg21">the WG21 site</a>.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="ARM">
+When will we have a new ARM?</a></h2>
+Ellis&amp;Stroustrup:
+<a href="http://www.research.att.com/%7Ebs/arm.html">The Annotated C++ Reference Manual</a> colloquially known
+as "The ARM" was written in 1989 and was the base of the C++ standards effort.
+It is by now quite old and does not describe Standard C++.
+<p>
+For a variety of reasons, the planned replacement ("ARM++") describing ISO Standard C++ was
+never written.
+As the work on C++0x is now proceeding, it is too late for an ARM++ based on ISO C++ 1998.
+My guess is that I won't find the time to write a new ARM.
+A 4th edition of
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a>
+and a 2nd edition of
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a>
+to match C++0x (when C++0x become the dominant C++) are likely to be more important.
+</p><p>
+</p><hr>
+<h2><a name="4th">
+When will you publish a 4th edition of "The C++ Programming Language"?</a></h2>
+Not soon. 
+The definition of C++ and the fundamental techniques that it supports
+are unlikely to change significantly before
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a>
+becomes dominant.
+When I write, I aim for a long "shelf life" and
+<a href="#When-next-standard">the ISO C++ standard</a>
+ensures basic stability.
+In this context, it is important that 
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)</a> describes
+Standard C++, its standard library, and the techniques they support rather
+than some particular implementation and some proprietary library.
+What is in the curent ISO C++ standard and described in my 3rd edition will remain valid C++
+for many years to come - even after the revised standard appears.
+<p>
+Confusingly, the German translation of the "Special Edition" is referred to as the 4th edition.
+</p><p>
+</p><hr>
+<h2><a name="SE">
+Should I buy the "Special Edition" of "The C++ Programming Language"?</a></h2>
+Sure! Buy it early and often :-)
+<p>
+Seriously, the difference between the current printings of the special
+edition and the 3rd edition is just the hard
+cover (and the price difference implied by that stronger cover).
+</p><p>
+If I were a C++ programmer who hadn't read
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)</a>,
+I'd buy and read either the 3rd edition or the special edition.
+If I used my textbooks and references heavily, I'd choose the hard cover.
+The cover on the 3rd is the best soft cover available, but it doesn't equal
+the special edition's hard cover.
+</p><p>
+If I already had the 3rd edition, I'd buy the SE if my current
+copy were fraying or if my copy were an early printing
+(the 3rd now has about 30 printings and SE about 20).
+</p><p>
+Compared to the first printing, the special edition and the most recent
+printings of the 3rd edition have 1,000+ corrections and clarifications.
+As a heavy C++ user, I find that significant. There are also the two new
+appendices
+(just over 100 pages; available for download: <a href="http://www.research.att.com/%7Ebs/3rd_loc0.html">Locales</a>
+and
+<a href="http://www.research.att.com/%7Ebs/3rd_safe0.html">Standard-Library Exception Safety</a>).
+</p><p>
+Existing material has not moved around so page numbers can be used to refer
+to material in old printings, new printings of the 3rd edition, and in the
+SE.
+</p><p>
+The SE also has an improved index.
+
+
+</p><p>
+</p><hr>
+<h2><a name="3rd-programming">
+What's the difference between the "TC++PL" and "Programming" books?</a></h2>
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language</a>
+is primarily written for experienced programmers who wants to learn C++.
+It's style is that of a professional book.
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming - Principles and Practice using C++</a>
+is primarily written for people who wants to learn programming using C++.
+It can be used/read by people with no or only weak programming background
+as well as people who want to learn modern programming techniques,
+such as object-oriented programming and generic programming, as supported by C++.
+It's style is that of a text book.
+
+
+<p>
+</p><hr>
+<h2><a name="machinereadable">
+Where do I find free machine-readable copies of your books?</a></h2>
+There are no legal free machine readable copies of my books.
+If you see a copy freely available it must be a copyright violation
+(that is, it was stolen).
+<p>
+Addison-Wesley offers electronic version through
+<a href="http://my.safaribooksonline.com/0201700735">Safari online books service</a>
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="recommend">
+What C++ compiler do you recommend? Which libraries?</a></h2>
+I don't recommend.
+It wouldn't be fair.
+However, do get a recent release. Naturally, newer compilers approximate the
+ISO standard much more closely than compilers from a few years ago.
+<p>
+For an incomplete list of C++ implementations, see
+<a href="http://www.research.att.com/%7Ebs/compilers.html">my C++ compilers list</a>.
+</p><p>
+Also, where possible, prefer the standard library to non-standard "foundation
+libraries" and try to minimize use of proprietary extensions.
+</p><p>
+</p><hr>
+<h2><a name="Java">
+Is Java the language you would
+have designed if you didn't have to be compatible with C?</a></h2>
+No. Java isn't even close.
+If people insist on comparing C++ and Java - as they seem to do -
+I suggest they read
+<a href="http://www.research.att.com/%7Ebs/dne.html"> The Design and Evolution of C++</a>
+(D&amp;E) to see why C++ is the way it is,
+and consider both languages in the light of the design criteria
+I set for C++. Those criteria will obviously differ from the criteria
+of Sun's Java team.
+Despite the syntactic similarities, C++ and Java are very different
+languages.
+In many ways, Java seems closer to Smalltalk than to C++.
+<p>
+Much of the relative simplicity of Java is - like for most new
+languages -
+partly an illusion and partly a function of its incompleteness.
+As time passes, Java will grow
+significantly in size and complexity. It will double or triple in size
+and grow implementation-dependent extensions or libraries.
+That is the way every commercially
+successful language has developed. Just look at any language you
+consider successful on a large scale. I know of no exceptions,
+and there are good reasons for this phenomenon.
+[I wrote this before 2000; now see <a href="http://developers.slashdot.org/article.pl?sid=03/05/30/1942259&amp;mode=thread&amp;tid=108&amp;tid=126&amp;tid=156">a preview of Java 1.5</a>.]
+</p><p>
+I have commented (negatively) about Java hype and ascribed much of Java's success to marketing.
+For example, see <a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">my HOPL-3 paper</a>.
+Today (2010), the claims made about Java are more reality based and less gratuitously derogative about alternatives.
+This was not always so. For example, compare the <a href="http://www.research.att.com/%7Ebs/1995_Java_whitepaper.pdf">original 1995 Java white paper</a>
+with the versions you find on the web (sometimes labelled "the original 
+Java whitepaper"); page 69 would be a good place to start.
+</p><p>
+Java isn't platform independent; it is a platform.
+Like Windows, it is a proprietary commercial platform.
+That is, you can write programs for Windows/Intel or Java/JVM, and in
+each
+case you are writing code for a platform owned by a single corporation
+and tweaked for the commercial benefit of that corporation.
+It has been pointed out that you can write programs in any language for
+the JVM and associated operating systems facilities. However, the JVM,
+etc.,
+are heavily biased in favor of Java. It is nowhere near being a general
+reasonably language-neutral VM/OS.
+</p><p>
+Personally, I'll stick to reasonably portable C++ for most of the kind
+of work I think most about and use a variety of languages for the rest.
+</p><p>
+</p><hr>
+<h2><a name="Csharp">
+What do you think of C#?</a></h2>
+I have no comments on C# as a language.
+It will take a lot to persuade me that the world needs yet another
+proprietary language.
+It will be especially hard to persuade me that it needs a language that is
+closely integrated with a specific proprietary operating system.
+<p>
+If you want to write exclusively for the .Net platform, C# isn't the worst alternative,
+but remember that C++ is a strongly supported - though less strongly hyped - alternative
+on that platform.
+</p><p>
+</p><hr>
+<h2><a name="CppCLI">
+What do you think of C++/CLI?</a></h2>
+C++/CLI is a set of extensions to ISO C++ that provides an extremely complete "binding" of C++
+to Microsoft's CLI (Common Language Infrastructure).
+It has been standardized by ECMA (ECMA-372). I am happy that it makes every feature of the CLI
+easily accessible from C++ and happy that C++/CLI is a far better language than its predecessor
+"Managed C++".
+However, I am less happy that C++/CLI achieves its goals by essentially augmenting C++ with
+a separate language feature for each feature of CLI
+(interfaces, properties, generics, pointers, inheritance, enumerations, and much, much more).
+This will be a major source of confusion (whatever anyone does or says).
+The wealth of new language facilities in C++/CLI compared to ISO Standard C++ tempts programmers
+to write non-portable code that (often invisibly) become intimately tied to Microsoft Windows.
+<p>
+The CLI provides a set of interfaces (to system facilities) that are very different from traditional
+interfaces to operating system facilities and applications.
+In particular, these interfaces have semantics that
+cannot be completely or conveniently expressed in conventional programming languages.
+One way of describing CLI is as a (partial) "platform" or "virtual machine". It consists of a
+large set of language features (inheritance, methods, loop constructs, callback mechanisms, etc.),
+supporting a large set of foundation libraries (the BCL), plus an elaborate system of metadata.
+The CLI is sometimes
+described as "language neutral". However, a language that doesn't accept a large subset of
+these facilities cannot use even basic .Net facilities
+(or future Microsoft Windows facilities, assuming that Microsoft's plans don't change)
+and a language that cannot express <b>all</b> of these
+features cannot be used for the implementation of resources meant to be usable by other languages.
+Thus, CLI is "language neutral" only in the sense that every language must support all of the CLI
+features to be "first-class" on .Net.
+</p><p>
+I prefer a binding to be a few primitives, expressible as simple function calls and simple
+data structures in any language, possibly encapsulated in language-specific libraries.
+For the CLI, this can at best be done for consumers of CLI facilities only. A language
+used to produce CLI modules must be able to express all of the CLI facilities, including
+the metadata.
+Only a language that can do that can be considered a systems programming language on .Net. 
+Thus, the Microsoft C++ team concluded that only build-in language facilities
+are acceptable to their customers.
+Their design reflects a view that accepts absolutely no restrictions on what part of CLI can be
+expressed in C++ with the C++/CLI extensions,
+absolutely no verbosity compared to other languages when using CLI facilities,
+and absolutely no overheads compared to other languages.
+They aim at preserving C++ as the dominant systems programming language for Windows.
+</p><p>
+As ever,
+<a href="#portability">I place a heavy emphasis on portability</a> and
+recommend people to design applications so that access to system-specific facilities are through
+well-defined interfaces specified in ISO C++ (e.g., not to use C++/CLI directly).
+On Windows, this will sometimes be inconvenient compared with using C++/CLI
+facilities directly, but it's the only way to gain portability and a degree of vendor independence.
+Obviously, that arms-length approach to the CLI cannot be maintained if the purpose of a piece of
+code is to provide a CLI interface to be consumed by other code.
+Please note that I recognize the need for system-specific extensions and that Microsoft is not
+the only C++ vendor with such extensions, I just strongly prefer to deal with such extensions
+through a "thin interface" specified in ISO standard C++.
+</p><p>
+How to deal with system-specific extensions is inherently a difficult question.
+The Microsoft C++ team, especially Herb Sutter, has kept up an active dialog with (other) members
+of the ISO C++ standards committee so that the relationship between ISO C++ and its superset C++/CLI
+will eventually be worked out.
+We have a long record of constructive joint work in the ISO C++ committee.
+Also, to minimize confusion between ISO C++ and the C++/CLI extensions, Microsoft is now revising
+their Visual C++ documentation to try to clearly distinguish C++/CLI from ISO C++
+(plain unqualified C++ means ISO C++).
+I hope others will follow that lead.
+</p><p>
+On the difficult and controversial question of what the CLI binding/extensions to C++ is to be called,
+I prefer C++/CLI as a shorthand for "The CLI extensions to ISO C++".
+Keeping C++ as part of the name reminds people what is the base language and will
+help keep C++ a proper subset of C++ with the C++/CLI extensions.
+The <a href="http://public.research.att.com/%7Ebs/bs_faq.html#merge">C/C++ compatibility problems</a>
+demonstrate how important it is to keep that subset property.
+</p><p>
+Here are some documents related to C++/CLI:
+</p><ul>
+<li>
+<a href="http://www.ecma-international.org/publications/standards/Ecma-372.htm">The ECMA C++/CLI standard</a>.
+</li><li>
+<a href="http://www.research.att.com/%7Ebs/uk-objections.pdf">The UK ISO C++ panel's objection</a> (incl. some code examples).
+</li><li>
+<a href="http://www.plumhall.com/ecma/ECMA372ReviewResponse.pdf">ECMA's answer to the UK (and other) objections</a>.
+</li><li>
+<a href="http://www.gotw.ca/publications/C++CLIRationale.pdf">Herb Sutter's design rationale for C++/CLI</a>
+</li></ul>
+<p>
+
+</p><hr>
+<h2><a name="portability">
+Why are you so keen on portability?</a></h2>
+Successful software is long-lived; life-spans of decades are not uncommon.
+A good application/program often outlives the hardware it was designed for,
+the operating system it was written for, the data base system it initially used, etc.
+Often, a good piece of software outlives the companies that supplied the basic technologies
+used to build it.
+<p>
+Often a successful application/program have customers/users who prefer a variety of platforms.
+The set of desirable platforms change as the user population changes. Being tied to a single
+platform or single vendor, limits the application/program's potential use.
+</p><p>
+Obviously, complete platform independence is incompatible with the ability to use all platform
+specific facilities. However, you can often approximate platform independence for an application
+by accessing platform facilities through a "thin interface" representing the application's view
+of its environment as a library.
+</p><p>
+
+</p><hr>
+<h2><a name="Ada">
+Do you really recommend Ada over C++ for larger projects?</a></h2>
+No. I have no idea who started that rumor, but it must have been
+an over-enthusiastic or malicious Ada devotee.
+<p>
+</p><hr>
+<h2><a name="compare">
+Would you compare C++ to "some language"?</a></h2>
+No, sorry, I won't.
+You can find the reason in the introductory notes of
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a>:
+<p>
+"Several reviewers asked me to compare C++ to other languages.
+This I have decided against doing.
+Thereby, I have reaffirmed a long-standing and strongly held view:
+Language comparisons are rarely meaningful and even less often fair.
+A good comparison of major programming languages requires
+more effort than most people are willing to spend,
+experience in a wide range of application areas,
+a rigid maintenance of a detached and impartial point of view,
+and a sense of fairness.
+I do not have the time, and as the designer of C++, my impartiality
+would never be fully credible.
+</p><p>
+I also worry about a phenomenon I have repeatedly observed in
+honest attempts at language comparisons.
+The authors try hard to be impartial, but are hopelessly biased by
+focusing on a single application, a single style of programming, or
+a single culture among programmers.
+Worse, when one language is significantly better known than others,
+a subtle shift in perspective occurs: Flaws in the well-known language
+are deemed minor and simple workarounds are presented, whereas similar
+flaws in other languages are deemed fundamental.
+Often, the workarounds commonly used in the
+less-well-known languages are simply unknown to the people doing the
+comparison
+or deemed unsatisfactory because they would be unworkable in the more
+familiar
+language.
+</p><p>
+Similarly, information about the well-known language tends to be
+completely
+up-to-date, whereas for the less-known language, the authors rely on
+several-year-old information.
+For languages that are worth comparing, a comparison of language X as
+defined
+three years ago vs. language Y as it appears in the latest experimental
+implementation is neither fair nor informative.
+Thus, I restrict my comments about languages other than C++ to
+<a href="#advanced">generalities</a>
+and to very specific comments."
+</p><p>
+That said, I consider C++ the best choice in programming language for a
+wide
+variety of people and applications.
+</p><p>
+</p><hr>
+<h2><a name="Others-do-compare">
+Others do compare their languages to C++; doesn't that annoy you?</a></h2>
+It does when it is done incompetently or for commercial gain.
+The most widely circulated comparisons tend to be
+those written by proponents of some language, Z, to prove that Z is
+better
+that other languages.
+Given its wide use, C++ is often top of the list of languages
+that the proponents of Z wants to prove inferior.
+Often, such papers are "published" or distributed by a company that
+sells Z as part of a marketing campaign.
+Surprisingly, many seem to take an unreviewed paper written by people
+working for a company selling Z "proving" that Z is best seriously.
+One problem is that there are always grains of truth in such
+comparisons.
+After all, no language is better than every other in all possible ways.
+C++ certainly isn't perfect,
+but selective truth can be most seductive and occasionally completely
+misleading.
+<p>
+When looking at a language comparison consider who wrote it,
+consider carefully if the descriptions are factual and fair,
+and also if the comparison criteria are themselves fair for all
+languages considered.
+This is not easy.
+</p><p>
+
+
+</p><hr>
+<h2><a name="diatribes">
+You won't compare C++ to other languages, but you write diatribes about C++?</a></h2>
+I don't write diatribes (that's a hostile characterization of some
+text), but
+I do  consider it reasonable - possibly even a duty - for someone who
+designed a
+language to explain its virtues and defend it against hostile
+characterizations.
+See
+<a href="http://www.research.att.com/%7Ebs/papers.html">my publications list</a>.
+In paticular, see my extensive and peer reviewed papers for the
+ACM History of Programming Conference:
+<ul>
+<li>B. Stroustrup:
+<a href="http://www.research.att.com/%7Ebs/hopl2.pdf">A History of C++: 1979-1991</a>.
+ACM HOPL-ii. 1993.
+</li><li>B. Stroustrup:
+<a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">Evolving a language in and for the real world: C++ 1991-2006</a>.
+ACM HOPL-III. 2007.
+</li></ul>
+Often, I also point out the limitations of C++ and the fundamental
+assumptions
+of the design of C++ (for example, see <a href="http://www.research.att.com/%7Ebs/dne.html">D&amp;E</a>).
+<p>
+</p><hr>
+<h2><a name="C-is-better">
+C is better than C++ for small projects, right?</a></h2>
+Not in my opinion. I never saw a project for which C was better than
+C++ for any reason but the lack of a good C++ compiler.
+<p>
+</p><hr>
+<h2><a name="C-is-subset">
+Is C a subset of C++?</a></h2>
+In the strict mathematical sense, C isn't a subset of C++.
+There are programs that are valid C but not valid C++ and even
+a few ways of writing code that has a different meaning in C and C++.
+However, C++ supports every programming technique supported by C.
+Every C program can be written in essentially the same
+way in C++ with the same run-time and space efficiency.
+It is not uncommon to be able to convert tens of thousands of lines
+of ANSI C to C-style C++ in a few hours.
+Thus, C++ is as much a superset of ANSI C as ANSI C is a superset
+of K&amp;R C and much as ISO C++ is a superset of C++ as it existed in 1985.
+<p>
+Well written C tends to be legal C++ also. For example, every example
+in Kernighan &amp; Ritchie: "The C Programming Language (2nd Edition)" is
+also a C++ program.
+</p><p>
+Examples of C/C++ compatibility problems:
+</p><pre>	int main()
+	{
+		double sq2 = sqrt(2);   /* Not C++: call undeclared function */
+		int s = sizeof('a');    /* silent difference: 1 in C++ sizeof(int) in C */
+	}
+</pre>
+Calling an undeclared function is poor style in C and illegal in C++.
+So is passing arguments to a function using a declaration that doesn't list
+argument types:
+<pre>	void f();	/* argument types not mentioned */
+
+	void g()
+	{
+		f(2);	/* poor style C. Not C++ */
+	}
+</pre>
+In C, a void* can be implicitly converted to any pointer type, and free-store
+allocation is typically done using malloc() which has no way of checking
+if "enough" memory is requested:
+<pre>	void* malloc(size_t);
+
+	void f(int n)
+	{
+		int* p = malloc(n*sizeof(char));  /* not C++. In C++, allocate using `new' */
+		char c;
+		void* pv = &amp;c;
+		int* pi = pv;   /* implicit conversion of void* to int*. Not in C++ */
+	}
+</pre>
+Note the potential alignment error caused by the implicit conversion
+of the void* to a int*.
+See
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html#void-ptr">the C++ alternative to void* and malloc()</a>.
+<p>
+When converting from C to C++, beware that C++ has more keywords than C:
+</p><pre>	int class = 2;    /* ok in C. Syntax error in C++ */
+	int virtual = 3;  /* ok in C. Syntax error in C++ */
+</pre>
+Except for a few examples such as the ones shown above
+(and listed in detail in the C++ standard and in Appendix B of
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)</a>),
+C++ is a superset of C.
+(Appendix B is available for downloading).
+<p>
+Please note that "C" in the paragraphs above refers to Classic C and C89.
+C++ is not a descendant of C99; C++ and C99 are siblings.
+C99 introduces several
+<a href="#merge">novel opportunities for C/C++ incompatibilities</a>.
+
+</p><p>
+</p><hr>
+<a name="difference">
+</a><h2><a name="difference">What is the difference between C and C++?</a></h2>
+<p>
+<a name="difference">C++ is a direct descendant of C that retains almost all of C as a subset.
+C++ provides stronger type checking than C and directly supports a wider
+range of programming styles than C.
+C++ is "a better C" in the sense that it supports the styles of programming
+done using C with better type checking and more notational support (without
+loss of efficiency).
+In the same sense, ANSI C is a better C than K&amp;R C.
+In addition, C++ supports data abstraction, object-oriented programming,
+and generic programming
+(see </a><a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)"</a>;
+Appendix B discussing compatibility issues is available for downloading).
+</p><p>
+I have never seen a program that could be expressed better in C than in C++
+(and I don't think such a program could exist - every construct in C has an
+obvious C++ equivalent).
+However, there still exist a few environments where the support for C++
+is so weak that there is an advantage to using C instead.
+There aren't all that many of those left, though; see
+<a href="http://www.research.att.com/%7Ebs/compilers.html">my (incomplete) compilers list</a>.
+</p><p>
+For a discussion of the design of C++ including a discussion of its
+relationship with C see
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a>.
+</p><p>
+Please note that "C" in the paragraphs above refers to Classic C and C89.
+C++ is not a descendant of C99; C++ and C99 are siblings.
+C99 introduces several
+<a href="#merge">novel opportunities for C/C++ incompatibilities</a>.
+Here is a description of the 
+<a href="http://david.tribble.com/text/cdiffs.htm">differences between C++98 and C99</a>.
+
+</p><p>
+</p><hr>
+<h2><a name="merge">
+Do you really think that C and C++ could be merged into a single language?</a></h2>
+I think that it would be a very good thing for the C/C++ community if they
+were. That is, if the C/C++ incompatibilities were systematically and
+completely eliminated and that future evolution was organized so as to
+prevent new incompatibilities from emerging.
+Whether that's possible is another matter.
+<p>
+My basic point is that the current C/C++ incompatibilities are "accidents of
+history" that have no fundamental reasons behind them (though they all
+"looked like a good idea at the time" to some competent and well-meaning
+people).
+The C/C++ incompatibilities provide no benefits to the community at large,
+cause serious problems to a large section of the C/C++ community,
+and could - with great difficulty - be eliminated.
+</p><p>
+For a far more detailed presentation of my views on C/C++ compatibility, see
+the series of papers I wrote about this:
+</p><ul>
+<li>
+B. Stroustrup:
+<a href="http://www.cuj.com/articles/2002/0209/0209c/0209c.htm?topic=reference">C and C++: Case Studies in Compatibility</a>.
+The C/C++ Users Journal.
+September 2002.
+<a href="http://www.research.att.com/%7Ebs/examples_short.pdf">Pdf version</a>.
+</li><li>
+B. Stroustrup:
+<a href="http://www.cuj.com/articles/2002/0208/0208c/0208c.htm?topic=reference">C and C++: A Case for Compatibility</a>.
+The C/C++ Users Journal.
+August 2002.
+<a href="http://www.research.att.com/%7Ebs/compat_short.pdf">Pdf version</a>.
+</li><li>
+B. Stroustrup:
+<a href="http://www.cuj.com/articles/2002/0207/0207d/0207d.htm?topic=reference">C and C++: Siblings</a>.
+The C/C++ Users Journal.
+July 2002.
+<a href="http://www.research.att.com/%7Ebs/siblings_short.pdf">Pdf version</a>.
+</li><li>
+B. Stroustrup:
+<a href="http://www.research.att.com/%7Ebs/sibling_rivalry.pdf">Sibling rivalry: C and C++</a>.
+AT&amp;T Labs - Research Technical Report. TD-54MQZY.
+January 2002.
+</li></ul>
+I imagine that if incompatibilities were eliminated (by making changes to
+both C and C++), there would still be entities called C and C++, but then
+<a href="#C-is-subset">C really would be defined as a subset of C++</a>.
+<p>
+Please note that these papers were written in late 2001 and early 2002 when it was still possible
+to imagine coordinated action by the C and C++ standards committees leading to practical results by
+the end of the decade. This didn't happen.
+</p><p>
+
+
+</p><hr>
+<h2><a name="whyC">
+Why did you make C++ (almost) compatible with C?</a></h2>
+I wanted C++ to be compatible with a complete language with sufficient performance and
+flexibility for even the most demanding systems programming.
+I had a perfect dread of producing yet-another pretty language with unintentional limitations.
+See Section 2.7 of 
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a>
+for historical details and read the articles in
+<a href="#merge">Do you really think ...?</a>
+for a (retrospective) technical discussion of C/C++ compatibility issues.
+<p>
+At the time, I considered C the best systems programming language available.
+That was not as obvious then (1979) as it later became,
+but I had experts such as
+<a href="http://netlib.bell-labs.com/who/dmr">Dennis Ritchie</a>,
+Steve Johnson,
+<a href="http://www.fraserresearch.org/agf.html">Sandy Fraser</a>,
+Greg Chesson,
+<a href="http://www.cs.dartmouth.edu/%7Edoug">Doug McIlroy</a>, and
+<a href="http://www.cs.princeton.edu/%7Ebwk/">Brian Kernighan</a>
+down the corridor from whom I could learn and get feedback.
+Without their help and advice, and without C, C++ would have been stillborn.
+</p><p>
+Contrary to repeated rumors,
+I was never told that I had to use C; nor was I ever told not to use C.
+In fact, the first C++ manual grew from troff source of the C manual that Dennis gave me.
+Many new languages were designed at Bell labs; in "Research" at least, there were no
+rules enforcing language bigotry.
+
+</p><p>
+</p><hr>
+<h2><a name="C-slash">
+What do you think of C/C++?</a></h2>
+No that's not really a question I often get. In that sense, it is the 
+only "fake FAQ" in this FAQ. However, it ought to be a FAQ because people 
+use "C/C++" as if it meant something specific and as if they knew what 
+it meant, leading to much confusion and misery. People should ask "What 
+is C/C++?" and then on reflection stop using the term. It does harm.
+<p>
+There is no language called "C/C++".
+The phrase is usually used by people who don't
+have a clue about programming (e.g. HR personnel and poor managers).
+Alternatively, it's used by people who simple do not know C++ (and often not C either).
+When used by programmers,
+it typically indicates a "C++ is C with a few useful and a lot of useless complicated features added"
+attitude.
+Often, that is the point of view of people who like to write their own strings and hash tables with
+little knowledge of the standard library beyond printf and memcpy. 
+There are people who stick to a restricted subset of C++ for perfectly good reasons,
+but they (as far as I have noticed) are not the people who say "C/C++".
+</p><p>
+I use C/C++ only in phrases such as "C/C++ compatibility" and "C/C++ community". 
+</p><p>
+
+</p><hr>
+<h2><a name="invention">
+When was C++ invented?</a></h2>
+I started work on what became C++ in 1979.
+The initial version was called "C with Classes".
+The first version of C++ was used internally in AT&amp;T in August 1983.
+The name "C++" was used late that year.
+The first commercial implementation was released October 1985 at the same time
+as the publication of
+<a href="http://www.research.att.com/%7Ebs/1st.html">the 1st edition of The C++ Programming Language</a>.
+Templates and exception handling were included later in the 1980's
+and documented in 
+<a href="http://www.research.att.com/%7Ebs/arm.html">The Annotated C++ Reference Manual</a>
+and
+<a href="http://www.research.att.com/%7Ebs/2nd.html">The C++ Programming Language (2rd Edition)</a>.
+<p>
+The current definition of C++ is
+<a href="http://www.research.att.com/%7Ebs/iso_pressrelease2.html">The ISO C++ Standard</a> described in
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)</a>.
+</p><p>
+You can find a more complete timeline and more detailed explanations in
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a> and 
+<a href="http://www.research.att.com/%7Ebs/hopl2.pdf">A History of C++: 1979-1991</a>.
+</p><p>
+</p><hr>
+<h2><a name="why">
+Why did you invent C++?</a></h2>
+I wanted to write efficient systems programs in the styles encouraged by
+Simula67.
+To do that, I added facilities for better type checking, data abstraction,
+and object-oriented programming to C.
+The more general aim was to design a language in which I could write programs
+that were both efficient and elegant.
+Many languages force you to choose between those two alternatives.
+<p>
+The specific tasks that caused me to start designing and implementing C++
+(initially called "C with Classes") had to do with distributing
+operating system facilities across a network.
+</p><p>
+You can find more detailed explanations in
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a>.
+See also
+<a href="http://www.research.att.com/%7Ebs/hopl2.pdf">A History of C++: 1979-1991</a> and
+<a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">Evolving a language in and for the real world: C++ 1991-2006</a>.
+
+
+</p><p>
+</p><hr>
+<h2><a name="why-ATT">
+Why did AT&amp;T support the development of C++?</a></h2>
+When I first developed C++, AT&amp;T built systems of greater complexity and with greater reliability
+requirements than most organizations.
+Consequently, we had to influence the market
+and help set standards that meet our needs - or else we wouldn't have the
+tools to build our systems. Left to itself "the industry" will create
+languages and tools for dealing with "average" problems. Similarly,
+teachers tend to focus on languages and tools that serve students and
+researchers well - even if they don't scale to the most demanding tasks.
+<p>
+At the time when I developed C++ - and before that when Ken Thompson and
+Dennis Ritchie developed Unix and C - AT&amp;T was probably the worlds largest
+civilian user of (and consumer of) software tools. Then, we probably used
+a wider
+range of systems - from the tiniest embedded processors to the largest
+supercomputers and data-processing systems. That put a premium on systems
+that were applicable in many technical cultures and on many platforms.
+C and C++ were designed with such demands in mind.
+</p><p>
+Thus generality is essential, and proprietary features are seen as limiting
+the choice of platforms and vendors. As a consequence AT&amp;T was and is a major
+supporter of formal standards (for example, ISO C and ISO C++).
+</p><p>
+Actually, AT&amp;T made enough money on Cfront, my original C++ compiler,
+to pay for the development of C++ several times over.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="revenues">
+Do you own C++?</a></h2>
+No. If anyone "owns C++," it must be the ISO. AT&amp;T gave the rights to the
+C++ manual that I wrote to the ISO.
+<a href="http://www.research.att.com/%7Ebs/iso_pressrelease2.html">The ISO C++ Standard</a>
+is copyrighted by ISO.
+<p>
+Compiler vendors do not pay royalties to me or to AT&amp;T for C++, and ISO
+standards are specifications intended for royalty-free use by everyone
+(once they have paid the ISO or a national standard committee for their
+copy of the standard).
+The individual compilers are owned by their respective vendors/suppliers.
+</p><p>
+"But someone from SCO claimed that they own C++"; is that not so? It's complete rubbish.
+I saw that interview. The SCO guy clearly had no clue what C++ was, referring to it as
+"the C++ languages".
+At most, SCO may own a 15-year old and seriously outdated version of Cfront - my original
+C++ compiler. I was careful not to patent or trademark anything to do with C++. That's one
+reason we write plain "C++" and not "C++(tm)".
+The C++ standard is unencumbered of patents - the committee carefully checked that also.
+</p><p>
+
+
+</p><hr>
+<h2><a name="name">
+Where did the name "C++" come from?</a></h2>
+Chapter 3 of
+<a href="http://www.research.att.com/%7Ebs/dne.html">D&amp;E</a>:
+``I picked C++ because it was short, had nice interpretations, and wasn't of
+the form "adjective C."'
+In C, ++ can, depending on context, be read as "next," "successor," or 
+"increment," though it is always pronounced "plus plus."
+The name C++ and its runner up ++C are fertile sources for jokes and puns
+-- almost all of which were known and appreciated before the name was chosen.
+The name C++ was suggested by Rick Mascitti.
+It was first used in December of 1983 when it was edited into the final
+copies of [Stroustrup,1984] and [Stroustrup,1984c].
+<p>
+Chapter 1 of
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a>:
+``The name C++ (pronounced "see plus plus") was coined by Rick Mascitti in the summer of 1983.
+The name signifies the evolutionary nature of the changes from C; "++" is the C increment
+operator. The slightly shorter name "C+" is a syntax error; it has also been 
+used as the name of an
+unrelated language. Connoisseurs of C semantics find C++ inferior to ++C. The 
+language is not
+called D, because it is an extension of C, and it does not attempt to remedy 
+problems by removing
+features. For yet another interpretation of the name C++, see the appendix of [Orwell,1949].''
+</p><p>
+The "C" in C++ has a long history.
+Naturally, it is the name of the language Dennis Ritchie designed.
+C's immediate ancestor was an interpreted descendant
+of BCPL called B designed by Ken Thompson.
+BCPL was designed and implemented by Martin Richards from Cambridge University
+while visiting MIT in the other Cambridge.
+BCPL in turn was Basic CPL, where CPL is the name of a rather large (for its time)
+and elegant programming language developed jointly by the universities of
+Cambridge and London.
+Before the London people joined the project "C" stood for Cambridge.
+Later, "C" officially stood for Combined.
+Unofficially,
+"C" stood for Christopher because Christopher Strachey was the main power 
+behind CPL.''
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="bootstrapping">
+Which language did you use to write C++?</a></h2>
+The first C++ compiler (Cfront) was written in C++.
+To build that, I first used C to write a "C with Classes"-to-C preprocessor.
+"C with Classes" was a C dialect that became the immediate ancestor to C++.
+That preprocessor translated "C with Classes" constructs (such as classes
+and constructors) into C.
+It was a traditional preprocessor that didn't understand all of the
+language, left most of the type checking for the C compiler to do,
+and translated individual
+constructs without complete knowledge. 
+I then wrote the first version of Cfront in "C with Classes".
+<p>
+Cfront was a traditional compiler that did complete syntax and semantic
+checking of the C++ source.
+For that, it had a complete parser, built symbol tables, and built a complete
+internal tree representation of each class, function, etc.
+It also did some source level optimization on its internal tree representation
+of C++ constructs before outputting C.
+The version that generated C, did not rely on C for any type checking.
+It simply used C as an assembler.
+The resulting code was uncompromisingly fast.
+For more information, see <a href="http://www.research.att.com/%7Ebs/dne.html">D&amp;E</a>.
+</p><p>
+
+
+</p><hr>
+<h2><a name="garbage-collection">
+Why doesn't C++ have garbage collection?</a></h2>
+If you want automatic garbage collection, there are good commercial and
+public-domain garbage collectors for C++.
+For applications where garbage collection is suitable, C++ is an
+excellent
+garbage collected language with a performance that compares favorably
+with
+other garbage collected languages.
+See <a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language (3rd Edition)</a>
+for
+a discussion of automatic garbage collection in C++.
+See also, Hans-J. Boehm's
+<a href="http://www.hpl.hp.com/personal/Hans_Boehm/gc">site for C and C++ garbage collection</a>.
+<p>
+Also, C++ supports programming techniques that allows memory management to
+be <a href="http://www.research.att.com/%7Ebs/bs_faq2.html#memory-leaks">safe and implicit without a garbage collector</a>.
+</p><p>
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a> offers a GC ABI.
+</p><p>
+
+
+</p><hr>
+<h2><a name="gui">
+Why doesn't C++ have a GUI?</a></h2>
+C++ has many commercial and open source GUIs (e.g.
+<a href="http://gtkmm.sourceforge.net/">Gtkmm</a>,
+<a href="http://smartwin.sourceforge.net/">SmartWin++</a>,
+<a href="http://www.objectcentral.com/">V C++ GUI</a>,
+<a href="http://www.fltk.org/">FLTK</a>, and
+<a href="http://www.trolltech.com/">Qt</a>).
+In particular, every platform vendor provides a C++ library to access their GUI.
+The problem is that it doesn't have a standard GUI, and that is indeed a major problem.
+<p>
+Note that providing a GUI is both a technical and political problem.
+There are lots of GUIs with lots of users, and generally they wouldn't like some other
+GUI to be declared standard.
+Anyway, the standards committee do not have the resources to build a new and better GUI.
+</p><p>
+
+
+</p><hr>
+<h2><a name="threads">
+Why doesn't C++ support threads?</a></h2>
+The ISO C++ standard doesn't mention concurrency, but all major C++ implementations support threads;
+pthreads runs essentially everywhere and many platform vendors support their own system threads.
+For portability, use some threads library, such as Boost threads.
+<p>
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a> offers threads.
+</p><p>
+
+
+</p><hr>
+<h2><a name="decline">
+Is C++ in decline?</a></h2>
+No, I don't think so.
+C++ use appears to be declining in some areas and to be on an upswing in others.
+If I had to guess, I'd suspect a net decrease sometime during 2002-2004 and a net 
+increase in 2005-2007, but I doubt anyone really knows. Most of the 
+popular measures basically measures noise and ought to report their 
+findings in decibel rather than "popularity." Many of the major uses of C++ are 
+in infrastructure (telecommunications, banking, embedded systems, etc.) 
+where programmers don't go to conferences or describe their code in 
+public. Many of the most interesting and important C++ applications are 
+not noticed, they are not for sale to the public as programming 
+products, and their implementation language is never mentioned. Examples 
+are Google and "800" phone numbers. Had I thought of a "C++ inside" logo 
+in 1985, the programming world might have been different today.
+<p>
+One simple thing that confuses many discussions of language 
+use/popularity is the distinction between relative and absolute 
+measures. For example, I say that C++ use is growing when I see user 
+population grow by 200,000 programmers from 3.1M to 3.3M. However, 
+somebody else may claim that "C++ is dying" because it's "popularity" 
+has dropped from 16 percent to 11 percent of the total number of programmers. 
+Both claims could be simultaneously true as the number of programmers 
+continues to grow and especially as what is considered to be programming 
+continues to change. I think that C++ is more than holding its own in 
+its traditional core domains, such as infrastructure, systems 
+programming, embedded systems, and applications with serious time and/or 
+space constraints.
+See also <a href="http://www.devx.com/SpecialReports/Article/38813/0/page/6">my DevX interview</a>.
+</p><p>
+
+
+</p><hr>
+<h2><a name="improve">
+What's being done to improve C++?</a></h2>
+Implementers are continually improving their <a href="http://www.research.att.com/%7Ebs/compilers.html">compilers</a>,
+libraries, and tools.
+The last five years have seen very significant improvements in quality.
+This is what most directly and most immediatly helps people;
+that, and the host of proprietary and open source libraries and tools that are continuosly
+being produced by the C++ community. See <a href="http://www.research.att.com/%7Ebs/C++.html">my C++ page</a> for examples.
+<p>
+The <a href="http://www.research.att.com/%7Ebs/C++.html">ISO C++ standard</a> was ratified in 1998.
+The next version, nicknamed <a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x</a>,
+is complete  and in public review; after that comes a "proofeading pass,"
+and a ratification process.
+You can find papers describing C++0x on <a href="http://www.research.att.com/%7Ebs/papers.html">my publications page</a>
+and all documents relating to the new standard on
+<a href="http://www.open-std.org/jtc1/sc22/wg21">the ISO C++ committee's home pages</a>.
+My <a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">HOPL-iii paper</a> on the last 15 years of C++ evolution
+may the best explanation of what is being done and why.
+A <a href="http://www.devx.com/SpecialReports/Article/38813/0/page/1">recent interview</a>
+contains lists of new language features and standard libraries.
+</p><p>
+When considering the evolution of C++, it is worth remembering that the aim is not to add the largest
+number of new features, but to improve C++ for its key application domains, including systems
+programming and library building, without breaking older code
+(there are billions of lines of C++ "out there").
+</p><p>
+
+
+
+
+</p><hr>
+<h2><a name="Hello-world">
+Why is the code generated for the "Hello world" program ten times larger for C++
+than for C?</a></h2>
+It isn't on my machine, and it shouldn't be on yours.
+I have even seen the C++ version of the "hello world"
+program smaller than the C version.
+In 2004, I tested using gcc -o2 on a Unix and
+the two versions (iostreams and stdio) yielded identical sizes.
+There is no language reason why the one version should be larger than
+the other. It is all an issue on how an implementor organizes the
+standard libraries (e.g. static linking vs. dynamic linking,
+locale support by default vs. locale support enabled through and option, etc.).
+If one version is significantly larger than the other,
+report the problem to the implementor of the larger.
+
+
+<p>
+</p><hr>
+<h2><a name="advanced">
+How can a legacy language like C++ compete with modern, advanced languages?</a></h2>
+Naturally, calling C++ a legacy language shows a bias (see
+<a href="#legacy">legacy code</a>).
+That aside, people are usually thinking of
+<a href="#Java">Java</a> or <a href="#Csharp">C#</a> when they ask such a
+question.
+I will not <a href="#compare">compare C++ to those languages</a>, but I can
+point out that "modern" doesn't necessarily mean "better", and that both
+Java and C# are rooted in 1980s style OOP to an even greater extent than
+early C++ is.
+<p>
+Since 1987 or so, the focus of development the C++ language and its associated
+programming styles have been the use
+of templates, static polymorphism, generic programming, and multiparadigm
+programming. This is way beyond the scope of the much-hyped proprietary
+languages. Another key difference is that C++ supports user-defined types
+to the same extent as built-in types. This - especially in
+combination with the use of templates, constructors, and destructors -
+enables the C++ programmer to use
+programming and design techniques that (IMO) are more advanced than what is
+supported in the languages with which C++ is most often compared; e.g. see
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html#finally">RTTI</a>.
+</p><p>
+Standard C++ and the design and programming styles it supports owe a debt
+to the functional languages, especially to ML.
+Early variants of ML's type deduction mechanisms were (together with much
+else) part of the inspiration
+of templates. Some of the more effective functional programming
+techniques were part of the inspiration of the STL and the use of function
+objects in C++.
+On the other hand, the functional community missed the boat with
+object-oriented programming, and few of the languages and tools from that
+community benefited from the maturing experience of large-scale industrial
+use.
+</p><p>
+Clearly, I don't think that
+<a href="#garbage-collection">garbage collection</a> is the sole defining
+characteristic of "advanced" in the context of programming languages.
+In particular, note that C++ provides support for effective and efficient
+memory management techniques that can eliminate resource leaks without the
+use of a garbage collector.
+If you disagree, you can just start using a garbage collector for C++;
+there are good ones available.
+
+
+
+</p><p>
+</p><hr>
+<h2><a name="multiparadigm">
+What is "multiparadigm programming"?</a></h2>
+Multiparadigm programming is a fancy way of saying "programming using more
+than one programming style, each to its best effect."
+For example, using object-oriented programming when run-time resolution
+between different object types is required and generic programming when
+static type safety and run-time performance is at a premium.
+Naturally, the main strength of multiparadigm programming is in programs
+where more than one paradigm
+(programming style) is used, so that it would be hard to get the same effect
+by composing a system out of parts written in languages supporting different paradigms.
+I find the most compelling cases for multiparadigm programming are found where
+techniques from different paradigms are used in close collaboration to
+write code that is more elegant and more maintainable than would be possible
+within a single paradigm.
+A simple example is the traversal of a statically typed container of objects
+of a polymorphic type:
+<pre>	void draw_all(vector&lt; Shape*&gt;&amp; vs)	// draw each element of a standard vector
+	{
+		for_each(vs.begin(),vs.end(),mem_fun(&amp;Shape::draw));
+	}
+</pre>
+Here, Shape will be an abstract base class defining the interface to
+a hierarchy of geometric shapes.
+This example easily generalizes to any standard library container:
+<pre>	template&lt; class C&gt; void draw_all(C&amp; cs)	// draw each element of a standard container
+	{
+		for_each(cs.begin(),cs.end(),mem_fun(&amp;Shape::draw));
+	}
+</pre>
+<p>
+Jim Coplien's book "Multiparadigm Design for C++" (Addison Wesley, 1998)
+explores the use of multiple paradigms in the context of design
+and design methods. 
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="big">
+Why is C++ so BIG?</a></h2>
+C++ isn't as big as some people imagine.
+It's not a tiny language designed to be a minimal language for teaching,
+but neither are the languages people most often compare it to, such as C, Java, C#.
+They too are huge compared to say, Pascal as Dr. Wirth originally defined it
+- for good reasons, I think.
+The programming world is far more complex today than it was 30 years ago,
+and modern programming languages reflect that.
+<p>
+The C++ standard is 740 pages, but that includes 400 pages of library description.
+The language features are described (in excruciating detail) in 340 pages. Similarly,
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a> is 1000+ pages, but only 350 of those are devoted to the explanation
+of language facilities and their use; the rest discuss libraries, programming techniques, etc.
+</p><p>
+C++ directly supports (i.e., in the language) what some other languages support through libraries,
+so the language part will be relatively larger. On the other hand, if you want to write
+a "typical modern application", you need to consider operating system interfaces, GUI,
+databases, web interfaces, etc. the sum of language features, libraries, and programming
+conventions and standards that you must become familiar with dwarf the programming language.
+Here, C++'s size can be an advantage as far as it better supports good libraries.
+</p><p>
+Finally, the days where a novice programmer can know all of a language are gone, at least for the
+languages in widespread industrial use. Few people know "all of C" or "all of Java" either and none
+of those are novices. It follows that nobody should have to apologize for the fact that
+novices do not know all of C++. What you must do - in any language - is to pick a subset,
+get working writing code, and gradually learn more of the language, its libraries, and its tools.
+For my suggestion on how beginners can approach C++, see
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming: Principles and Practice using C++</a>.
+</p><p>
+</p><hr>
+<h2><a name="EC++">
+What do you think of EC++?</a></h2>
+EC++ is an (almost) subset of C++ lacking exceptions, templates,
+namespaces,
+RTTI support, multiple inheritance, etc. being defined by an "industry
+consortium."
+I am not in favor of language subsets or dialects.
+I am especially not fond of subsets that cannot support the standard
+library so
+that the users of that subset must invent their own incompatible
+foundation libraries.
+I fear that a defined subset of C++ could split the user community and
+cause acrimony (3/31/1999: I just saw an advertisement that used vivid
+graphics to indicate how EC++ reduced "fat" (i.e. memory space) by abolishing
+- among other things - namespaces, templates, and C++ standard strings. Sigh!).
+I strongly prefer work on "standards" to occur in an open forum (such
+as ISO or a national standards organization).
+<p>
+For a discussion of how embedded systems implementers can
+address performance issues using Standard C++ (better than by using dialects)
+see the ISO C++ committee's <a href="http://www.research.att.com/%7Ebs/performanceTR.pdf">report on performance</a>.
+To the best of my knowledge EC++ is dead (2004), and if it isn't it ought to be.
+</p><p>
+For a look at how ISO C++ can be used for serious embedded systems programming, see
+<a href="http://www.research.att.com/%7Ebs/JSF-AV-rules.pdf">the JSF air vehicle C++ coding standards</a>.
+</p><p>
+</p><hr>
+<h2><a name="from-Smalltalk">
+C++ got its Object-Oriented concepts from Smalltalk?</a></h2>
+No. C++ got the key notions of classes, derived classes, virtual
+functions
+(in other words, the notions of encapsulation, inheritance and
+polymorphism)
+from Simula just like Smalltalk did.
+In terms of family relationships, C++ and Smalltalk are siblings.
+<p>
+
+
+</p><hr>
+<h2><a name="Object-Oriented-language">
+Is C++ an Object-Oriented language?</a></h2>
+C++ is a
+<a href="http://www.research.att.com/%7Ebs/bs_faq.html#multiparadigm">multi-paradigm programming language</a>
+that supports Object-Oriented and other useful styles of programming.
+If what you are looking for is something that forces you to do things
+in
+exactly one way, C++ isn't it.
+There is no one right way to write every program - and even if there
+were
+there would be no way of forcing programmers to use it.
+<p>
+That said, writing C-style programs in C++ is for most applications not
+an
+optimal use of C++. To be a really effective C++ programmer, you must
+use
+the abstraction mechanisms and the type system in a way that fits
+reasonably
+with their intent. Trying to ignore or defeat the C++ type system is a
+most frustrating experience.
+</p><p>
+Writing Java-style code in C++ can be as frustrating and
+sub-optimal as
+writing C-style code in C++.
+</p><p>
+For a more detailed discussion see any of my overview or style papers
+from my
+<a href="http://www.research.att.com/%7Ebs/papers.html">bibliography</a>.
+In particular, see my OOPSLA paper "Why C++ isn't just an Object-Oriented Programming Language".
+</p><p>
+</p><hr>
+<h2><a name="really-say-that">
+Did you really say that?</a></h2>
+<i>"C makes it easy to shoot yourself
+in the foot; C++ makes it harder, but when you do it blows your whole
+leg off"</i>.
+Yes, I said something like that (in 1986 or so).
+What people tend to miss, is that what I said there about C++ is to
+a varying
+extent true for all powerful languages. As you protect people from
+simple
+dangers, they get themselves into new and less obvious problems.
+Someone who avoids the simple problems may simply be heading for
+a not-so-simple one. One problem with very supporting and protective
+environments is that the hard problems may be discovered too late or
+be too hard to remedy once discovered.
+Also, a rare problem is harder to find than a frequent one
+because you don't suspect it.
+<p>
+<i>"Within C++, there is a much smaller and cleaner language
+struggling to get out"</i>.
+Yes, that quote can be found on page 207 of
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a>.
+And no, that smaller and cleaner language is not
+<a href="#Java">Java</a>
+or
+<a href="#Csharp">C#</a>.
+The quote occurs in a section entitled "Beyond Files and Syntax".
+I was pointing out that the C++ semantics is much cleaner than its syntax.
+I was thinking of programming styles, libraries and programming environments
+that emphasized the cleaner and more effective practices over archaic uses
+focused on the low-level aspects of C.
+</p><p>
+<i>"I have always wished for my computer to be as easy
+to use as my telephone; my wish has come true because I can no longer figure out
+how to use my telephone"</i>.
+I said that after a frustrating attempt to use a "feature-rich" telephone
+sometime around 1990. I'm sure the sentiment wasn't original, and probably not
+even the overall phrasing; someone must have thought of that before me.
+</p><p>
+<i>"There are only two kinds of languages: the ones people complain about
+and the ones nobody uses"</i>.
+Yes.
+Again, I very much doubt that the sentiment is original. Of course, all "there are only two" quotes
+have to be taken with a grain of salt.
+</p><p>
+<i>"Proof by analogy is fraud"</i>.
+Yes; page 692 of TC++PL.
+A good analogy is an excellent way of illustrating
+an idea, but far too often such analogies are not accompanied by solid reasoning, data, etc.
+</p><p>
+<i>"People who think they know everything really annoy those of us who know we don't"</i>.
+Yes.
+</p><p>
+<i>"C++ Is my favorite garbage collected language because it generates so little garbage"</i>.
+Yes; see <a href="#garbage-collection">Why doesn't C++ have garbage collection?</a> and
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html#memory-leaks">How do I deal with memory leaks</a>.
+</p><p>
+<i>"If you think it's simple, then you have misunderstood the problem"</i>.
+Yes, but no, I don't recall which question elicited that answer.
+</p><p>
+<i>"There are more useful systems developed in languages deemed 
+awful than in languages praised for being beautiful--many more"</i>.
+Yes, in <a href="http://technologyreview.com/InfoTech/17831">MIT Technology Review interview</a>
+and elsewhere.
+There, I also said:
+</p><ul>
+<li>
+<i>"I think we should look for elegance in the applications built,
+      rather than in the languages themselves"</i>.
+	I should have said "more than" rather than "rather than".
+</li><li>
+<i>"To use C++ well, you have to understand design and programming technique"</i>.
+</li><li>
+<i>"C++ is designed to allow you to express ideas, but if you don't
+      have ideas or don't have any clue about how to express them, C++
+      doesn't offer much help"</i>.
+</li></ul>
+<p>
+<i>Far too often, "computer science" is a form of math envy</i>.
+Yes, but 
+please don't forget that "Far too often." The quote comes from a context 
+where I'm worrying about insufficient attention to data (empiricism) and 
+insufficient attention to the connection to computing. It is not a 
+frontal assault on the notion that computer science can be science 
+(e.g., see Knuth on algorithms and the analysis of algorithms; that's 
+science and it is not any other science). And, no, I'm not going to give 
+concrete examples or names.
+</p><p>
+<i>Far too often, "software engineering" is neither engineering nor about 
+software</i>.
+Yes, but please don't forget that "Far too often." The quote 
+comes from a context where I'm worrying about insufficient attention to 
+data (empiricism) and insufficient attention to the connection to code. 
+I'm worried that the realities of having to deliver useful and 
+maintainable code can be drowned in processes, corporate standards, and 
+marketing studies; that software development sometimes is controlled by 
+people who couldn't recognize good code if it jumped up and punched them 
+on the nose, and are proud of that. And, no, I'm not going to give 
+concrete examples or names. When practiced well, software development is 
+a worthy engineering discipline, delivering results that compares well 
+with those of older engineering disciplines.
+</p><p>
+<i>When (not if) automatic garbage collection becomes part of C++, it will be optional</i>.
+Yes in a
+<a href="http://www.research.att.com/%7Ebs/slashdot_interview.html">a 2000 interview with /.</a>.
+</p><p>
+<i>It's easy to win forgiveness for being wrong; being right is what gets you into real trouble.</i>
+Yes.
+</p><p>
+<i>Any problem in computer science can be solved with another layer of indirection</i>, known as the 1st law of computing.
+Yes, I said that quoting (my PhD Thesis advison) David J. Wheeler. Please don't misattribute it to me.
+</p><p>
+
+
+
+</p><hr>
+<h2><a name="IEEE">
+Did you really give an interview to IEEE?</a></h2>
+in which you confessed that C++ was deliberately created as an awful
+language
+for writing unmaintainable code to increase programmers' salaries?
+<p>
+Of course not. Read <a href="http://www.research.att.com/%7Ebs/ieee_interview.html">the real IEEE interview</a>.
+</p><p>
+
+</p><hr>
+<h2><a name="legacy">
+What is "legacy code"?</a></h2>
+"Legacy code" is a term often used derogatorily to characterize code that
+is written in a language or style that
+(1) the speaker/writer consider outdated
+and/or
+(2) is competing with something sold/promoted by the speaker/writer.
+"Legacy code" often differs from its suggested alternative by actually
+working and scaling.
+<p>
+
+</p><hr>
+<h2><a name="number-of-C++-users">
+Is the number of C++ users still doubling every year?</a></h2>
+No. During 1980-1991, the number of users doubled every seven
+and a half months (see
+<a href="http://www.research.att.com/%7Ebs/dne.html"> The Design and Evolution of C++</a>).
+However, there simply aren't enough programmers to sustain that.
+From the few numbers I can get (compiler sales, book sales, workloads of
+consultants I happen to know, IDC, etc.), I estimate that the growth rate is
+a few percent.
+<a href="#decline">Steady and definitely positive</a>.
+IDC estimated that 1.2 million C++ Implementations were sold in 1996.
+Their 2001 estimate of the number of C++ programmers was "about 3 million";
+their 2004 number was "more than 3 million".
+That seems plausible and indicates a continued growth.
+
+<p>
+</p><hr>
+<h2><a name="use-C++">
+Does anyone use C++ these days?</a></h2>
+Yes, <a href="#number-of-C++-users">many</a> do. There are too many C++ users
+to effectively count them, but the number is in the millions.
+C++ is supported by all <a href="http://www.research.att.com/%7Ebs/compilers.html">major vendors</a>.
+For examples of C++ use see my <a href="http://www.research.att.com/%7Ebs/applications.html"> application sampler</a>.
+
+<p>
+</p><hr>
+<h2><a name="use-C++-for-OS">
+Why isn't C++ used for Operating Systems?</a></h2>
+It is, and it has been for over a decade;
+see <a href="http://www.research.att.com/%7Ebs/applications.html">my list of C++ applications</a>.
+
+<p>
+</p><hr>
+<h2><a name="C++success">
+Did you expect C++ to become such a success?</a></h2>
+Of course not.
+The success rate for general-purpose programming languages is vanishingly small.
+I knew that, and I knew that the chance of success was affected by marketing
+clout, which I did not have.
+<p>
+C++ was initially designed and implemented as a set of general
+facilities addressing some specific problems that I and my colleagues faced.
+The generality - and efficiency - of the facilities provided turned out to
+serve much wider needs than I had anticipated.
+The emphasis on general facilities - as opposed to the provision of specific
+solutions to specific problems - has remained with C++ and has served its
+community well as the specific problems facing the community have changed
+over the years.
+
+</p><p>
+</p><hr>
+<h2><a name="certification">
+What's a good certification for C++ programmers?</a></h2>
+To the best of my knowledge, there isn't a good certification program for C++ programmers.
+That's a pity. A <i>good</i> certification program would be most useful.
+However, C++ lacks the central organization that would produce a solid certification program, and
+a certification program without authority or that focused on syntax would be worse than useless.
+<p>
+</p><hr>
+<h2><a name="working-on-now">What are you working on now?</a></h2>
+A better FAQ :-)
+<p>
+Seriously, I'm looking for
+fundamental ways of improving the tools and techniques we use to build
+large real-world systems.
+One part of my work is <a href="#When-next-standard">C++0x</a>.
+</p><p>
+
+
+</p><hr>
+<h2><a name="what-is">
+What is C++?</a></h2>
+C++ is a general-purpose programming language with a bias towards 
+systems programming that
+<ul>
+<li>is <a href="#difference">a better C</a>
+</li><li>supports <a href="#class">data abstraction</a>
+</li><li>supports <a href="#oop">object-oriented programming</a>
+</li><li>supports <a href="#generic">generic programming</a>
+</li></ul>
+
+It is defined by
+<a href="http://www.research.att.com/%7Ebs/C++.html">an ISO standard</a>,
+offers stability over decades,
+and has a large and lively user community.
+See also
+<a href="http://www.research.att.com/%7Ebs/3rd.html">The C++ Programming Language</a> and
+<a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">Evolving a language in and for the real world: C++ 1991-2006</a>.
+<p>
+
+</p><hr>
+<h2><a name="background">
+Where can I learn about the background of C++?</a></h2>
+About the design of C++? About the history of C++?
+<p>
+Look at my papers for
+<a href="http://www.research.att.com/%7Ebs/hopl2.pdf">HOPL-2</a> and
+<a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">HOPL-3</a>;
+HOPL stands for "History Of Programming Languages", the premier 
+conference on that subject, sponsored by the ACM. These are heavily 
+peer-reviewed papers.
+For even more information see my book
+<a href="http://www.research.att.com/%7Ebs/dne.html">The Design and Evolution of C++</a> and the
+<a href="http://www.research.att.com/%7Ebs/DnE2005.pdf">Preface to the 2006 Japanese translation of D&amp;E</a>
+which brings the information up to 2006.
+Also, many of my
+<a href="http://www.research.att.com/%7Ebs/interviews.html">interviews</a>
+touch upon the issues of background, design, and history of C++.
+</p><p>
+
+</p><hr>
+<h2><a name="true">
+Is it true that ...?</a></h2>
+Many questions come to me in the form of assertions
+<ul>
+<li>C++ is low-level(?)
+</li><li>C++ too slow for low-level work(?)
+</li><li>C++ is useful only if you write truly object-oriented code(?)
+</li><li>Modern C++ is all generic programming and template metaprogramming(?)
+</li><li>C++ is designed by Microsoft(?)
+</li></ul>
+
+Often, the person bringing up one of these points considers the 
+statement a fact (but none of these assertions are true);
+sometimes, there is an implied question mark. So,
+<ul>
+
+<li><i>C++ is low-level?</i>
+No. C++ offers both low-level and high-level features.
+C++ has low-level parts, such as pointers, arrays, and casts.
+These facilities are
+(<a href="#difference">almost identical to what C offers</a>)
+are essential (in some form or other) for close-to-the-hardware work.
+So, if you want low-level language facilities, yes C++ provides a 
+well-tried set of facilities for you.
+However, when you don't want to use low-level features, you don't need 
+to use the C++ facilities (directly). Instead, you can rely on 
+higher-level facilities, including libraries.
+For example, if you don't want to use arrays and pointers, standard 
+library strings and containers are (better) alternatives in many cases.
+If you use only low-level facilities, you are almost certainly wasting 
+time and complicating maintenance without performance advantages
+(see <a href="http://www.research.att.com/%7Ebs/new_learning.pdf"> Learning Standard C++ as a New Language</a>).
+You may also be laying your systems open to attacks (e.g. buffer overflows).
+
+</li><li><i>C++ too slow for low-level work?</i>
+No. If you can afford to use C, you can afford to use C++, even the 
+higher-level facilities of C++ where you need their functionality.
+See
+<a href="http://www.research.att.com/%7Ebs/abstraction-and-machine.pdf">Abstraction and the C++ machine model</a>
+and the ISO C++ standards committee's
+<a href="http://www.research.att.com/%7Ebs/performanceTR.pdf">Technical Report on Performance</a>.
+
+</li><li><i>C++ is useful only if you write truly object-oriented code?</i>
+No.
+That is, "no" for just about any reasonable definition of "object-oriented".
+C++ provides support for a wide variety of needs, not just for one style 
+or for one kind of application.
+In fact, compared to C, C++ provides more support for very simple programming tasks.
+For example, the standard library and other libraries radically 
+simplifies many otherwise tedious and error-prone tasks.
+C++ is widely used for huge
+<a href="http://www.research.att.com/%7Ebs/applications.html">applications</a>
+but it also provides benefits for even tiny programming tasks.
+
+</li><li><i>Modern C++ is all generic programming and template metaprogramming?</i>
+No.
+C++ supports
+<a href="#multiparadigm">several useful programming techniques</a>, 
+including, traditional procedural programming, object-oriented 
+programming, and generic programming.
+None of these is better than all others for all uses and typically the 
+most effective solution to a real-world problem involves a combination 
+of techniques.
+
+</li><li><i>C++ is designed by Microsoft?</i>
+No.
+<a href="http://www.research.att.com/%7Ebs/href=" hopl2.pdf="">I originally designed and implemented C++</a> and
+<a href="http://www.research.att.com/%7Ebs/hopl-almost-final.pdf">together with the ISO C++ standards committee refined its definition</a>.
+Microsoft has taken an active and largely positive role in this standardization
+- as has Apple, GNU, IBM, Sun, and many others.
+Like others - e.g. Apple - Microsoft tries to help/lock-in their users with proprietary extensions,
+(in particular, <a href="#CppCLI">Microsoft C++/CLI</a>).
+</li></ul>
+<p>
+
+
+</p><hr>
+<h2><a name="boost">
+What do you think of Boost?</a></h2>
+<a href="http://www.boost.org/">Boost</a> is a large and expanding
+<a href="http://www.boost.org/doc/libs">collection of libraries</a>
+designed to work well with the ISO C++ standard library.
+It contains many extremely useful and well-engineered libraries, such as asio, filesystem, 
+regex, and thread (apologies for not trying to identify more useful 
+libraries; there are just too many).
+One library, TR1, contains a good approximation of new C++0x standard 
+library components.
+<p>
+The Boost libraries have tests suites, have documentation, have been tested on multiple systems,
+and are peer reviewed.
+</p><p>
+I have two problems with Boost, though, which I hope will be dealt with eventually:
+</p><ul>
+<li>It is too hard to download and use just one Boost library; the 
+libraries seem overly coupled making it hard to pick and choose.
+</li><li>Some of the libraries are too clever for my taste. Sometimes, 
+generality and simplicity coincide; in Boost, the balance is IMO too 
+often so far towards generality that novices and average users are lost.
+</li></ul>
+That said, it is usually a really dumb idea to go and reinvent a wheel 
+that boost already offers.
+<p>
+
+</p><hr>
+<h2><a name="metaprogramming">
+What do you think of template metaprogramming?</a></h2>
+Template metaprogramming is a set of powerful programming techniques, 
+which when used with care and taste can help solve quite tricky problems, mostly 
+relating to the architecture of larger systems, their portability, and 
+their maintenance (see Abrahams and Gurtovoy:
+<a href="http://www.informit.com/store/product.aspx?isbn=0321227255">C++ Template Metaprogramming</a> and some of
+<a href="http://www.boost.org/">the Boost libraries</a>.
+<p>
+Like all powerful techniques they are easily overused. Personally, I 
+tend to use templates primarily for generic programming (e.g., defining 
+containers and algorithms over containers) and for templates that 
+generate fairly obvious code based on template arguments (e.g., 
+generating buffers and register access code); that's sometimes called 
+generative programming. Be careful about the complexity of the templates 
+you write or use; it is easy to get overenthusiastic and write template 
+code that is too clever to be useful as maintainable production code.
+</p><p>
+If you do not like functional programming styles, you might find 
+template metaprograms hard to understand. If you do like functional 
+programming, you may find the template version a bit primitive, but 
+remember these templates are executed at compile-time.
+
+
+
+</p><center>
+<a href="http://www.research.att.com/%7Ebs/homepage.html">home</a>
+|
+<a href="http://www.research.att.com/%7Ebs/C++.html">C++</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bs_faq.html">FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bs_faq2.html">technical FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/C++0xFAQ.html">C++0x FAQ</a>
+|
+<a href="http://www.research.att.com/%7Ebs/papers.html">publications</a>
+|
+<a href="http://www.research.att.com/%7Ebs/3rd.html">TC++PL</a>
+|
+<a href="http://www.research.att.com/%7Ebs/programming.html">Programming</a>
+|
+<a href="http://www.research.att.com/%7Ebs/dne.html">D&amp;E</a>
+|
+<a href="http://www.research.att.com/%7Ebs/bio.html">bio</a>
+|
+<a href="http://www.research.att.com/%7Ebs/interviews.html">interviews</a>
+|
+<a href="http://www.research.att.com/%7Ebs/applications.html">applications</a>
+|
+<a href="http://www.research.att.com/%7Ebs/glossary.html">glossary</a>
+|
+<a href="http://www.research.att.com/%7Ebs/compilers.html">compilers</a>
+|
+<a href="http://www.cs.tamu.edu/">Texas A&amp;M University</a>
+|
+<a href="http://www.research.att.com/">AT&amp;T Research</a>
+</center>
+</body></html>

@@ -1,0 +1,3335 @@
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>
+comp.lang.java FAQ
+</title>
+<meta name="description" content="The Java FAQ-- Frequently Asked Questions about Java, answered by Elliotte Rusty Harold at metalab.unc.edu.This page may only be mirrored with explicit, prior permission and only atother sunsites. If the URL doesn't say sunsite, this is an illegal copy.">
+<meta name="keywords" content="links, Java, examples, developers, resource, programming">
+<script language="javascript">
+/* Only sunsites are allowed to mirror this page and then
+only with explicit, prior permission. For details,
+send email to elharo@metalab.unc.edu */
+if (location.protocol.toLowerCase().indexOf("file") != 0 ) { 
+  if (location.host.toLowerCase().indexOf("cafeaulait.org") < 0 && location.host.toLowerCase().indexOf("sunsite") < 0 && 0 > location.host.toLowerCase().indexOf("ibiblio.org")) {
+    location.href="http://www.cafeaulait.org/javafaq.html";
+  }
+}
+</script>
+</head><body text="#000000" bgcolor="#ffffff">
+
+<pre>From: elharo@metalab.unc.edu
+Newsgroups: comp.lang.java.programmer,comp.lang.java.softwaretools,comp.lang.java.gui,comp.lang.java.help,alt.www.hotjava
+Organization: Cafe au Lait
+Followup-To: poster
+Subject: comp.lang.java FAQ
+
+Archive-name: computer-lang/java-faq/part1
+Posting-Frequency: weekly
+Last-modified: 1997/10/06
+Version: 1.6
+URL: http://metalab.unc.edu/javafaq/javafaq.html
+</pre>
+
+<h1><a name="xtocid6890">The comp.lang.java FAQ List</a></h1>
+
+This is a Java FAQ list for the comp.lang.java newsgroups.
+If you're reading the text version via Usenet, I do
+apologize that parts of it may be less intelligible than
+possible in HTML.  Please refer to the HTML version at
+http://metalab.unc.edu/javafaq/javafaq.html.  <p>
+
+The only official mirrors of this site are at the other sunsites.  If the URL
+where you found this file is not a sunsite, then this is an illegal mirror
+copy and is likely to be out of date. Please refer to the 
+<a href="http://metalab.unc.edu/javafaq/javafaq.html">official site</a> instead.</p><p>
+
+This document is Copyright 1995-1997 by Elliotte Rusty Harold. For information about
+reproduction, redistribution and other such rights please see the end of
+this file.</p><p>
+
+
+</p><h2><a name="xtocid90000">What's New</a></h2>
+
+<p>
+Question 4.10: <a href="#formathtml">How do I load and display formatted HTML?</a></p><p>
+
+I've added some info about Sun's HotJava HTML bean.</p><p>
+
+Question 8.4: <a href="#printf">How do I format numbers like C's printf()?</a></p><p>
+
+I've added some info about the <code>java.text</code> package.</p><p>
+
+I've also added the following two questions:</p><p>
+
+</p><ul>
+<li>5.5: <a href="#crossbrowser">How can I make my applets work well 
+on multiple browsers and virtual machines?</a>
+</li><li>14.3: <a href="#obfuscation">Disassembly, Decompilation, and Obfuscation</a>
+</li></ul>
+
+For the most part, this FAQ list covers Java 1.0.2. 
+I have begun the slow process of converting this list over to Java 1.1.
+ I am aware of the changes
+in Java 1.1 and will incorporate them as time permits.
+Please don't send me email pointing out errors
+or omissions that are only relevant to 1.1.  I am
+fully cognizant of these.<p>
+
+</p><h2><a name="xtocid267261">Table of Contents</a></h2>
+
+<ul>
+<li><a href="#xtocid90000">What's New</a>
+</li><li><a href="#xtocid267261">Table of Contents</a>
+
+</li><li>1: <a href="#xtocid190290">What is Java?</a>
+<ul>
+<li>1.1: <a href="#xtocid190291">Where did Java come from?</a>
+</li><li>1.2: <a href="#xtocid190292">Doesn't the World Wide Web have something to do with this?</a>
+</li><li>1.3: <a href="#xtocid190293">What platforms does Java run on?</a>
+</li><li>1.4: <a href="#xtocid55836">Do I need to know C++ to learn Java?</a>
+</li><li>1.5: <a href="#xtocid90007">Where does Javascript fit in?</a>
+</li><li>1.6: <a href="#applet">What's the difference between an application and an applet?</a>
+</li></ul>
+
+</li><li>2: <a href="#xtocid190294">What other Java Resources are available?</a>
+<ul>
+<li>2.1<a href="#xtocid190295">Web Sites</a>
+</li><li>2.2: <a href="#xtocid190296">Mailing Lists</a>
+</li><li>2.3: <a href="#xtocid190297">Newsgroups</a>
+</li><li>2.4: <a href="#xtocid190298">Books</a>
+</li></ul>
+
+</li><li>3: <a href="#xtocid1902910">Java for C++ programmers</a>
+<ul>
+<li>3.1: <a href="#xtocid1902911">Data Types</a>
+</li><li>3.2: <a href="#xtocid1902912">Control Statements</a>
+</li><li>3.3: <a href="#xtocid1902913">Command Line Arguments</a>
+</li><li>3.4: <a href="#xtocid1902914">Comments</a>
+</li><li>3.5: <a href="#xtocid1902915">Classes</a>
+</li><li>3.6: <a href="#xtocid1902918">How is Java unlike C++?</a>
+</li></ul>
+
+</li><li>4: <a href="#xtocid1902919">How Do I...</a>
+<ul>
+<li>4.1: <a href="#xtocid1902920">Make a linked list without pointers?</a>
+</li><li>4.2: <a href="#xtocid75724">How do I scanf, readln, etc. in Java?</a>
+</li><li>4.3: <a href="#xtocid2672625">How do I convert strings to numbers?</a>
+</li><li>4.4: <a href="#xtocid1902923">How Do I Call C Code from Java?</a>
+</li><li>4.5: <a href="#xtocid1902924">How Do I Call Java from C?</a>
+</li><li>4.6: <a href="#xtocid1902925">How do you do multiple inheritance?</a>
+</li><li>4.7: <a href="#xtocid1902932">Can I write objects to and read objects from a file or other stream?</a>
+</li><li>4.8: <a href="#xtocid1902927">How do I call the native API from Java?</a>
+</li><li>4.9: <a href="#methodpointers">How do I pass a function pointer to a method?</a>
+</li><li>4.10: <a href="#formathtml">How do I load and display formatted HTML?</a>
+</li><li>4.11: <a href="#appaudio">How do I play a sound in an application?</a>
+</li></ul>
+
+</li><li>5: <a href="#xtocid2672634">Programming Applets</a>
+<ul>
+<li>5.1: <a href="#xtocid1902928">Can applets communicate with each other?</a>
+</li><li>5.2: <a href="#xtocid1902929">Can applets launch programs on the server?</a>
+</li><li>5.3: <a href="#xtocid1902930">Can applets launch programs on the client?</a>
+</li><li>5.4: <a href="#xtocid1902931">Can I record audio from an applet?</a>
+</li><li>5.5: <a href="#crossbrowser">How can I make my applets work well on multiple browsers and virtual machines?</a>
+</li></ul>
+
+</li><li>6: <a href="#xtocid1902933">Language Issues</a>
+<ul>
+<li>6.1: <a href="#xtocid1902940">What does it mean that a class or member is "final"?</a>
+</li><li>6.2: <a href="#xtocid1902941">What does it mean that a method or field is "static"?</a>
+</li><li>6.3: <a href="#xtocid2672631">What does it mean that a method or class is <code>abstract</code>?</a>
+</li><li>6.4: <a href="#interfaces">What's an interface?</a>
+</li><li>6.5: <a href="#xtocid1902934">Why doesn't Java include <i>insert your favorite feature here</i>?</a>
+</li><li>6.6: <a href="#xtocid1902935">Is Java CORBA compliant?</a>
+</li><li>6.7: <a href="#xtocid1902936">Can I cast an <code>int</code> to an <code>Integer</code>? a <code>float</code> to a <code>Float</code>?</a>
+</li><li>6.8: <a href="#xtocid1902937">How do I version a class?</a>
+</li><li>6.9: <a href="#xtocid1902938">Why isn't there operator overloading?</a>
+</li><li>6.10: <a href="#xtocid900042">Does Java have pointers?</a>
+</li><li>6.11: <a href="#xtocid1902939">Does Java pass method arguments by value or by reference?</a>
+</li><li>6.12: <a href="#xtocid1902943">Are there parameterized types (templates)?</a>
+ </li><li>6.13: <a href="#xtocid1902944">How does garbage collection work?</a>
+ </li><li>6.14: <a href="#xtocid1902945">PERFORM and BECOME</a>
+</li></ul>
+
+</li><li>7: <a href="#xtocid558355">java.awt</a>
+<ul>
+<li>7.1: <a href="#xtocid558356">What Does <i>AWT</i> Stand For?</a>
+</li><li>7.2: <a href="#xtocid1902946">What are peer "classes"?</a>
+</li><li>7.3: <a href="#events">Can you explain how events are passed?</a>
+</li><li>7.4: <a href="#xtocid2335354">Clipping</a>
+</li><li>7.5: <a href="#thicklines">How do I change the thickness of the line?</a>
+</li><li>7.6: <a href="#fonts">What fonts does Java support?</a>
+</li></ul>
+
+</li><li>8: <a href="#xtocid900055">java.io</a>
+<ul>
+<li>8.1:<a href="#xtocid1902921">How do I read data from a file?</a>
+</li><li>8.2: <a href="#xtocid1902922">How do I write data to a file?</a>
+</li><li>8.3: <a href="#append">How do I append data to a file?</a>
+</li><li>8.4: <a href="#printf">How do I format numbers like C's printf()?</a>
+</li></ul>
+
+</li><li>9: <a href="#xtocid558358">java.net</a>
+<ul>
+<li>9.1: <a href="#xtocid558359">How do I convert a numeric IP address like 199.1.32.90 into a host name like star.blackstar.com?</a>
+</li><li>9.2: <a href="#xtocid900061">How can a Java program talk to a CGI program?</a>
+</li><li>9.3: <a href="#xtocid900062">How can an applet send email?</a>
+</li><li>9.4: <a href="#ping">How can I use ICMP in Java?</a>
+</li><li>9.5: <a href="#proxy">How do I make Java work with a proxy server?</a>
+</li></ul>
+
+</li><li>10: <a href="#xtocid558360">java.util</a>
+<ul>
+<li>10.1: <a href="#xtocid1902942">How random is Random()?</a>
+</li><li>10.2: <a href="#random">How do I generate a random integer between a and b?</a>
+</li></ul>
+
+</li><li>11: <a href="#xtocid1902947">Common Errors and Problems</a>
+<ul>
+<li>11.1: <a href="#xtocid558363">How Can I Avoid Flicker in an Applet?</a>
+</li><li>11.2: <a href="#xtocid558364">Can you explain CLASSPATH?</a>
+</li><li>11.3: <a href="#xtocid900069">Why won't my audio clip play?</a>
+</li><li>11.4: <a href="#classformaterror">When I load the page Netscape gives me a java.lang.ClassFormatError.</a>
+</li><li>11.5: <a href="#xtocid49935">Netscape gives me "Applet Not Initialized Error"</a>
+</li><li>11.6: <a href="#xtocid2672657">Other Netscape Problems</a>
+</li><li>11.7: <a href="#xtocid1902948">I keep getting access privilege violations, " Java tried to read file foo.class in directory bar."</a>
+</li><li>11.8: <a href="#xtocid68951">javac keeps insisting that it 
+can't find the right constructor function in my class, but I'm sure it's
+ in a file I imported. Why is it even looking in my class instead of the
+ imported file?</a>
+</li><li>11.9: <a href="#xtocid900075">NullPointerExceptions with arrays of objects</a>
+</li><li>11.10: <a href="#staticref">Can't make static reference to method <i>type myMethod</i> in class <i>myClass</i></a>
+</li><li>11.11: <a href="#stringcomparison">Why do I have trouble when using == to compare Strings</a>?
+</li></ul>
+
+</li><li>12: <a href="#xtocid75753">Security</a>
+<ul>
+<li>12.1: <a href="#xtocid75754">System Level Security</a>
+</li><li>12.2: <a href="#xtocid75755">User Level Security</a>
+</li></ul>
+
+</li><li>13: <a href="#xtocid1902949">Tools</a>
+<ul>
+<li>13.1: <a href="#xtocid1902950">IDE</a>
+</li><li>13.2: <a href="#xtocid1902951">Debugger</a>
+</li><li>13.3: <a href="#xtocid1902952">Editors</a>
+</li><li>13.4: <a href="#xtocid1902953">YACC grammar</a>
+</li><li>13.5: <a href="#xtocid1902954">Profilers</a>
+</li></ul>
+
+</li><li>14: <a href="#xtocid1902955">The Java Virtual Machine and Byte Code</a>
+<ul>
+<li>14.1: <a href="#xtocid1902956">Can I program directly in byte code?</a>
+</li><li>14.2: <a href="#xtocid1902957">Optimizing Java</a>
+</li><li>14.3: <a href="#obfuscation">Disassembly, Decompilation, and Obfuscation</a>
+</li></ul>
+
+</li><li>15: <a href="#xtocid1902958">Legal Issues</a>
+
+</li><li>16: <a href="#xtocid1902959">FAQ's about the FAQ</a>
+<ul>
+<li>16.1: <a href="#xtocid1902960">Who is this Elliotte guy, and just what qualified him to write a Java FAQ anyway?</a>
+</li><li>16.2: <a href="#xtocid1902961">Why don't you include X in your FAQ?</a>
+</li><li>16.3: <a href="#xtocid1902962">This is really cool.  Can I republish or translate it?</a>
+</li></ul>
+</li></ul>
+
+
+<h2>1: <a name="xtocid190290">What is Java?</a></h2>
+
+Java, formerly known as oak, is an object-oriented programming language
+developed by Sun. It shares many superficial similarities with C, C++, and 
+Objective C  (for instance <code>for</code> loops have the same syntax in all four languages);
+but it is not based on any of those languages, nor have efforts
+been made to make it compatible with them.<p>
+
+Java is sometimes referred to as C++ ++ --. The language was originally created 
+because C++ proved inadequate for certain tasks.  Since the designers were
+not burdened with compatibility with existing languages, they were able to
+learn from the experience and mistakes of previous object-oriented languages.
+They added a few things C++ doesn't have like garbage collection and multithreading;
+and they
+threw away C++ features that had proven to be better in theory than in practice like
+multiple inheritance and operator overloading.  (There's still argument over
+whether they made the right choices.  I tend to think they were correct to throw out
+operator overloading and probably correct to throw out multiple inheritance.
+For now let's just say that neither choice is 
+likely to be reviewed soon.)</p><p>
+
+Even more importantly Java was designed from the ground up
+to allow for secure execution of code across a network, even when the source of that
+code was untrusted and possibly malicious. This required the elimination of more
+features of C and C++. Most notably there are no pointers in Java.  Java
+programs cannot (at least in theory) access arbitrary addresses in memory.</p><p>
+
+Furthermore Java was designed not only to be cross-platform in source form like
+C, but also in compiled binary form. Since this is frankly impossible across
+processor architectures, Java is compiled to an intermediate byte-code which
+is interpreted on the fly by the Java interpreter.  Thus to port Java programs
+to a new platform all that is needed is a port of the interpreter and a few native code libraries.</p><p> 
+
+Finally Java was designed to make it a lot easier to write bug free code. 
+Shipping C code has, on average, one bug per 55 lines of code.  About half of these
+bugs are related to memory allocation and deallocation.  Thus Java has a number of
+features to make bugs less common:
+
+</p><ul>
+<li>Strong Typing
+</li><li>No unsafe constructs
+</li><li>The language is small so its easy to become fluent.
+</li><li>The language is easy to read and write.  Obfuscated Java isn't nearly as common as obfuscated C.
+</li><li>There are <strong>no</strong> undefined or architecture dependent constructs.
+</li><li>Java is object oriented so reuse is easy.
+</li><li>Java has concurrency.
+</li></ul>
+
+<h3>1.1: <a name="xtocid190291">Where did Java come from?</a></h3>
+
+
+In the late 1970's Bill Joy 
+thought about doing a language that would merge the best features of 
+MESA and C. However other projects (like cofounding Sun) intervened.  
+In the late 1980's he got Sun's engineers
+started on a complete revision of the UNIX operating system
+that involved merging SunOS4.x with AT&amp;T's SYSVR4. 
+ <p>
+
+ In 1989 Joy sold 
+his Sun stock, invested heavily in Microsoft and moved out of 
+mainstream Sun to Aspen, Colorado.  
+By the early 90's Bill was getting tired of huge programs.  
+He decided that he wanted to be able to write a 10,000 line program that made a difference. 
+In late 1990 Bill wrote a paper called <cite>Further</cite> which outlined 
+his pitch to Sun engineers that they should produce an object environment 
+based on C++.  
+Today Joy freely admits that C++ was too complicated and wasn't up to the job. 
+</p><p>
+
+Around this time 
+ James Gosling (of emacs fame) had been working for
+several months on an SGML editor called "Imagination" using C++.    
+The Oak language (now Java) grew out of Gosling's
+frustration with C++ on his "Imagination" project. </p><p>
+
+Patrick Naughton, then of Sun, now vice-president of technology at StarWave, 
+started the Green Project on December 5th, 1990. 
+Naughton defined the project as an effort to "do fewer things better".
+That December he
+recruited Gosling and Mike Sheridan to help start the project.
+Joy showed
+them his <cite>Further</cite> paper, and 
+ work began on  graphics and user
+interface issues for several months in C. </p><p> 
+
+In April of 1991 the Green Project (Naughton, Gosling and Sheridan)
+settled on smart consumer electronics as the delivery platform,
+and Gosling started working in earnest on Oak.  
+Gosling wrote the original
+compiler in C; and Naughton, Gosling and Sheridan 
+wrote the runtime-interpreter, also in C. Oak was running its
+first programs in August of 1991.  Joy got his first demos of the system that winter, when
+Gosling and Naughton went skiing at Joy's place in Aspen.</p><p>
+
+By the fall of 1992 "*7", a cross between a PDA and a remote
+control, was ready  This was demoed to
+Scott McNealy, Sun's president, in October. He was blown away.
+Following that the Green Project was set up as First Person
+Inc., a wholly owned Sun subsidiary. </p><p> 
+
+In early 1993 the
+Green team heard about a Time-Warner request for proposal
+for a settop box operating system. First Person quickly
+shifted focus from smart consumer electronics (which was
+proving to be more hype than reality) to the set-top box OS
+market, and placed a bid with Time-Warner. </p><p>
+
+Fortuitously, Sun lost the bid. The Time-Warner project went
+nowhere, the same place it probably would have gone if Sun
+had won the bid. First Person continued work on settop boxes
+until early 1994, when it concluded that like smart consumer
+electronics settop boxes were more hype than reality. </p><p>
+
+Without a market to be seen First Person was rolled back
+into Sun in 1994. However around this time it was realized
+that the requirements for smart consumer electronics and
+settop box software (small, platform independent secure
+reliable code) were the same requirements for the nascent
+web.</p><p>
+
+For a third time the project was redirected, this time at
+the web. A prototype browser called WebRunner was written by
+Patrick Naughton in one weekend of inspired hacking. After
+additional work by Naughton and Jonathan Payne this browser
+became HotJava. The rest, as they say, is history.</p><p>
+
+Information in this section is primarily based on the first
+hand accounts of Bill Joy and Patrick Naughton (which don't
+always agree). No doubt other people have still different
+memories of what occurred. If you've got any more first hand
+information about what went on in the Green project I'd like
+to hear from you. </p><p>
+
+
+</p><h3>1.2: <a name="xtocid190292">Doesn't the World Wide Web have something to do with this?</a></h3>
+
+ Not necessarily. Java is a programming language. When work began on what has
+ become Java, the World Wide Web was just getting started at CERN; and Mosaic
+ wasn't even a glint in Marc Andreesen's eye.  The original
+ use of the Java language (settop boxes) required security and the ability
+ to execute code from untrusted hosts.  It turns out these are virtually the
+ same requirements for allowing people to download and run programs from the Web.
+ No other language has the built-in security of Java.  The key here is 
+ the security features.  The object-oriented nature of Java is secondary, and
+ mainly reflects the preferences and prejudices of the developers who set
+ out to write a secure language.  The C-like syntax of the language is even
+ less crucial.<p>
+
+ At the lowest level the 
+ advantage of Java to the web is that it provides a secure, cross-platform
+ way for code to be executed.  At a somewhat higher level Java adds several features to
+ existing web sites:</p><p>
+
+ </p><dl>
+ <dt>Arbitrary Graphics
+ </dt><dd>
+ Java lets the server draw pictures in a window on the client.
+ In theory this allows a web page to do anything a regular program can
+ do by drawing in a window. <p>
+
+ </p></dd><dt>Arbitrary Data Types
+ </dt><dd>
+ In practice rather than using graphics primitives to create your desired web page
+ you'd use a graphics program to draw the page and then write a program that
+ could read and display the file formats of that program.  Java lets
+ you write content handlers that display any particular data format.
+ This way you can download your data and your data display program rather
+ than downloading a bitmapped snapshot of the display.  People are already using
+ this to add sound and animation to web pages.  Rather than having to download a file
+ and spawn an external viewer, the viewer is included with the data; and the
+ data is displayed right on the page.<p>
+
+
+ </p></dd><dt>Less Load On The Server
+ </dt><dd>
+ CPU intensive cgi-bin scripts place a large load on a server,
+ particularly at busy sites. With Java you can off-load the 
+ calculations to the client's PC.  I've written an applet
+ that calculates all possible ram configurations for a given
+ Mac model.  However on models with many memory slots the
+ sheer number of permutations can tie up even a fast machine
+ for several hours.  Publishing this as a cgi-bin would bring 
+ my server to its knees, but by publishing it as a Java applet I can distribute the load
+ across all the machines that want to run it.<p>
+
+ </p></dd><dt>More User Interaction
+ </dt><dd>
+ Finally Java allows for more interaction with the user.  Java not only
+ allows you to paint arbitrary data on the screen.  It also allows you
+ to collect input from the user in the form of mouse clicks,
+ keystrokes and the like.  This lets you put almost any application
+ on your web page that doesn't require disk access.<p>
+
+ </p></dd></dl>
+
+
+<h3>1.3: <a name="xtocid190293">What platforms does Java run on?</a></h3>
+
+Sun has made a <a href="http://www.javasoft.com/products/jdk/1.1/index.html">Java Development Kit</a>
+(JDK) available for Sparc and X86
+Solaris, Windows NT and Windows 95 Intel. The JDK is free, and most third party ports
+are based on this. <p>
+
+Sun also published a 1.0.2
+JDK for MacOS 7.5 on PowerMacs
+and 68030 (25 MHz and faster) and 68040 Macs. However it's dropped development for Macs in favor 
+of Apple's own <a href="http://applejava.apple.com/">Macintosh Runtime for Java</a> (MRJ)
+which is a better option for Mac users. Currently MRJ
+supports Java 1.0. Java 1.1 support is promised soon.</p><p>
+
+
+SGI's port of Sun's JDK 1.1.x to IRIX 5.3, 6.2, 6.3, and 6.4  is available at 
+<a href="http://www.sgi.com/Fun/Free_webtools.html">http://www.sgi.com/Fun/Free_webtools.html</a>.
+An <a href="http://www.switch.ch/misc/leinen/java/irix-jdk.html">IRIX
+port</a> of JDK 1.0 has mostly been completed by Simon Leinen. </p><p>
+
+A Linux port is in fairly good shape.  See <a href="http://java.blackdown.org/java-linux.html">http://java.blackdown.org/java-linux.html</a>.
+</p><p>
+
+IBM has ported Java to Windows 3.1, OS/2, and AIX. It is working on
+ports for MVS and OS/400. See <a href="http://ncc.hursley.ibm.com/javainfo/hurindex.html">http://ncc.hursley.ibm.com/javainfo/hurindex.html
+</a>. </p><p>
+
+
+The OSF has ported the JDK 1.0.2 to
+Unixware, the Bull Estrella or other PowerPC running AIX4.1, X86
+running DASCOM OSF/1 , the Digital Alpha running Digital UNIX 3.2,
+the HP700 series running HPUX 10.x, the NCR Globalyst (Pentium)
+running UNIX SysV, and Sony NEWS (MIPS) running Sony NEWS 6.1.1. See
+<a href="http://www.osf.org/mall/web/JDK/">http://www.osf.org/mall/web/JDK/</a>.</p><p>
+
+Other ports are underway for <a href="ftp://ftp.informatik.uni-muenchen.de/pub/comp/platforms/next/Developer/languages/java/BlackJava.FAQ">Nextstep</a>,
+SunOS 4.1, the <a href="http://www.lls.se/%7Ematjo/PJAmi/PJAmi.html">Amiga</a> and
+possibly other platforms.</p><p>
+
+In the past new versions of Java have most often been made
+available first for Solaris.  If you have to have the latest
+version as soon as it's released, or if you're developing
+"Bet your company" applications with Java, you
+should probably be running Solaris on a SparcStation.
+Otherwise, if you just want to learn the language, you can
+get away with an Intel based Windows 95 or NT machine with a
+lot of RAM.</p><p>
+
+Netscape 2.0 and later plays Java 1.0 applets on Windows NT, Windows 95,
+Solaris, SunOS 4.1, Linux and most other Unix platforms. 
+ Netscape
+3.0 for the Mac also supports Java 1.0. Netscape 4.0 and earlier 
+and Internet Explorer
+3.0 and earlier do not support Java 1.1 to any significant extent,
+only Java 1.0. The only web browser that really supports Java 1.1 is Sun's 
+HotJava.</p><p>
+
+ Netscape 2.0 can even compile Java programs.
+(Netscape 3.0 cannot).  </p><p>
+
+First download the classes.zip file
+from the Solaris distribution of the JDK. (You have to download the
+entire JDK. You can't get just the classes.zip file.) Next set your
+CLASSPATH environment variable to include the classes.zip file. For example,
+on Unix, if you put the file in /usr/local/lib/classes.zip, then you would set it
+like this:</p><p>
+
+</p><pre>sh: <tt>% CLASSPATH=$CLASSPATH:/usr/local/lib/classes.zip</tt>
+csh: <tt>% setenv CLASSPATH "$CLASSPATH:/usr/local/lib/classes.zip"
+</tt></pre>
+
+You'll probably want to put this line in your .login or .cshrc file.
+Of course you'll need to adjust this to match where you've installed
+these files and to add any other classes you use.  Finally you
+compile programs from the command line like this:<p>
+
+</p><pre><tt>% netscape -java sun.tools.javac.Main HelloWorld.java
+</tt></pre>
+
+You can always alias <tt>netscape -java sun.tools.javac.Main</tt> to just
+<tt>javac</tt> to make this more transparent.<p>
+
+You can also run command-line programs that don't use the AWT in the same way, like this:</p><p>
+
+</p><pre><tt>% netscape -java HelloWorld.class
+</tt></pre>
+
+You can't use <tt>netscape -java</tt> to run programs that use the
+AWT, but you can of course play applets in Netscape..<p>
+
+</p><h3>1.4: <a name="xtocid55836">Do I need to know C++ to learn Java?</a></h3>
+
+No. Java is in fact a much easier language to learn than
+C++. <p>
+
+A little further out in left field, it isn't even necessary to know
+Java to write Java programs.  <a href="http://www.intermetrics.com/langtool.htm">Intermetrics</a> is beta
+testing an ADA-95 to Java byte code compiler. Other such
+cross-compilers are probably possible including ANSI Fortran-77,
+COBOL, and Basic.
+However the one most people probably want, a C/C++ to Java
+byte code compiler, is probably not possible due to Java's lack of
+pointers.</p><p>
+
+</p><h3>1.5: <a name="xtocid90007">Where does Javascript fit in?</a></h3>
+
+To quote from p. 31 of my 
+book, <cite><a href="http://www.cafeaulait.org/books/jdr.html">The Java Developer's Resource</a></cite>,
+
+<blockquote>
+Java and JavaScript are about as closely related as the Trump Taj
+Mahal in Atlantic City is to the Taj Mahal in India. In other words
+Java and JavaScript both have the word Java in their names.
+JavaScript is a programming language from Netscape which is
+incorporated in their browsers. It is superficially similar to Java
+in the same way C is similar to Java but differs in all important
+respects. </blockquote>
+
+<h3>1.6: <a name="applet">What's the difference between an application and an applet?</a></h3>
+
+This question can be answered on many levels.  Technically an
+application is a Java class that has a <code>main()</code> method.  An applet is a
+Java class which extends <code>java.applet.Applet</code>. A class which extends
+<code>java.applet.Applet</code> and also has a <code>main()</code> method is both an application
+and an applet.<p>
+
+More generally and less technically an application is a stand-alone
+program, normally launched from the command line, and which has more
+or less unrestricted access to the host system. An applet is a
+program which is run in the context of an applet viewer or web
+browser, and which has strictly limited access to the host system. 
+For instance an applet can normally not read or write files on the
+host system whereas an application normally can.  </p><p>
+
+The actions of both applets and applications, however, can be
+controlled by SecurityManager objects. If you can change the
+SecurityManager that's used you can change what an applet or an
+application is and is not allowed to do. Thus these are not hard and
+fast differences, though this is normally how they separate out in
+practice.</p><p>
+
+</p><h2>2 <a name="xtocid190294">What other Java Resources are available?</a></h2>
+
+<h3>2.1<a name="xtocid190295">Web Sites</a></h3>
+
+The key site for Java information is <a href="http://www.javasoft.com/">http://www.javasoft.com/</a>.
+This is Sun's official site for Java, and contains the latest 
+published version of all official Java information.
+The most important page on this site is the Documentation page at 
+<a href="http://www.javasoft.com/doc/">
+http://www.javasoft.com/doc/</a>. Most of the other
+pages are linked off of this page or its children.<p>
+
+For many more web sites see the Cafe au Lait links page at 
+<a href="http://metalab.unc.edu/javafaq/links.html">http://metalab.unc.edu/javafaq/links.html</a>.</p><p>
+
+</p><h3>2.2: <a name="xtocid190296">Mailing Lists</a></h3>
+
+There are over sixty different Java related mailing lists.  A
+more-or-less complete list is at the Cafe Au Lait mailing list page
+at <a href="http://metalab.unc.edu/javafaq/mailinglists.html">http://metalab.unc.edu/javafaq/mailinglists.html</a>.
+<p>
+
+</p><h3>2.3: <a name="xtocid190297">Newsgroups</a></h3>
+
+<dl>
+
+<dt><a href="news:alt.www.hotjava">alt.www.hotjava</a>
+</dt><dd>
+A newsgroup for the discussion of the HotJava browser.
+<p>
+
+</p></dd><dt><a href="news:comp.lang.java.announce">comp.lang.java.announce</a>
+</dt><dd>
+ A newsgroup for announcements that may be of interest to Java developers.  
+ See <a href="http://www.cs.latrobe.edu.au/%7Eleachbj/clj.announce/guidelines.html">http://www.cs.latrobe.edu.au/~leachbj/clj.announce/guidelines.html</a> 
+for the ridiculously complicated submission guidelines and submission address.
+<p>
+</p></dd><dt><a href="news:comp.lang.java.programmer">comp.lang.java.programmer</a>
+</dt><dd>
+ A newsgroup for the discussion of the Java language.
+<p>
+
+</p></dd><dt><a href="news:comp.lang.java.machine">comp.lang.java.machine</a>
+</dt><dd>
+Technical issues about Java not related directly to programming, 
+including virtual machines, byte code, classfile format,
+performance and optimization, possible extensions, porting, 
+native methods and interfacing Java with other languages.
+
+<p>
+</p></dd><dt><a href="news:comp.lang.java.security">comp.lang.java.security</a>
+</dt><dd>
+Discussion concerning any
+of Java's security features such as byte code verification,
+SecurityManagers, class loaders, 
+public-key encryption and authentication of classes,
+holes in the security model,
+and similar topics.
+<p>
+
+</p></dd><dt><a href="news:comp.lang.java.help">comp.lang.java.help</a>
+</dt><dd>
+This group is for <strong>end-users</strong> 
+of Java systems, not programmers. It deals with installation
+problems, CLASSPATH problems, the availability of ports to specific 
+platforms, and the like.
+Subject lines should include the platform that the problem occurs on,
+and the browser version, for example MacOS 7.5 Netscape 3.0.
+
+<p>
+   	</p></dd><dt><a href="news:comp.lang.java.beans">comp.lang.java.beans</a>            
+   		</dt><dd>The JavaBeans component software API<p>
+  	</p></dd><dt><a href="news:comp.lang.java.databases">comp.lang.java.databases </a>       
+  		</dt><dd>Java and databases, including middleware like java.sql, JDBC, ODBC, 
+  		and Java based databases like jDB.<p>
+  	</p></dd><dt><a href="news:comp.lang.java.gui">comp.lang.java.gui</a>              
+  		</dt><dd>The AWT and other GUI enrvironments: windows, dialogs, menus, components,
+  		buttons, radio buttons, printing, cut and paste, etc. <p>
+  	</p></dd><dt><a href="news:comp.lang.java.softwaretools">comp.lang.java.softwaretools</a>    
+  		</dt><dd>Integrated Development Environments (IDEs), web browsers, compilers,
+  		applet viewers, Rapid Application Development (RAD) tools, class browsers,
+  		visual interface builders, and other tools.<p>
+</p></dd></dl>
+
+
+<h3>2.4: <a name="xtocid190298">Books</a></h3>
+
+
+As of March, 1997 I recommend four books in particular for those learning
+the language. The first is my own book, <cite>The Java Developer's Resource</cite>,
+ISBN: 0-13-570789-7, $26.95 from Prentice Hall.
+ This is an introduction to Java 1.0 for programmers, regardless of 
+ previous experience with C or OOP.  It should be available in most bookstores
+that stock computer books as well as from amazon.com, 
+<a href="http://www.amazon.com/exec/obidos/ISBN=0135707897/">http://www.amazon.com/exec/obidos/ISBN=0135707897/</a><p>
+ 
+The second book I recommend is 
+<a href="http://www.amazon.com/exec/obidos/ISBN=156592262X/cafeaulaitA/">Java in a Nutshell: 
+A Desktop Quick Reference for Java
+Programmers</a>
+by <person>David Flanagan</person>
+ from <a href="http://www.ora.com/">O'Reilly &amp; Associates, Inc.</a>, ISBN: 1-56592-262-X, $19.95
+ (the tiger book).
+ This is an excellent introduction to Java for C and C++ programmers and an excellent reference
+for everyone.</p><p>
+
+For people with no prior experience in programming I recommend Kris Jamsa's 
+<cite><a href="http://www.amazon.com/exec/obidos/ISBN=1884133304/cafeaulaitA">Java Now!</a></cite>,
+ISBN: 1-884133-30-4, $16.95, Jamsa Press.
+</p><p>
+
+None of these books cover Java 1.1. In fact as of this writing, few books
+truly cover Java 1.1 though several claim to.  The best of the lot as of this writing
+seems to be Rogers Cadenhead's <a href="http://www.amazon.com/exec/obidos/ISBN=1575212706/cafeaulaitA/">Teach Yourself 
+Java 1.1 Programming in 24 Hours</a> from Sams.net, ISBN 1-57521-270-6.
+This is 
+a decent book introducing Java 1.1 programming to non-programmers. However it's quite basic,
+and coverage of the AWT is very limited. 
+</p><p>
+
+For details about these and many more books see the Cafe au Lait books page at
+<a href="http://metalab.unc.edu/javafaq/books.html">http://metalab.unc.edu/javafaq/books.html</a>
+</p><p>
+
+</p><h2>3: <a name="xtocid1902910">Java for C++ programmers</a></h2>
+
+In the large Java looks like Smalltalk.  In the small it looks like C.
+The syntax of Java is deliberately similar to C.  If you know C 
+you already know large chunks of Java.  Here, in brief, is Java 
+syntax for C programmers:<p>
+
+</p><h3>3.1: <a name="xtocid1902911">Data Types</a></h3>
+
+Java's primitive data types are very similar to those of C. (The <code>boolean</code> type 
+has been added.)  However the implementation of the data types has been
+substantially cleaned up in several ways.<p>
+
+</p><ol>
+<li>
+Where C and C++ leave a number of issues to be machine and
+compiler dependent (for instance the size of an <code>int</code>) Java specifies
+everything.  <p>
+</p></li><li>Java prevents casting between arbitrary variables.
+Only casts between numeric variables and between sub and superclasses of the same object
+are allowed. <p>
+</p></li><li>All numeric variables in Java are signed.<p>
+</p></li></ol><p>
+
+Here are the detailed primitive data types:
+
+</p><dl>
+<dt><code>boolean</code>
+</dt><dd>
+1-bit.  May take on the values <code>true</code> and <code>false</code> only.<p>
+<code>true</code> and <code>false</code> are defined constants of the language 
+and are not the same as <code>True</code> and <code>False</code>, 
+<code>TRUE</code> and <code>FALSE</code>, zero and nonzero, 1 and 0 
+or any other numeric value.  Booleans may not be cast into any other 
+type of variable nor may any other variable be cast into a boolean.</p><p>
+
+</p></dd><dt><code>byte</code>
+</dt><dd>
+1 signed byte (two's complement).  Covers values from -128 to 127.<p>
+
+</p></dd><dt><code>short</code>
+</dt><dd>
+2 bytes signed (two's complement), -32,768 to 32,767<p>
+
+</p></dd><dt><code>int</code>
+</dt><dd>
+4 bytes, signed (two's complement).  -2,147,483,648 to 2,147,483,647. 
+Like all numeric types ints may be cast into other numeric types (byte, 
+short, long, float, double).  When <i>lossy</i> casts are done (e.g. 
+int to byte) the conversion is done modulo the length of the smaller type.<p>
+
+</p></dd><dt><code>long</code>
+</dt><dd>
+8 bytes signed (two's complement). Ranges from -9,223,372,036,854,775,808 to 
++9,223,372,036,854,775,807.<p>
+
+
+</p></dd><dt><code>float</code>
+</dt><dd>
+4 bytes, IEEE 754.  Covers  a range from 
+1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative).
+<p>
+Like all numeric types floats may be cast into other numeric types (<code>byte</code>, 
+<code>short</code>, <code>long</code>, <code>int</code>, <code>double</code>).  
+When <i>lossy</i> casts to integer types are done (e.g. 
+<code>float</code> to <code>short</code>) the fractional part is truncated and the 
+conversion is done modulo the length of the smaller type.</p><p>
+
+</p></dd><dt><code>double</code>
+</dt><dd>
+8 bytes IEEE 754. Covers a range from 4.94065645841246544e-324d to 
+1.79769313486231570e+308d (positive or negative).<p>
+
+</p></dd><dt><code>char</code>
+</dt><dd>
+2 unsigned bytes, Unicode. 
+<p>
+Chars are not the same as bytes, ints, shorts or Strings.</p><p>
+</p></dd></dl>
+
+<code>sizeof</code> isn't necessary in Java because all sizes are precisely 
+defined. i.e. an <code>int</code> is always 4 bytes. 
+This may not seem to be adequate when dealing with objects that 
+aren't base data types.  However even if you did know the size of 
+a particular object, you couldn't do anything with it anyway.
+You cannot convert an arbitrary object into bytes
+and back again.
+<p>
+
+Strings are a <dfn>reference</dfn> or <dfn>object type</dfn>, that is a 
+instances of the class  <code>java.lang.String</code>. 
+They are not null terminated and are not the same as an array
+of chars.</p><p>
+
+Arrays are also objects.  Multidimensional arrays are created via arrays of arrays.</p><p>
+
+
+</p><h3>3.2: <a name="xtocid1902912">Control Statements</a></h3>
+
+Java contains <code>if</code>, <code>else</code>, <code>for</code>,
+<code>while</code>, <code>do while</code> and <code>switch</code>
+statements. The syntax is <strong>identical</strong> to C's. 
+However all condition tests must return boolean values.  Since
+non-boolean assignment statements
+and arithmetic statements do not return a boolean value,
+some of the more obfuscated condition tests in C are prohibited.<p>
+
+</p><h3>3.3: <a name="xtocid1902913">Command Line Arguments</a></h3>
+
+Command line arguments are like C's except that <code>argv</code>
+has become a string array commonly called <code>args</code> and
+<code>args[0]</code> is the first command line argument, not the
+name of the program.  The other arguments are all shifted one to the
+left from where they'd be in C or C++.<p>
+
+</p><h3>3.4: <a name="xtocid1902914">Comments</a></h3>
+
+Java supports both the <code>/* This is a comment */</code> comment
+from C and the <br> 
+<code>//  This is a C++ comment</code><br>
+comment from C++.  <p>
+
+However comments that begin with a <code>/**</code> are special. 
+These comments should only be used before
+a method or class declaration. They indicate that the comment should be included in
+automatically generated documentation for that declaration.  </p><p>
+
+</p><h3>3.5: <a name="xtocid1902915">Classes</a></h3>
+
+Java does not support multiple inheritance.<p>
+
+Superclasses of a class are indicated with the <code>extends</code>
+keyword rather than with a <code>:</code>.</p><p>
+
+Methods must be defined inside the class to which they belong.  They
+may not be declared inside the class and defined outside the class
+as is common in C++.</p><p>
+
+
+</p><h3>3.6: <a name="xtocid1902918">How is Java unlike C++?</a></h3>
+
+Two classes of language features have been removed from C++ to make
+it Java.  These are those language features which make C++ unsafe
+and those which make it hard to read.<p>
+
+Features removed that make Java easier to read and understand than
+C++ include <code>#define</code>, <code>typedef</code>, operator
+overloading, <code>enum</code>, unions and structs.</p><p>
+
+The main feature removed to make Java safer and more robust than C++
+is pointer arithmetic. </p><p>
+
+Other features removed include global variables, standalone
+functions (everything is a method), friend functions (Everything in
+a package is a friend of everything else in the package.) and
+non-virtual functions.</p><p>
+
+A number of features have been added to Java to make it safer
+including true arrays with bounds checking, garbage collection,
+concurrency, interfaces (from Objective C) and packages. There is no
+need to explicitly allocate or free memory in Java.</p><p>
+
+</p><h2>4: <a name="xtocid1902919">How Do I...</a></h2>
+
+<h3>4.1: <a name="xtocid1902920">Make a linked list without pointers?</a></h3>
+
+Short answer: Use the <code><a href="http://www.javasoft.com/products/JDK/CurrentRelease/api/java.util.Vector.html">Vector</a></code> 
+class in 
+<code>java.util</code>. It can do anything
+a linked list can do and a little more and saves you a lot of coding
+which, after all, is the point of OOP and the class library. However
+it is array based so insertions or deletions from the middle of a
+Vector are not as efficient as with a true linked list.<p>
+
+Long answer: Object variables in Java are all references.  A
+reference acts like a pointer in most other languages. (Though
+they're handles, not pointers, in most Java implementations. The
+notable exception is Microsoft's.) The main difference is that you
+can't do pointer arithmetic on references. Therefore wherever you'd
+use a pointer to an object in C++, in Java you should just use the
+object itself. </p><p>
+
+On the other hand the primitive data types (<code>int, float,
+double, char, byte, short, long</code> and <code>boolean</code>) are
+not references. If you want to get a reference to one of these you
+need to wrap it in a class first.  Java provides ready-made
+type-wrapper classes in the java.lang package for <code>Boolean</code>,
+<code>Character</code>, <code>Integer</code>, <code>Double</code>, 
+<code>Float</code>, and <code>Long</code>. Bytes and shorts can be
+stored in the Integer class as well. Java 1.1 adds <code>Byte</code>, 
+<code>Short</code>, and <code>Void</code> classes
+too.</p><p>
+
+</p><h3>4.2: <a name="xtocid75724">How do I scanf, readln, etc. in Java?</a></h3>
+
+Java has no exact equivalent to C's <code>scanf()</code>, <code>fscanf()</code> 
+and <code>sscanf()</code> functions,  Pascal's <code>read()</code> and <code>readln()</code> function,
+or Fortran's <code>READ*</code> function. In particular there's no one method
+that lets you get input from the user as a numeric value.<p>
+
+However,  roughly equivalent functionality is scattered across several classes.
+You first read an input line into a <code>String</code>
+using <code>DataInputStream.readline()</code> or 
+<code>BufferedReader</code> (in Java 1.1)</p><p>
+
+Next use the 
+<a href="http://www.javasoft.com/products/JDK/CurrentRelease/api/java.util.StringTokenizer.html">StringTokenizer</a>
+class in <code>java.util</code> to split the <code>String</code> into tokens.
+By default <code>StringTokenizer</code> splits on white space (spaces,
+tabs, carriage returns and newlines),
+but this is user definable.</p><p>
+
+For example,</p><p>
+
+</p><pre><code>import java.util.StringTokenizer;
+
+class STTest {
+
+  public static void main(String args[]) {
+  
+    String s = "9 23 45.4 56.7";
+    
+    StringTokenizer st = new StringTokenizer(s);
+    while (st.hasMoreTokens()) {
+      System.out.println(st.nextToken());
+    }
+    
+  }
+  
+}
+</code></pre>
+
+prints the following output: 
+
+<pre><tt>
+9
+23
+45.4
+56.7
+</tt></pre>
+
+
+Finally you convert these tokens into numbers using the 
+type wrapper classes as described in the next question.<p>
+
+</p><h3>4.3: <a name="xtocid2672625">How do I convert strings to numbers?</a></h3>
+
+You can convert strings into numbers using the <code>Integer</code>, <code>Float</code>, 
+<code>Double</code> and <code>Long</code>
+type wrapper classes as indicated by the following code snippet:<p>
+
+</p><pre><code>class ConvertTest {
+
+  public static void main (String args[]) {
+
+    String str;
+  
+    str = "25";
+  
+    int i = Integer.valueOf(str).intValue();
+    System.out.println(i);
+    long l = Long.valueOf(str).longValue();
+    System.out.println(l);
+
+    str = "25.6";
+  
+    float f = Float.valueOf(str).floatValue();
+    System.out.println(f);
+    double d = Double.valueOf(str).doubleValue();  
+    System.out.println(d); 
+  
+  }
+  
+}</code></pre>
+
+There are no equivalent <code>Short</code> and <code>Byte</code> classes
+in Java 1.0. There are in Java 1.1. 
+For shorts and bytes use the <code>Integer</code> class
+but use the <code>byteValue()</code> or <code>shortValue()</code> methods instead.<p>
+
+
+
+</p><h3>4.4: <a name="xtocid1902923">How Do I Call C Code from Java?</a></h3>
+
+First of all for security reasons you can only call external
+code from an application. You cannot call external code from
+an applet.  (Otherwise all the security would go out the
+window.)  Furthermore all code you write in this way will be
+non-portable.  If these aren't problems for you, check out
+<a href="http://www.javasoft.com/JDK-1.0/tools/solaris/javah.html">javah</a>
+in the JDK 1.0 or the <a href="http://www.javasoft.com/products/jdk/1.1/docs/guide/jni/index.html">Java Native Interface</a> in JDK 1.1.<p>
+
+Chapter 19 of my book <cite><a href="http://www.cafeaulait.org/books/javasecrets.html">Java
+Secrets</a></cite> discusses the Java Native Interface in depth.
+(IDG Books, 1997,  ISBN
+ 0-764-58007-8,  <a href="http://www.amazon.com/exec/obidos/ISBN=0764580078/cafeaulaitA/">http://www.amazon.com/exec/obidos/ISBN=0764580078/cafeaulaitA/</a>) 
+</p><p>
+
+</p><h3>4.5: <a name="xtocid1902924">How Do I Call Java from C?</a></h3>
+
+Since Java is not as of yet a true compiled language, the
+only way to call Java code from C in Java 1.0 is by using the
+<code>system()</code> call (or your OS's equivalent) to execute the java
+interpreter with appropriate command line arguments.<p>
+
+In Java 1.1  the Java Native Method Interface in combination 
+with the Invocation API allows native applications to load and access the Java virtual
+machine.
+</p><p>
+
+</p><h3>4.6: <a name="xtocid1902925">How do you do multiple inheritance?</a></h3>
+
+Java does not support multiple inheritance.  Instead declare interfaces
+for each additional class you want to inherit from, and implement
+those interfaces in your subclass. For more details, see
+<a href="#interfaces">question 6.1</a> below.<p>
+
+</p><h3>4.7: <a name="xtocid1902932">Can I write objects to and read objects from a file or other stream?</a></h3>
+
+In theory yes, but once again all the coding is up to you. 
+There is no general method for doing this in Java 1.0. The problem is
+made harder by Java's security features that don't let you
+forge arbitrary byte streams into objects.<p>
+
+In Java 1.1  a serialization interface has been added to the language. 
+However only objects that explicitly implement the <code>java.io.Serializable</code>
+interface can be serialized. 
+</p><p>
+
+
+</p><h3>4.8: <a name="xtocid1902927">How do I call the native API from Java?</a></h3>
+
+You can do this only in an application, not in an applet.  You will need to write some
+intermediary code in C or another traditional language and call your C code from Java.<p>
+
+</p><h3>4.9: <a name="methodpointers">How do I pass a function pointer to a method?</a></h3>
+
+Methods are not first class objects in Java. Only objects and
+primitive data types can be passed to methods.<p>
+
+Instead you should declare an interface which declares the 
+function you want to pass; for example</p><p>
+
+</p><pre><code>public interface Comparable {
+
+  public abstract int compare(Object o1, Object o2);
+
+}
+</code></pre>
+ 
+ Then declare that your method takes an object of this type.
+ For example,<p>
+ 
+</p><pre><code>  public void sort(Object[] o, Comparable c) {
+  
+    boolean done = false;
+    while (!done) {
+      done = true;
+      for (int i = 0; i &lt; o.length - 1; i++) {
+      if (c.compare(o[i], o[i+1]) &lt; 0) {
+        swap(o[i], o[i+1]);
+        done = false;
+      }
+    
+    }
+  
+  }
+</code></pre>
+
+Each class you want to compare then needs its own
+class which implements <code>Comparable</code>. For example, <p>
+
+</p><pre><code>public class StringCompare implements Comparable {
+
+  public int compare(Object o1, Object o2) {
+  
+    String s1 = (String) o1;
+    String s2 = (String) o2;
+    return s1.compareTo(s2);
+    
+  }
+  
+}
+</code></pre>
+
+
+It helps that <code>Object</code> is a superclass for all object types.<p>
+
+</p><h3>4.10: <a name="formathtml">How do I load and display formatted HTML?</a></h3>
+
+If you need to do this, you should probably be looking
+at JavaScript instead of Java.
+It's possible in Java, but only with <strong>GREAT</strong> difficulty.  There is no simple
+answer at this point in time. The problem is that Java does not contain
+a built-in HTML rendering engine.  You either need to 
+generate the file on the server, then load the URL of that file
+into the browser; or
+you need to write a complete HTML parser and display engine.<p>
+
+Recently Sun released the $195 payware
+<a href="http://www.javasoft.com/products/hotjava/bean/index.html">HotJava HTML Component</a>.
+ This is a Java bean which parses and renders HTML. In requires Java 1.1 or later.
+</p><p>
+There is at least one semi-free third party solution. Data Technology's Ice Browser 
+(<a href="http://www.bgnett.no/datatech/ICEBrowser/index.html">http://www.bgnett.no/datatech/ICEBrowser/index.html</a>) 
+can handle most HTML 3.2 constructs, though I haven't had a chance
+to test it personally yet. Ice Browser also requires Java 1.1.
+</p><p>
+
+
+
+</p><h3>4.11: <a name="appaudio">How do I play a sound in an application?</a></h3>
+
+Java's audio support comes from the AppletContext class and the AudioClip interface.
+Since applications don't have applet contexts, they have no easy way to play audio clips. 
+This is supposed to be fixed in Java 1.2. In the meantime you have to use undocumented 
+classes in the sun packages. The following example demonstrates:<p>
+
+</p><pre><code>import sun.audio.*;
+import java.awt.*;
+import java.io.*;
+
+
+public class SoundPlayer extends Frame implements FilenameFilter {
+
+  Button openButton = new Button("Open");  
+  Button playButton = new Button("Play");
+  Button loopButton = new Button("Loop");
+  Button stopButton = new Button("Stop");
+  Label filename = new Label("                   ");
+  File theFile = null;
+  AudioData theData = null;
+  InputStream nowPlaying = null;
+
+  public SoundPlayer() {
+    super("Sound Player");
+    resize(300, 200);
+    Panel north = new Panel();
+    north.setLayout(new FlowLayout(FlowLayout.LEFT));
+    north.add(new Label("File: "));
+    north.add("North", filename);
+    add("North", north);
+    Panel south = new Panel();
+    south.add(openButton);
+    south.add(playButton);
+    south.add(loopButton);
+    south.add(stopButton);
+    add("South", south);
+  }
+
+  public static void main(String[] args) {
+    SoundPlayer sp = new SoundPlayer();
+    sp.show();
+  }
+
+  public void open() {
+    FileDialog fd = new FileDialog(this, "Please select a .au file:");
+    fd.setFilenameFilter(this);
+    fd.show();
+    try {
+      theFile = new File(fd.getDirectory() + "/" + fd.getFile());
+      if (theFile != null) {
+        filename.setText(theFile.getName());
+        FileInputStream fis = new FileInputStream(theFile);
+        AudioStream as = new AudioStream(fis);
+        theData = as.getData();
+      }
+    }
+    catch (IOException e) {
+      System.err.println(e);
+    }
+  }
+
+  public void play() {
+    stop();    
+    if (theData == null) open();
+    if (theData != null) {
+      AudioDataStream ads = new AudioDataStream(theData);
+      AudioPlayer.player.start(ads);
+      nowPlaying = ads;
+    }
+  }
+
+  public void stop() {
+    if (nowPlaying != null) {
+      AudioPlayer.player.stop(nowPlaying);
+      nowPlaying = null;
+    }
+  }
+
+  public void loop() {
+    stop();
+    if (theData == null) open();
+    if (theData != null) {
+      ContinuousAudioDataStream cads = new ContinuousAudioDataStream(theData);
+      AudioPlayer.player.start(cads);
+      nowPlaying = cads;
+    }
+  }
+
+  public boolean action(Event e, Object what) {
+
+    if (e.target == playButton) {
+      play();
+      return true;
+    }
+    else if (e.target == openButton) {
+      open();
+      return true;
+    }
+    else if (e.target == loopButton) {
+      loop();
+      return true;
+    }
+    else if (e.target == stopButton) {
+      stop();
+      return true;
+    }
+
+    return false;
+
+  }
+
+  public boolean accept(File dir, String name) {
+
+    name = name.toLowerCase();
+    if (name.endsWith(".au")) return true;
+    if (name.endsWith(".wav")) return true;
+    return false;
+
+  }
+
+}
+</code></pre>
+
+
+This example is taken from Chapter 10 of <cite>Java
+Secrets</cite>, 
+available from amazon
+(<a href="http://www.amazon.com/exec/obidos/ISBN=0764580078/cafeaulaitA/">http://www.amazon.com/exec/obidos/ISBN=0764580078/cafeaulaitA/</a>) 
+and various independent bookstores.  It's published by IDG Books, ISBN
+number 0-764-58007-8. Chapters 8-17 cover various of the sun packages
+including sun.audio. (Chapters 1-7 cover the internals of Java like byte
+code and class files. Chapter 19 and 20 cover platform dependent Java
+including native methods.)<p>
+
+</p><h2>5: <a name="xtocid2672634">Programming Applets</a></h2>
+
+<h3>5.1: <a name="xtocid1902928">Can applets communicate with each other?</a></h3>
+
+At this point in time applets may communicate with other applets
+running in the same virtual machine.  If the applets are of the same
+class, they can communicate via shared static variables.  If the
+applets are of different classes, then each will need a reference to
+the same class with static variables.  In any case the basic idea is
+to pass the information back and forth through a static variable.<p>
+
+An applet can also get references to all other applets on the same
+page using the <code>getApplets()</code> method of <code>java.applet.AppletContext</code>.  Once
+you've got a reference to an applet,
+ you can communicate with it by
+using its public members.</p><p>
+
+It is conceivable to have applets in different virtual machines that
+talk to a server somewhere on the Internet and store any data that
+needs to be serialized there.  Then, when another applet needs this
+data, it could connect to this same server.  Implementing this is
+non-trivial. </p><p>
+
+</p><h3>5.2: <a name="xtocid1902929">Can applets launch programs on the server?</a></h3>
+
+Yes, using CGI.  Any other implementation would be server dependent.
+Of course this requires a lot of coding and is non-trivial.  A
+simple way to do this is not built into Java because that would
+require a special server.  One of Java's strengths is that it is
+web server independent.<p>
+
+A number of organizations have developed special http servers that
+allow applets or other clients to run Java programs on the server in
+a secure environment.  Most notably Sun's <a href="http://jserv.javasoft.com/">Java Web Server</a> implements a
+servlet interface for this purpose. The W3C's <a href="http://www.w3.org/pub/WWW/Jigsaw/">JigSaw</a> implements a
+similar idea called resource objects.</p><p>
+
+</p><h3>5.3: <a name="xtocid1902930">Can applets launch programs on the client?</a></h3>
+
+Absolutely not.  This would be a security hole big enough to walk
+three herds of elephants, two marching bands and at least one
+quarter of the people AT&amp;T laid off through.<p>
+
+</p><h3>5.4: <a name="xtocid1902931">Can I record audio from an applet?</a></h3>
+
+This is what is known as "a third-party opportunity".  
+In other words not this year and probably not next year either.  
+This would make a neat Java plug-in if anyone cares to write one in C.<p>
+
+
+</p><h3>5.5: <a name="crossbrowser">How do I make my applets work well on 
+multiple browsers and virtual machines?</a></h3>
+
+Java is cross-platform, but that doesn't mean all platforms, browsers,
+and virtual machines operate identically. However,
+there are a number of
+steps a developer can take to ensure that their applet works reasonably
+well on most browsers.<p>
+
+</p><ol>
+<li>Use Java 1.0 only. Use a Java 1.0 compiler and a Java 1.0 environment
+to test in. Do not use Java 1.1.<p>
+
+</p></li><li>From day 1, run your tests in Netscape Navigator 3.0 and earlier. Of
+browsers that support Java, Navigator's probably the buggiest so if you
+can get something to work there it's more likely to run elsewhere. In
+particular, do not develop your applets using the appletviewer. The
+appletviewer's too reliable and too stable to accurately model real user
+experience.<p>
+
+</p></li><li>From day 1, include multiple platforms in your tests and development.
+ You may not be able to test on every platform Java supports, but Windows 95
+and the Mac are a must.  The Mac VMs in Navigator are some of the worst
+around so it's important to write for them. Windows NT is also a nice
+test, but I'd stay away from Solaris unless I had lots of time.  It's
+too stable and reliable.  However, Linux makes a very nice test since it's a stable OS 
+(which you're not testing against) combined with a buggy VM and a strange
+GUI (which you are testing against). If
+you've got multiple people working on the project, have them work on
+different platforms and report bugs to each other. Better yet have them
+switch development environments daily so programmers 
+are forced to make sure their code works in all browsers.<p>
+
+</p></li><li>Learn to love layout managers. Provide plenty of extra white space in
+your user interfaces.  Learn to hate absolute positioning. If you must
+use it, be sure to check font metrics.  Don't just eyeball it.
+<p>
+</p></li><li> Avoid filename filters, multiple window interfaces, and other
+GUI features that don't translate well across platforms.
+<p>
+</p></li></ol>
+
+I know this sounds a little perverted. I'm telling you to work with the
+worst tools rather than the best.  But right now Sun's promise of "write
+once/run anywhere" translates into "write once/debug everywhere".  And the
+fact is, users are far more likely to be using the buggy platforms like
+Mac/Netscape rather than stable ones like Solaris/appletviewer.  Working
+around a bug in one VM generally doesn't cause problems on other VMs. In
+fact it will probably make your code more portable to platforms you
+haven't tested. However, assuming that your development environment is
+bug-for-bug compatible with users' runtime environments does cause
+problems.  It is much easier to work with multiple platforms from the
+beginning, rather than developing a great app on Windows or Solaris and
+then porting it to all the other platforms.
+<p>
+
+</p><h2>6: <a name="xtocid1902933">Language Issues</a></h2>
+
+<h3>6.1: <a name="xtocid1902940">What does it mean that a class or member is <code>final</code>?</a></h3>
+
+A <code>final</code> class can no longer be subclassed.  Mostly this is done for
+security reasons with basic classes like <code>String</code> and <code>Integer</code>. 
+It also allows the compiler to make some optimizations,
+and makes thread safety a little easier to achieve.<p>
+
+Methods  may be declared <code>final</code> as well. This means they
+may not be overridden in a subclass.  </p><p>
+
+Fields can be declared <code>final</code>, too. 
+However, this has a completely different meaning.
+A final field cannot be changed after it's initialized,
+and it must include an initializer statement where it's declared.
+For example,</p><p>
+
+<code>public final double c = 2.998;</code></p><p>
+
+It's also possible to make a <code>static</code> 
+field <code>final</code> to get the effect
+of C++'s <code>const</code> statement or 
+some uses of C's <code>#define</code>, e.g.</p><p>
+
+</p><pre><code>public static final double c = 2.998;
+ </code></pre>
+
+<h3>6.2: <a name="xtocid1902941">What does it mean that a method or field is "static"?</a></h3>
+
+Static variables and methods are instantiated only once per class.
+In other words they are <dfn>class variables</dfn>, not instance
+variables.  If you change the value of a <code>static</code> variable in a
+particular object, the value of that variable changes for all
+instances of that class.<p>
+
+Static methods can be referenced with the name of the class rather
+than the name of a particular object of the class (though that works
+too).  That's how library methods like
+<code>System.out.println()</code> work. <code>out</code> 
+is a static field in the <code>java.lang.System</code> class.</p><p>
+
+</p><h3>6.3: <a name="xtocid2672631">What does it mean that a method or class is <code>abstract</code>?</a></h3>
+
+An abstract class cannot be instantiated. Only its
+subclasses can be instantiated. You indicate that a class is abstract
+with the <code>abstract</code> keyword like this:<p>
+
+<code>public abstract class Container extends Component {</code></p><p>
+
+Abstract classes may contain abstract methods.
+A method declared <code>abstract</code> is not actually implemented in the current 
+class. It exists only to be overridden in subclasses. It has no body.
+For example, </p><p>
+
+<code>  public abstract float price();</code></p><p>
+
+Abstract methods may only be included in abstract classes.
+However, an abstract class is not required to have any 
+abstract methods, though most of them do.</p><p>
+
+Each subclass of an abstract class must override the abstract methods
+of its superclasses or itself be declared <code>abstract</code>.</p><p>
+
+For more details, see section 8.1.2.1 of the <cite>Java Language Specification</cite>.</p><p>
+
+</p><h3>6.4: <a name="interfaces">What's an interface?</a></h3>
+
+An interface is an idea taken from Objective C.  It
+describes the public methods that a class implements and
+their calling conventions without saying <em>anything</em>
+about how those methods are implemented. It is the
+responsibility of each class that implements an interface to
+provide code to handle the cases where the methods of the
+interface are called.<p>
+
+For example suppose you're writing an inventory database.
+The inventory may include many different items of many different
+types and classes.  However each item in the warehouse needs to be able to tell 
+you its price.  Normally you would implement this by having each class
+extend a common superclass.  However that's not always convenient.
+Instead you can declare an interface called 
+<code>Price</code> with a <code>price()</code> method
+like this: </p><p>
+
+</p><pre><code>public interface Price {
+
+  public float price();
+
+}
+</code></pre>
+
+Any class which implements the <code>Price</code> 
+interface must contain a method with the signature 
+<code>public float price()</code>.  The code of the 
+<code>price()</code> method is included separately in each
+separate class which implements <code>Price</code>, 
+not in the <code>Price</code> interface itself.<p>
+
+
+Different classes in your warehouse can each implement 
+the <code>Price</code> interface like this:</p><p>
+
+
+</p><pre><code>public class Monopoly extends BoardGame implements Price {
+
+  // other methods
+
+  public float price() {
+    return 14.95;
+  }
+
+}
+</code></pre>
+
+When other code is passed an object, it can test 
+whether the object implements <code>Price</code> with the 
+<code>instanceof</code> operator. For example,<p>
+
+<code>if (o instanceof Price) System.out.println("Subtotal is " + o.price());</code></p><p>
+
+In fact, interfaces can be used to tag objects. The
+<code>java.rmi.Remote</code> interface declares no methods. Its sole
+purpose is to indicate that an object is a remote object. In general,
+sub-interfaces of <code>java.rmi.Remote</code> will declare remote
+methods, however. For example,</p><p>
+
+</p><pre><code>public interface Hello extends java.rmi.Remote {
+
+  public String sayHello();
+
+}
+</code></pre>
+
+<pre><code>public class HelloImpl extends UnicastRemoteServer implements Hello {
+
+  public String sayHello() {
+    return "Hello";
+  }
+
+}
+</code></pre>
+
+For more information about the<code> java.rmi</code> package, see <a href="http://chatsubo.javasoft.com/current/rmi/index.html">http://chatsubo.javasoft.com/current/rmi/index.html</a>
+or Chapter 14 of my book, <cite>Java Network Programming</cite>, from
+O'Reilly &amp; Associates.<p>
+
+
+
+</p><h3>6.5: <a name="xtocid1902934">Why doesn't Java include <i>insert your favorite feature here</i>?</a></h3>
+
+The Java language has been extensively debated and argued about
+within Sun. Almost every language construct of existing languages
+has already been considered for inclusion in Java. While there may
+still be room for addition, it is very unlikely that your pet
+feature will be added to the language spec if it isn't already
+there.  In a couple of years parameterized types (i.e. templates) 
+may be added to the language.  Otherwise the spec is pretty much 
+frozen except for minor changes and bug fixes.<p>
+
+Extensions are planned for the class library though.  In particular
+Sun is working on extensions for 3D, multimedia, telephony, and improved
+graphics.</p><p>
+
+</p><h3>6.6: <a name="xtocid1902935">Is Java CORBA compliant?</a></h3>
+
+Not yet. However work is underway for a Java ORB and IDL. 
+<a href="http://www.javasoft.com/products/jdk/idl/index.html">http://www.javasoft.com/products/jdk/idl/index.html</a>.<p>
+
+</p><h3>6.7: <a name="xtocid1902936">Can I cast an <code>int</code> to an <code>Integer</code>? a <code>float</code> to a <code>Float</code>?</a></h3>
+
+No, you cannot promote a base data type 
+like <code>int</code> or <code>float</code> to an
+object such as an <code>Integer</code> or a <code>Float</code>.  
+However the proper way to do this isn't very
+hard. Instead do<p>
+
+</p><pre><code>int x = 5;
+myInteger = new Integer(x);</code></pre>
+
+
+<h3>6.8: <a name="xtocid1902937">How do I version a class?</a></h3>
+
+ There is no support for versioning classes in Java 1.0. However in Java 1.1
+ the serialver tool provides a serialVersionUID 
+ for one or more classes you can add to your class as a field.
+ This is used in object serialization. 
+<p>
+
+</p><h3>6.9: <a name="xtocid1902938">Why isn't there operator overloading?</a></h3>
+
+Because C++ has proven by example that operator overloading makes code
+almost impossible to maintain. In fact there very nearly wasn't even method overloading
+in Java, but it was thought that this was too useful for some very basic  
+methods like <code>print()</code>.  
+Note that some of the classes like DataOutputStream have unoverloaded
+methods like <code>writeInt()</code> and <code>writeByte()</code>.<p>
+
+</p><h3>6.10: <a name="xtocid900042">Does Java have pointers?</a></h3>
+
+No, no, a thousand times no. Java does not have pointers, no way, no
+how, the daily email I get from people who think differently not
+withstanding.<p>
+
+Java does have <dfn>references</dfn>. A reference is an abstract
+identifier for an object. It is <em>not</em> a pointer. A reference
+tags a particular object with a name in the Java virtual machine so
+that the programmer may refer to it. How exactly the virtual machine
+implements references at the level of machine code is VM-dependent
+and completely hidden from the programmer in any case. Most VMs
+including Sun's use handles, not pointers. A <dfn>handle</dfn> is a
+pointer to a pointer. At the level of machine code in the CPU a
+reference is an address in memory where the address of the object is
+stored.  This way the objects can be moved around in memory and only
+the master pointer needs to be updated rather than all references to
+the object. This is completely hidden from the Java programmer,
+though. Only the implementer of the virtual machine needs to worry
+about it. Indeed, this is not the only way references can be
+implemented. Microsoft's VM actually does use pointers rather than
+handles. Other schemes are possible.  </p><p>
+
+</p><h3>6.11: <a name="xtocid1902939">Does Java pass method arguments by value or by reference?</a></h3>
+
+Java passes all arguments by value, not by reference. However this
+is one of the few places where the distinction between an object and
+a reference to an object becomes important. Object and array
+variables in Java are really references to the object or array. This
+can make it look like an object is passed by reference if you only
+modify the fields of the object or array, but do not change the
+reference itself. For example,  consider this program:<p>
+
+</p><pre><code>import java.awt.Point;
+
+class changePoint {
+
+  public static void main(String args[]) {
+  
+    Point p1 = new Point(0, 0);
+    changePoint(p1);
+    System.out.println(p1);
+    
+  }
+  
+  static void changePoint(Point p) {
+  
+    p.x = 38;
+    p.y = 97;
+
+  }
+
+}
+</code></pre>
+
+It prints:<p>
+</p><pre><tt>java.awt.Point[x=38,y=97]
+</tt></pre>
+
+Therefore the point has been changed.  However the reference, which
+is what was really passed, has not been changed.  To see that
+consider the following program.<p>
+
+</p><pre><code>import java.awt.Point;
+
+
+class dontChangePoint {
+
+  public static void main(String args[]) {
+  
+    Point p1 = new Point(0, 0);
+    dontChangePoint(p1);
+    System.out.println(p1);
+    
+  }
+  
+  static void dontChangePoint(Point p) {
+  
+    p = new Point(38, 97);
+
+  }
+
+}
+</code></pre>
+
+It prints:<p>
+</p><pre><tt>
+java.awt.Point[x=0,y=0]
+</tt></pre>
+
+What happened in this example was that a copy of the reference <code>p1</code>
+was passed to the <code>dontChangePoint()</code> method. A new <code>Point</code> object was
+then assigned to that  copy. However this did not change the old
+reference in the main method. In the previous example the reference
+<code>p</code> in the <code>changePoint()</code> method and <code>p1</code> in 
+the <code>main()</code> method both referred
+to the same object. In this example <code>p</code> and <code>p1</code> refer to different
+objects after the new <code>Point</code> is assigned to <code>p</code>.<p>
+
+
+</p><h3>6.12: <a name="xtocid1902943">Are there parameterized types (templates)?</a></h3>
+
+Not in Java 1.0 or 1.1.  However this is being seriously
+ considered for future versions.<p>
+ 
+ </p><h3>6.13: <a name="xtocid1902944">How does garbage collection work?</a></h3>
+ 
+ Current implementations of 
+ Java use a mark and sweep garbage collector.  Reference counting is not used.
+ Thus circular linked lists do not lead to memory leaks. It is theoretically
+ possible that future versions of Java will use some other garbage collection
+ algorithm.<p>
+ 
+ </p><h3>6.14: <a name="xtocid1902945">PERFORM and BECOME</a></h3>
+
+Sorry Smalltalkers.  There's no equivalent for <code>PERFORM</code>
+or <code>BECOME</code> in Java 1.0.  These would probably open
+security holes. There are workarounds for some things you might want
+to do using interfaces. <p>
+
+In Java 1.1 the <a href="http://java.sun.com/products/JDK/1.1/designspecs/reflection/">Core
+Reflection API</a> and the <code>java.lang.reflect</code> package provides most of the functionality you need.
+However this API is partially 
+unavailable to applets due to security issues.</p><p>
+
+</p><h2>7: <a name="xtocid558355">java.awt</a></h2>
+
+<h3>7.1: <a name="xtocid558356">What Does </a><i>AWT</i> Stand For?</h3>
+
+So far I've heard it claimed that AWT stands for:<p>
+
+</p><ul>
+<li>Abstract Window Toolkit
+</li><li>Advanced Window Toolkit
+</li><li>Another Window Toolkit
+</li><li>Applet Window Toolkit
+</li><li>Awkward Window Toolkit
+</li><li>Annoying Window Toolkit
+</li></ul>
+
+I do not know which if any of these are correct, but Abstract Window Toolkit seems to be the
+most popular.
+<p>
+
+
+</p><h3>7.2: <a name="xtocid1902946">What are peer "classes"?</a></h3>
+
+Peer classes exist mainly for the convenience of the people who
+wrote the Java environment. They help in translating between the AWT
+user interface and the native (Windows, OpenWindows, Mac etc.)
+interfaces.  Unless you're porting Java to a new platform you
+shouldn't have to use them.<p>
+
+</p><h3>7.3: <a name="events">Can you explain how events are passed?</a></h3>
+
+The following applies to Java 1.0 only. The event mechanism has changed
+completely in Java 1.1, though the following is retained for backwards
+compatibility.<p>
+
+Components are subclasses of <code>java.awt.Component</code>. Examples of
+components include buttons, scrollbars, text fields, frames, windows,
+dialogs, panels, canvases, and checkboxes. One subclass of
+<code>java.awt.Component</code> is <code>java.awt.Container</code>.  A container is a
+component which can hold other components.  Examples of containers
+include Frames, Windows, Dialogs, Panels and Applets. An applet is a
+subclass of <code>Panel</code>. <code>Panel</code> is a subclass of 
+<code>Container</code>. Container is a
+subclass of <code>Component</code>. Therefore an applet is both a container and a
+component.</p><p>
+
+When the user clicks the mouse, types on the keyboard, drags and
+drops, or does any of a few other things, the operating system
+produces an event. This event is passed to Java, and the Java
+runtime tries to figure out which component the event was intended
+for. </p><p>
+
+The Java runtime then passes that event to the
+<code>handleEvent(Event e)</code> method of some <code>Component</code>. The
+<code>Component</code>'s <code>handleEvent()</code> method contains a big if-else statement to
+look at the type of event and respond appropriately. What the
+<code>handleEvent()</code> method does depends on the type of component. Generally
+some events are ignored and other events are passed to methods that
+know how to respond to those events. For instance a MOUSE_DOWN event
+is passed to mouseDown(). The table below shows the events the
+default <code>handleEvent()</code> can deal with.  When one of these events
+occurs, <code>handleEvent()</code> passes it and various other information to the
+specified method.</p><p>
+
+</p><pre>Event                      Method Called
+--------------------------------------------------------
+Event.MOUSE_ENTER:         mouseEnter(evt, evt.x, evt.y)
+Event.MOUSE_EXIT:          mouseExit(evt, evt.x, evt.y)
+Event.MOUSE_MOVE:          mouseMove(evt, evt.x, evt.y)
+Event.MOUSE_DOWN:          mouseDown(evt, evt.x, evt.y)
+Event.MOUSE_DRAG:          mouseDrag(evt, evt.x, evt.y)
+Event.MOUSE_UP:            mouseUp(evt, evt.x, evt.y)
+Event.KEY_PRESS:           keyDown(evt, evt.key)
+Event.KEY_ACTION:          keyDown(evt, evt.key)
+Event.KEY_RELEASE:         keyUp(evt, evt.key)
+Event.KEY_ACTION_RELEASE:  keyUp(evt, evt.key)
+Event.ACTION_EVENT:        action(evt, evt.arg)
+Event.GOT_FOCUS:           gotFocus(evt, evt.arg)
+Event.LOST_FOCUS:          lostFocus(evt, evt.arg)
+</pre>
+
+By default each of these methods does nothing. Furthermore, by
+default all other events do nothing. If you want to do something
+when one of the above events occurs in your component, subclass the
+component and override the appropriate method. For example, to
+create a <code>Canvas</code> that prints the message "Don't Tread on Me!" every
+time the user clicks on it, use the following subclass of <code>Canvas</code>:<p>
+
+</p><pre><code>public class noTread extends Canvas {
+
+  public boolean mouseDown(Event e, int x, int y) {
+    System.out.println("Don't Tread on Me!");
+    return true;
+  }
+  
+}</code></pre>
+
+<code>Button</code>, <code>Choice</code>, <code>TextField</code>, and <code>Checkbox</code> 
+are special because of how
+they're implemented as native widgets. They do not see <code>MOUSE_DOWN</code>,
+<code>MOUSE_UP</code>, <code>KEY_PRESS</code>, and other such events. Rather 
+they receive one
+event and one event only: <code>Event.ACTION_EVENT</code>. When a <code>Button</code> is
+pressed, the user hits return in a <code>TextField</code>, 
+the user double clicks on a <code>List</code> item,
+ clicks a <code>Checkbox</code>, or
+selects from a <code>Choice</code>, an <code>ACTION_EVENT</code> is generated.  If you haven't
+overridden <code>handleEvent()</code>, this is passed to the <code>action()</code> method of the
+component's container. These four components are the only things
+which generate <code>ACTION_EVENT</code>s.  No other component will generate an
+<code>ACTION_EVENT</code>. (Menu items, which are not components but are implemented
+as native peers, also
+generate action events.)<p>
+
+Each event handler method, including <code>handleEvent()</code>, returns <code>true</code> if
+the event was completely handled and <code>false</code> if it was not. If <code>false</code>
+is returned, then the event is passed to the component's container
+to see if the container wants to process the event.  </p><p>
+
+If you want to respond to a different set of events, you must
+override <code>handleEvent()</code>.  You can either completely replace it or just
+add the extra events you want to handle and then return
+<code>super.handleEvent()</code> for other types of events.  For example to print
+all the events as they happen in your applet you might use this
+<code>handleEvent()</code> method:</p><p>
+
+</p><pre><code>public boolean handleEvent(Event e, int x, int y) {
+  System.out.println(e);
+  return super.handleEvent(e, x, y);
+}
+</code></pre>
+
+<code>mouseDown()</code>, <code>mouseUp()</code>, <code>keyDown()</code>, and all the other event methods would
+still be called by the superclass. If you don't handle an event in
+the <code>handleEvent()</code> method, return <code>super.handleEvent(e)</code> to give your
+superclass an opportunity to process the event.  In this case, we've
+handled the event but not completely so we still let the superclass
+process it by returning <code>super.handleEvent(e, int x, int y)</code>.<p>
+
+The return value of <code>handleEvent()</code> is important. If <code>handleEvent()</code> returns
+true, that means the event has been fully digested and no further
+processing is needed. On the other hand if <code>handleEvent()</code> returns
+false, then the event is passed to the component's container to be
+handled. </p><p>
+
+Note that this all works for any component at all. You'll most
+commonly override these methods in a subclass of <code>Applet</code> or perhaps
+<code>Frame</code>. However the same methods and techniques apply to all
+subclasses of <code>Component</code>.</p><p>
+
+The API documentation confuses the issue because of  
+the ambigious use of the word <i>parent</i>.  In object-oriented circles
+the word <i>parent</i> usually refers to the superclass. However in the
+context of the AWT, the word <i>parent</i> refers 
+to the container that contains a component. Thus in the statement:</p><p>
+
+</p><blockquote>
+return <code>true</code> if the event has been handled and no further action
+is necessary; <code>false</code> if the event is to be given to the
+component's parent
+</blockquote>
+
+the word <i>parent</i> means the component's container, 
+<strong>not</strong> its superclass.<p>
+
+You must distinguish between the container/component
+hierarchy and the inheritance hierarchy. By default, the way an event 
+travels has <strong>nothing</strong> to do with the inheritance
+hieararchy. If you override an event handling method, then events 
+passed to that method will not be passed to a component's superclass unless
+you specifically ask them to be.  However, in most cases your <code>handleEvent()</code> 
+method will return <code>super.handleEvent()</code> to give the superclass a crack at 
+handling the event rather than simply returning false.</p><p>
+
+To sum up, when you write a subclass of <code>Component</code>, you can either
+respond to specific events by overriding the methods that correspond
+to those events, such as <code>mouseDown()</code>; or you can respond to all
+events by overriding <code>handleEvent()</code>. Each of your event handling
+methods must return a <code>boolean</code>. Return <code>true</code> when an  event has been
+completely processed, and return <code>false</code> when you want the component's
+container to try to handle the event. When overriding <code>handleEvent()</code>,
+you also have an option to return <code>super.handleEvent()</code> to ask the
+superclass to handle the event and decide whether or not to pass it
+along to the component's container. </p><p>
+
+</p><h3>7.4: <a name="xtocid2335354">Clipping</a></h3>
+
+<a href="http://www.javasoft.com/JDK-1.0/api/java.awt.Graphics.html#clipRect%28int,%20int,%20int,%20int%29">java.awt.Graphics.clipRect(int, int, int, int)</a> 
+and related methods are hopelessly flawed,
+at least as of 1.0. Ignore them completely. <p>
+
+Instead if you need to do clipping,
+create separate offscreen <a href="http://www.javasoft.com/JDK-1.0/api/java.awt.Image.html">Images</a> 
+for each clipping region. 
+Each <code>Image</code> should be the size of the clipping region you desire. Draw into 
+those offscreen images, and then copy them onto the appropriate 
+section of the of your applet window using <a href="http://www.javasoft.com/JDK-1.0/api/java.awt.Graphics.html#drawImage%28java.awt.Image,%20int,%20int,%20java.awt.image.ImageObserver%29">java.awt.Graphics.drawImage()</a>. 
+Some coordinate conversion will 
+almost certainly be necessary.</p><p>
+
+If the background image isn't a simple color then you'll first need to 
+copy the appropriate part of that image to  your offscreen clipping 
+Image. You can do this by drawing your background <code>Image</code> into your 
+offscreen region with <code>Graphics.drawImage()</code> and a suitable shifting of 
+coordinates.</p><p>
+
+This all works for rectangular regions only since all <code>Image</code>s are
+rectangular. More complicated geometries can be faked if 
+all but one section contains only simple colors.  </p><p>
+
+</p><h3>7.5: <a name="thicklines">How do I change the thickness of the line?</a></h3>
+
+Java 1.1 and earlier only support 1 pixel wide lines. There's no easy way
+around this. You can, however, draw multiple, parallel lines offset from each other
+by one pixel:<p>
+
+</p><pre><code>  public void paint(Graphics g) {
+
+    int x1=5;
+    int x2=278;
+    int y1=8;
+    int y2=93;
+    
+
+    // Draw a ten pixel thick line
+    for (int i = -5; i &lt; 5; i++) {
+      g.drawLine(x1+i,y1+i,x2+i,y2+i);
+    }
+
+  }
+</code></pre>
+
+This isn't perfect. The ends of the line are excessively tapered.
+You really need to take the slope of the line into account when incrementing
+x and y, but this should give you the idea.  If you're doing a lot of this,
+you can write a class or method to do it for you. <p>
+
+There are other hacks you can use. For example, a thick line is essentially 
+a filled rectangle. Therefore you can calculate the endpoints of the 
+rectangle and use <code>fillPolygon()</code> to draw it.</p><p>
+
+The real solution is going to have to wait for a more complete graphics API for Java,
+possibly in Java 1.2.</p><p> 
+
+</p><h3>7.6: <a name="fonts">What fonts does Java support?</a></h3>
+
+Java 1.0
+implementations are guaranteed to have the fonts Helvetica, Courier,
+TimesRoman, and Symbol or some reasonable facsimile
+thereof.<p>
+
+ These names are deprecated in Java 1.1. In Java 1.1 you should use 
+ SansSerif, Serif, and Mono instead which will be mapped to an appropriate font like
+ Helvetica, Times, or Courier.</p><p>
+
+Whether fonts installed on the client are available
+to Java is implementation depenedent. You can get a <code>String</code>
+array of the names of the available fonts by calling the <code>getFontList()</code> method
+from <code>java.awt.Toolkit</code>. For example,</p><p>
+
+<code>String[] fonts = Toolkit.getDefaultToolkit().getFontList()</code></p><p>
+
+
+</p><h2>8: <a name="xtocid900055">java.io</a></h2>
+
+<h3>8.1:<a name="xtocid1902921">How do I read data from a file?</a></h3>
+
+There are a number of ways to read data from a file. If
+you're reading a file as raw binary data, you open a file
+using a <code>FileInputStream(String)</code> constructor and use one of
+the various <code>read()</code> methods to read the data into an array of
+bytes.  For example the following program reads raw data
+from a file specified on the command line.  It then writes
+the same data to the standard output.<p>
+
+</p><pre><code>import java.io.*;
+
+class ReadRawData {
+
+  public static void main (String args[]) {
+
+    boolean done = false;
+    byte b[] = new byte[1024];
+    int num_bytes = 0;
+
+    FileInputStream fin = null;
+    try {
+      fin = new FileInputStream(args[0]);
+    }
+    catch(ArrayIndexOutOfBoundsException e) {
+      System.out.println("You have to give me the name of a file to open.");
+      System.exit(0);   
+    }
+    catch (FileNotFoundException e) {
+      System.out.println("Could not open input file " + args[0]);
+      System.exit(0);
+    }
+    catch(IOException e) {
+      System.out.println("Error while opening input file" + args[0]);
+      System.exit(0);
+    }
+    catch (Exception e) {
+      System.out.println("Unexpected exception: " + e);
+      System.exit(0);     
+    }
+
+    try {
+      num_bytes = fin.read(b);
+    } 
+    catch(IOException e) {
+      System.out.println("Finished Reading: " + e);
+      done = true;
+    }
+    catch (Exception e) {
+      System.out.println("Unexpected exception: " + e);
+      System.exit(0);     
+    }
+      
+    while(!done) {
+      System.out.write(b, 0, num_bytes);
+      try {
+        num_bytes = fin.read(b);
+      }
+      catch(IOException e) {
+        System.out.println("Finished Reading: " + e);
+        done = true;
+      }
+      catch (Exception e) {
+        System.out.println("Unexpected exception: " + e);
+        System.exit(0);     
+      }
+      if (num_bytes == -1) done = true;
+   }  // end while
+    
+ }  // end main
+  
+} // end ReadRawData</code></pre>
+
+On the other hand if you're reading a text file in Java 1.0 you'll
+probably want to use a <code>DataInputStream</code> which gives you a
+<code>readLine()</code> method that returns successive lines of the file
+as Java <code>String</code>s.  You can then process each <code>String</code> as you
+see fit.  <p>
+
+</p><pre><code>// Implement the Unix cat utility in java
+
+import java.io.*;
+
+class cat  {
+
+  public static void main (String args[]) {
+  
+    String thisLine;
+ 
+   //Loop across the arguments
+   for (int i=0; i &lt; args.length; i++) {
+ 
+     //Open the file for reading
+     try {
+       FileInputStream fin =  new FileInputStream(args[i]);
+
+       try {
+         DataInputStream myInput = new DataInputStream(fin);
+  
+         try {
+           while ((thisLine = myInput.readLine()) != null) {  // while loop begins here
+             System.out.println(thisLine);
+           } // while loop ends here
+         }
+         catch (Exception e) {
+           System.out.println("Error: " + e);
+         }
+      } // end try
+      catch (Exception e) {
+        System.out.println("Error: " + e);
+      }
+  
+    } // end try
+    catch (Exception e) {
+      System.out.println("failed to open file " + args[i]);
+      System.out.println("Error: " + e);
+    }
+  } // for ends here
+  
+} // main ends here
+
+}</code></pre>
+
+This code emulates the Unix "cat" command.  Given
+a series of filenames on the command line it concatenates
+the files onto the standard output. <p>
+
+In Java 1.1 <code>DataInputStream.readLine()</code> is deprecated.
+You should use a <code>BufferedReader</code> instead as in this class: </p><p>
+
+</p><pre><code>// Implement the Unix cat utility in java
+
+import java.io.*;
+
+class cat {
+
+  public static void main (String args[]) {
+  
+    String thisLine;
+ 
+   //Loop across the arguments
+   for (int i=0; i &lt; args.length; i++) {
+ 
+     //Open the file for reading
+     try {
+       FileReader fr =  new FileReader(args[i]);
+       BufferedReader myInput = new BufferedReader(fr);
+       
+       while ((thisLine = myInput.readLine()) != null) {  // while loop begins here
+         System.out.println(thisLine);
+       } // while loop ends here
+ 
+     } // end try
+     catch (IOException e) {
+       System.out.println("Error: " + e);
+     }
+     
+  } // for ends here
+  
+} // main ends here
+
+}</code></pre>
+
+<h3>8.2: <a name="xtocid1902922">How do I write data to a file?</a></h3>
+
+You should only assume you'll be able to write to a file
+from an application.  Although it may be possible to write
+data into a file from an applet if the browser viewing the
+applet is HotJava, this ability will generally be disabled. 
+From within Netscape there is no way for an applet to write
+to a file on the local hard drive. <p>
+
+Within an application, however, file access is
+straight-forward.  There are several ways but here is a
+simple example using formatted output streams:</p><p>
+
+</p><pre><code>import java.io.*;
+
+class PrintToAFile  {
+
+  public static void main (String args[]) {
+
+    //First open the file you want to write into
+    try {
+      FileOutputStream fout =  new FileOutputStream("test.out");
+
+      // now convert the FileOutputStream into a PrintStream
+
+      PrintStream myOutput = new PrintStream(fout);
+
+      // Now you're able to use println statements just as if you were using System.out.println
+      // to write to the terminal 
+
+      myOutput.println("Hello There!");
+      myOutput.println(1 + " + " + 1 + " = " + (1+1));
+    }
+    catch (IOException e) {
+      System.out.println("Error opening file: " + e);
+      System.exit(1);
+    }
+
+  } // main ends here
+
+}</code></pre>
+
+There are a number of other things to note about writing
+data to a file.  This program creates or opens a file called
+"test.out" in the same directory as the running
+program.  However you could pass it a full pathname to a
+file in a different directory instead.<p>
+
+You should also learn about the <code>DataOutputStream</code> class and the
+<code>write()</code> method when you get a chance.
+<code>DataOutputStream</code>s and <code>DataInputStream</code>s are used for moving
+data between Java programs in a portable way. The various
+incarnations of the <code>write()</code> method are used for writing and
+reading arbitrary byte streams. What I've demonstrated here
+is more suitable for human consumption.  </p><p>
+
+In Java 1.1 you should probably use a <code>PrintWriter</code> 
+instead of a <code>PrintStream</code>.</p><p>
+
+</p><h3>8.3: <a name="append">How do I append data to a file?</a></h3>
+
+In Java 1.1 you can just pass true as the second argument to this 
+<code>FileOutputStream</code> constructor to indicate that you 
+want to append data to the file:<p>
+
+</p><pre><code>public FileOutputStream(String name, boolean append) 
+ throws IOException
+</code></pre>
+
+In Java 1.0, however, you must use 
+the <code>java.io.RandomAccessFile</code> class that lets you read and write bytes
+from arbitrary locations in a file.  This class implements <code>DataInput</code>
+and <code>DataOutput</code> so you have all the methods of <code>DataInputStream</code> and
+<code>DataOutputStream</code> available to you.<p> 
+
+To create a new random access
+file pass the name of the file and the mode to the constructor. The
+mode is either "r" (read-only) or "rw" (read and write).  The
+length() method returns a long that tells you how many bytes there
+are in a file and the <code>seek(long p)</code> method lets you position the file
+pointer at a particular point in the file. Thus to start writing at
+the end of a <code>RandomAccessFile raf</code>, you first
+<code>raf.seek(raf.length())</code>. The following example
+demonstrates by appending the string "Kilroy was here!" to every
+file specified on the command line.</p><p>
+
+</p><pre><code>import java.io.*;
+
+class AppendToAFile  {
+
+  public static void main (String args[]) {
+
+    for (int i = 0; i &lt; args.length; i++) {
+      //First open the file you want to append to
+    
+      try {
+        RandomAccessFile raf =  new RandomAccessFile(args[i], "rw");
+        // Position yourself at the end of the file
+        raf.seek(raf.length());
+
+       // Write the String into the file. Note that you must
+       // explicitly handle line breaks.
+       raf.writeBytes("\nKilroy was here!\n");
+
+      }
+      catch (IOException e) {
+        System.out.println("Error opening file: " + e);
+      }
+      
+    }
+
+  } 
+
+}</code></pre>
+
+<h3>8.4: <a name="printf">How do I format numbers like C's printf()?</a></h3>
+
+Java does not have any built in equivalent to C's printf/sprintf/fprintf
+family of functions that specify the width and precision of 
+numbers converted into strings. Since Java does not support variable length
+argument lists, it's not possible to write exact equivalents for these 
+functions. Instead the approach that must be taken is to convert one number 
+at a time into a string according to  a format specification, 
+then write the resulting string onto the appropriate output stream.
+This is a more flexible solution, but it's far from obvious.
+<p>
+
+In Java 1.1, the <code>java.text</code> package contains classes
+that format numbers according to particular needs. In particular it's worth
+getting to know the <code>java.text.NumberFormat</code> and 
+<code>java.text.DecimalFormat</code>
+classes, though these can't handle exponential notation.
+I've begun work on my own formatting class that does handle exponential
+and other notations available through <code>printf()</code>. It can be found at
+<a href="http://metalab.unc.edu/javafaq/formatter/">http://metalab.unc.edu/javafaq/formatter/</a>.
+Gary Cornell and Cay Horstmann's popular book 
+<cite><a href="http://www.mathcs.sjsu.edu/faculty/horstman/corejava.html">Core Java</a></cite> 
+also includes such a class.
+You can probably find more at <a href="http://www.gamelan.com/">Gamelan</a>. </p><p>
+
+
+</p><h2>9: <a name="xtocid558358">java.net</a></h2>
+
+Network programming in Java is covered in much more detail in my book,
+<cite><a href="http://metalab.unc.edu/books/jnp.html">Java Network Programming</a></cite> 
+from O'Reilly &amp; Associates. 
+Most of what is new and exciting about Java centers around the 
+potential for new kinds of dynamic, networked applications; 
+and  Java Network Programming  shows you how to write them.
+Topics covered include sockets, URLs, InetAddresses, UDP, TCP/IP, 
+multicasting, applets, servlets, RMI, and more. <p>
+
+Manning Publications has also recently published a book titled 
+<cite>Java Network Programming</cite>.  It's not a bad book, and is 
+surprisingly orthogonal to mine. About 2/3 of that book is
+streams and encryption which I only touch on. My book
+covers servlets, applets, RMI, multicast sockets, and Java 1.1
+which that book doesn't discuss. The matching titles appear to be just 
+unlucky choices. Both publishers went with the most obvious title they 
+could think of.  However the cover of the Manning book has a big fish,
+and looks  suspiciously like an O'Reilly book.  Don't be fooled.  The real 
+O'Reilly book has a gyroscope on the cover. </p><p> 
+
+You can buy <cite>Java Network Programming</cite> at any bookstore that stocks 
+computer books, or you can order it from 
+<a href="http://www.amazon.com/exec/obidos/ISBN=1565922271/cafeaulaitA">amazon.com</a> 
+or <a href="http://www.cbooks.com/sqlnut/SP/search/gtsumt?source=&amp;isbn=1565922271">Computer 
+Literacy</a>.</p><p> 
+
+</p><h3>9.1: <a name="xtocid558359">How do I convert a numeric IP address like 199.1.32.90 into a hostname like star.blackstar.com?</a></h3>
+
+Unfortunately due to an unintended side effect (i.e. a bug) in Java's caching
+of IP addresses and hostnames, Java 1.0 can't convert numeric IP addresses into 
+hostnames. However this is straightforward in Java 1.1. For example,<p>
+
+<code>String hostname = InetAddress.getByName("199.1.32.90").getHostName()</code></p><p>
+
+</p><h3>9.2: <a name="xtocid900061">How can a Java program talk to a CGI program?</a></h3>
+
+Web browsers display forms, read user input, encode that input into
+a standard format called a "query string", and send that data to CGI
+programs that live on the web server. When you write an applet that
+talks to a CGI program, you have to do all this yourself.<p>
+
+The first thing to know is that there are two ways a CGI program can
+accept data from a web browser, GET and POST. CGIs that use GET take
+their arguments from the URL. Programs that use POST read their
+arguments from standard input.   </p><p>
+
+The second thing to know is that  when you submit data to a form
+through a web browser, the web browser encodes the data for you.  In
+an applet, however, you need to encode the data yourself. The data
+is encoded like this: Each form entry is a name-value pair. Names
+and values are separated from each other by equals signs (=). Pairs are
+separated from each other by ampersands (&amp;). For example, consider this
+form: </p><p>
+</p><pre>&lt;Form method=GET action="http://metalab.unc.edu/javafaq/cgi-bin/getform.pl"&gt;  
+Email: &lt;Input NAME="email" size=40&gt;
+Name: &lt;Input NAME="realname" size=40&gt; 
+&lt;Input TYPE="submit" VALUE="Subscribe"&gt;
+&lt;/Form&gt;
+</pre>
+You see that this uses  the GET method to communicate with a cgi-bin
+program at http://metalab.unc.edu/javafaq/cgi-bin/getform.pl. It
+sends two fields to the CGI program, email and realname. Let's say
+you want to send the string "elharo@metalab.unc.edu" for the email
+address, and the string "Elliotte Harold" for the real name. Then
+the query string would look like this:<p>
+
+<code>String qs = "email=elharo%40metalab.unc.edu&amp;realname=Elliotte%20Harold";</code>
+</p><p>
+
+The  spaces in "Elliotte Harold" and the @ in
+"elharo@metalab.unc.edu" have been converted into percent escapes.
+All  non-alphanumeric characters in the values must be replaced with
+a % followed by their ASCII value. Thus a space becomes %20 and the
+@ becomes %40. </p><p>
+
+To send this data to the server, append a question mark (?) and the
+query string to the URL of the CGI program, and request that URL
+from the server. Thus the URL you want is:</p><p>
+
+</p><pre><code>http://metalab.unc.edu/javafaq/cgi-bin/getform.pl?email=elharo%40metalab.unc.edu;realname=Elliotte%20Harold";</code>
+</pre>
+
+In Java terms this requires constructing a URL object from this string, and
+opening that URL's InputStream to read the response.  The following 
+code fragment demonstrates:<p>
+
+</p><pre><code>try {
+  String thisLine;
+  String qs = "email=elharo%40metalab.unc.edu&amp;realname=Elliotte%20Harold";
+  URL u = new URL("http://metalab.unc.edu/javafaq/cgi-bin/getform.pl?" + qs);
+  DataInputStream theHTML = new DataInputStream(u.openStream());
+  while ((thisLine = theHTML.readLine()) != null) {
+    System.out.println(thisLine);
+  } 
+}
+catch (Exception e) {
+  System.err.println(e);
+}
+</code></pre>
+
+Communicating with CGI programs that use POST is somewhat more
+complex, and it doesn't work very well in Java 1.0.2. It may be
+improved in Java 1.1. When POSTing to a CGI, you encode the query
+string exactly as you do for GET requests. However instead of merely
+requesting a URL's InputStream, you open a URLConnection to the CGI
+program. <p>
+
+Do not append the query string to the URL as you did with GET.
+Instead set the  <code>URLConnection</code>'s <code>doOutput</code> and <code>doInput</code> fields to true
+and set <code>AllowUserInteraction</code> to false. Chain the <code>URLConnection</code>'s
+<code>OutputStream</code> to a <code>DataOutputStream</code> and use the <code>DataOutputStream</code>'s
+<code>writeBytes()</code> method to send the query string to the server. </p><p>
+
+If you want to read the response, then chain the <code>URLConnection</code>'s
+<code>InputStream</code> to a <code>DataInputStream</code>, and use the <code>DataInputStream</code>'s
+<code>readLine()</code> method to read the response in a <code>while</code> loop. The following
+code fragment demonstrates:</p><p>
+
+</p><pre><code>String query = "email=elharo%40metalab.unc.edu;realname=Elliotte%20Harold";
+
+try {
+
+  // open the connection and prepare it to POST
+  URL u = new URL("http://metalab.unc.edu/javafaq/cgi-bin/postform.pl");
+  URLConnection uc = u.openConnection();
+  uc.setDoOutput(true);
+  uc.setDoInput(true);
+  uc.setAllowUserInteraction(false);
+  DataOutputStream dos = new DataOutputStream(uc.getOutputStream());
+
+  // Send the data
+  dos.writeBytes(query);
+  dos.close();
+
+
+  // Read the response
+  DataInputStream dis = new DataInputStream(uc.getInputStream());
+  String nextline;
+  while((nextline = dis.readLine()) != null) {
+   System.out.println(nextline);
+  }
+  dis.close();
+
+}
+catch (Exception e) {
+  System.err.println(e);
+}
+</code></pre>
+
+As you see, posting forms is considerably more complex than using
+the GET method. However on some platforms, GET has an annoying
+habit of failing once the query string grows past 200 characters.
+The exact point where GET fails varies depending on the operating
+system and the web server.  <p>
+
+
+</p><h3>9.3: <a name="xtocid900062">How can an applet send email?</a></h3>
+
+The simplest way to answer this question is to tell you to write a
+CGI program which sends email, and then refer you to the
+previous question to learn how to communicate with the CGI
+program. There really isn't  any other reliable,
+cross-platform way to send email. The problem is that email programs
+are platform dependent. <p>  
+
+ The Simple Mail Transport Protocol is an Internet standard 
+ that you may be able to 
+ use some of the time. The basic idea is to open a socket to the SMTP port, 25,
+ on the web server, and send your email through the server. 
+ However not all web servers, especially those based on Macs or
+ Windows NT, run SMTP servers, and an applet can't open sockets to other hosts.
+ Even if you do have SMTP software running on your web server, the applet 
+ may be behind a firewall that
+ disallows outgoing connections to port 25 on hosts outside the firewall. 
+ </p><p>
+ 
+ </p><h3>9.4: <a name="ping">How can I use ICMP in Java?</a></h3>
+
+Java does not support ICMP, the Internet Control Message Protocol,
+at this time; nor does it allow you to send raw IP packets. You 
+must use TCP or UDP. Therefore protocols that rely on ICMP
+like ping and traceroute cannot yet be implemented in Java.<p>
+
+</p><h3>9.5: <a name="proxy">How do I make Java work with a proxy server?</a></h3>
+
+The <code>socksProxyHost</code>, <code>socksProxyPort</code>, <code>http.proxyHost</code>, 
+and <code>http.proxyPort</code>
+ system properties define the proxy server
+used to support SOCKS v4 and HTTP proxy
+functionality:<p>
+
+</p><pre><code>socksProxyHost // for socks v4 
+socksProxyPort 
+http.proxyHost // standard HTTP proxy 
+http.proxyPort
+</code></pre>
+
+This is documented in the HotJava documentation, 
+but applies to the JDK too. You  can set system properties 
+from the command line like this<p>
+
+</p><pre><code>java -DsocksProxyHost=utopia.poly.edu -DsocksProxyPort=9087  MyClass
+</code></pre>
+
+Of course you have to change it to use your proxy host and port. <p>
+
+These can also be set by any other convenient means to
+set system properties, such as including them in the appletviewer.properties
+file like this:</p><p>
+
+</p><pre><code># caching
+proxySet=true
+proxyHost=proxy.mysite.com
+proxyPort=8080
+
+# ftp
+ftpProxySet=true
+ftpProxyHost=ftpprxy.mysite.com
+ftpProxyPort=7070
+</code></pre>
+
+<h2>10: <a name="xtocid558360">java.util</a></h2>
+
+<h3>10.1: <a name="xtocid1902942">How random is Random()?</a></h3>
+
+It's good enough for games. I wouldn't use it for cryptography.<p>
+
+Unlike most random functions in other libraries the
+<code>Math.random()</code> method seeds itself with the current time
+in milliseconds. Thus you do not need to seed it explicitly at the
+start of your program.  If you require a non-random <code>Random()</code> for
+test purposes or you need more randomness than the current time in
+milliseconds can provide, then you can use <code>java.util.Random()</code> which
+has a constructor that lets you specify a seed.</p><p>
+
+</p><h3>10.2: <a name="random">How do I generate a random integer between a and b?</a></h3>
+
+Generate a random double between 0.0 and 1.0, multiply by the number of
+<code>int</code> values you want to choose from, 
+add the smallest <code>int</code> value you want, round it down
+to the nearest integer using <code>Math.floor()</code>, 
+and cast the result to an <code>int</code>.
+For example, the following class simulates a six-sided die
+by producing random, uniformly distributed ints between 1 and 6.<p>
+
+</p><pre><code>public class Die {
+
+  Random generator = new Random();
+
+  public static int roll() {
+  
+    // get a rcandom number between 0 and 1
+    double r = generator.nextDouble();
+    
+    // multiply by 6 so it's now between 0 and 6
+    r *= 6.0;
+    
+    // add 1
+    r += 1.0;
+    
+    //truncate it to an int
+    r = Math.floor(r);
+    
+    // handle one special if unlikely case
+    if (r == 7.0) r = 6.0;
+    
+    // convert to an int and return
+    return (int) r;
+
+  }
+
+}
+</code></pre>
+
+
+<h2>11: <a name="xtocid1902947">Common Errors and Problems</a></h2>
+
+<h3>11.1: <a name="xtocid558363">How Can I Avoid Flicker in an Applet?</a></h3>
+
+The key to fixing flicker is realizing that the screen isn't
+actually painted in the <code>paint()</code> method.  The pixels get put on the
+screen in the <code>update()</code> method which most applets don't override.
+However by overriding the <code>update()</code> method you can do all your painting
+in an offscreen <code>Image</code> and then just copy the final <code>Image</code> onto the
+screen with no visible flicker.<p>
+
+The cookbook approach is simple.  Add the following three private
+fields to your applet and the public <code>update()</code> method.  Flicker will
+magically disappear. </p><p>
+
+</p><pre><code>
+  private Image offScreenImage;
+  private Dimension offScreenSize;
+  private Graphics offScreenGraphics;
+
+  public final synchronized void update (Graphics g) {
+
+    Dimension d = size();
+    if((offScreenImage == null) || (d.width != offScreenSize.width) ||  (d.height != offScreenSize.height)) {
+      offScreenImage = createImage(d.width, d.height);
+      offScreenSize = d;
+      offScreenGraphics = offScreenImage.getGraphics();
+    }
+    offScreenGraphics.clearRect(0, 0, d.width, d.height);
+    paint(offScreenGraphics);
+    g.drawImage(offScreenImage, 0, 0, null);
+
+  }
+</code></pre>
+
+<h3>11.2: <a name="xtocid558364">Can you explain CLASSPATH?</a></h3>
+
+A <dfn>path</dfn> specifies the name and location of a file on the 
+file system. It starts with the name of the disk or the root of the
+filesystem and works its way down through various directories until
+reaches the file. File, directory, and path naming conventions are
+platform specific. For example a Unix path looks like
+<tt>/home/users/elharo/html/javafaq.html</tt>. A DOS/Windows path
+looks like <tt>C:\html\javafaq.htm</tt>. A Macintosh path looks like
+<tt>My Hard Drive:html:Java FAQ List v1.1</tt>. All three of these
+examples point to a file.  Paths can also point to a directory. For
+example, <tt>/home/users/elharo/html</tt>, <tt>C:\html</tt>, or
+<tt>My Hard Drive:html:</tt>.  <p>
+
+The character that separates one directory from the next in a path
+is called the <dfn>separator character</dfn>. It is a slash (/)
+on Unix, a backslash (\) in Windows  and a colon (:) on the Mac. You can
+get its value on a particular platform by looking at the static
+variable <code>java.io.File.separatorCharacter</code>.   </p><p>
+
+If you actually check this on the Mac, you'll note something funny. 
+<code>java.io.File.separatorCharacter</code> appears to be a slash (/) 
+like on Unix, not a colon like a Mac programmer would expect. Why Java had to
+be different from every other Mac program in the universe
+I don't know. This is problematic because 
+Mac file names can include slashes. </p><p>
+
+The CLASSPATH is an environment variable that contains a list of
+directories where Java looks for classes referenced in a program. If
+the CLASSPATH isn't set properly no program written in Java will be
+able to run, and the compiler won't be able to compile. Each entry
+in this list is separated from the other entries  by the
+<code>java.io.File.pathSeparatorChar</code>.  This is semicolon (;) on 
+Windows and a colon (:) on Unix and the Mac. For example</p><p>
+</p><pre>Unix: <code>~/classes:/usr/local/netscape/classes</code>
+Windows: <code>C:\java\classes;C:\netscape\classes</code>
+Mac: <code>My Hard Drive/JDK/classes:My Hard Drive/My Project:My Hard Drive/classes</code>
+</pre>
+<p>
+On most platforms, the JDK's java interpreter appends some 
+directories to the CLASSPATH you set manually.  These are 
+set relative to where the java interpreter itself is. For example, 
+if the java program is installed in /usr/local/java/bin, then
+it will append /usr/local/java/classes and /usr/local/java/lib/classes.zip
+to the CLASSPATH.  Another way of thinking about it: if the directory
+where the java interpreter is installed is $JAVA, then 
+$JAVA/../classes and $JAVA/../lib/classes.zip are automatically
+in your CLASSPATH.
+</p><p>
+
+Java applets and applications aren't self-contained.  They need
+access to other classes to do their work. For instance when you call
+<code>System.out.println()</code> Java needs to know where to look
+to find the file that includes the <code>System</code> class.</p><p>
+
+The directories in the CLASSPATH are where Java starts searching for
+classes. To find a class Java first changes the periods in the full
+package-qualified name of the class (e.g. <code>java.util.Date</code> and not
+just <code>Date</code>) into directory separators (/ on Unix, \ on Windows, : on
+the Mac). Thus if it wants the <code>java.awt.GridBagLayout</code> class, it
+looks for the file <code>java/awt/GridBagLayout.class</code> in each of the root
+directories listed in the CLASSPATH variable from left to right
+until it finds the file. With the Unix CLASSPATH listed above, Java
+first looks for <code>~/classes/java/awt/GridBagLayout.class</code>
+Then for,
+<code>/usr/local/netscape/classes/java/awt/GridBagLayout.class</code>.</p><p>
+
+The specification of the CLASSPATH is somewhat platform dependent.
+For instance ~ means the home directory on Unix but has no meaning
+on the Mac. </p><p>
+
+Under Unix you set CLASSPATH variables like this:</p><p>
+
+</p><pre>csh: <tt>% setenv CLASSPATH <var>my_class_path</var></tt>
+sh: <tt>% CLASSPATH=<var>my_class_path</var></tt>
+</pre> 
+
+You'll probably want to add one of these lines to your .login or .cshrc file
+so it will be automatically set every time. <p>
+
+Under Windows you set
+the CLASSPATH environment variable with a DOS command like</p><p>
+
+</p><pre><tt>C:\&gt; SET CLASSPATH=C:\JDK\JAVA\CLASSES;c:\java\lib\classes.zip</tt>
+</pre>
+
+You can also add this to your autoexec.bat file.  You should of course point it at 
+whichever directories actually contain your classes.<p>
+
+The CLASSPATH variable is also important when you run Java applets,
+not just when you compile them. It tells the web browser or applet
+viewer where it should look to find the referenced .class files. If
+the CLASSPATH is set improperly, you'll probably see messages like
+"Applet could not start."</p><p>
+
+Since large packages can contain many, many .class files Sun has
+built the capability to read zip archives into Java. Therefore an
+entire directory structure of class files can be zipped to save
+space. If you want to see what's inside the zip file, unzip it. Java
+doesn't care whether or not a directory has been zipped. You just
+need to make sure that the .zip file is named the same as the
+directory it replaces plus the .zip extension and that it is in the
+same location.</p><p>
+
+In Netscape you should make sure that the first directory in the
+CLASSPATH is the directory that contains Netscape's class files (The
+defaults are /usr/local/netscape/java/classes on Unix and
+C:\NETSCAPE\NAVIGATOR\Program\java\classes in Windows.) </p><p>
+
+Finally note that if you install additional packages such as Jeeves 
+or any third party package, you need to add the directory
+where the package is installed to your CLASSPATH.  For example let's
+say you buy a package of statistics classes from SPSS, and you put
+those classes in /opt/classes/stats. Then you you need to add
+/opt/classes/stats to the end of your CLASSPATH. </p><p> 
+
+You can
+temporarily add a directory to the CLASSPATH by giving the
+<tt>-classpath</tt> option to the java interpreter or the javac
+compiler. For example,</p><p>
+
+</p><pre><tt>javac -classpath $CLASSPATH:/opt/classes/stats</tt>
+</pre> 
+
+To use just the classes in /opt/classes/stats and not the classes
+normally found in your CLASSPATH, omit $CLASSPATH like this:<p>
+
+</p><pre><tt>javac -classpath /opt/classes/stats</tt>
+</pre> 
+
+Finally if the CLASSPATH environment variable has not been set, and
+you do not specify one on the command line, then Java sets the
+CLASSPATH to the default:<p>
+
+</p><pre>Unix: <code>.:$JAVA/classes:$JAVA/lib/classes.zip</code>
+Windows: <code>.:$JAVA\classes:$JAVA\lib\classes.zip</code>
+Mac: <code>./$JAVA:classes/$JAVA:lib:classes.zip</code>
+</pre>
+
+Here . is the current directory and  $JAVA is the main Java
+directory where the different tools like javac were installed.<p>
+
+</p><h3>11.3: <a name="xtocid900069">Why won't my audio clip play?</a></h3>
+
+It's probably in the wrong format. Java 1.1 and earlier only 
+understand 8 bit, mulaw-encoded, 8000
+Hz, one-channel files. Many sound conversion programs will convert 
+various formats to .au files but not necessarily to 
+8 bit, mulaw-encoded, 8000
+Hz, one-channel files.<p>
+    
+</p><h3>11.4: <a name="classformaterror">When I load the page Netscape gives me a java.lang.ClassFormatError.</a></h3>
+
+Something is mangling the .class file.  Most likely the .class files
+were uploaded to the server as text or MacBinary rather than as raw
+binary data.  Make sure you put your ftp program in binary mode
+before sending the files to the server.<p>
+
+The other possibility is that the web server is sending the file to
+clients as text rather than binary data.  Make sure the web server
+is configured to send files that end in ".class" with a MIME type of
+application/octet-stream. Many web servers send files as type
+text/plain which often works but causes problems on a few servers.
+In particular, WebStar needs to change the action to "binary" and
+the MIME type to "application/octet-stream". </p><p>
+
+It's also possible on some platforms that Netscape just can't find 
+the .class file; that is, it isn't in the directory where Netscape is
+looking for it.  Technically, this isn't really a ClassFormatError,
+but this is how Netscape reports it on some platforms and versions.
+</p><p>
+
+</p><h3>11.5: <a name="xtocid49935">Netscape gives me "Applet Not Initialized Error"</a></h3>
+
+This is almost always means Netscape can't find one of the classes
+it needs to run the applet.  Check to make sure that the classes your program uses are
+in the CODEBASE, the CLASSPATH, or somewhere else Netscape can find them.  It's not
+uncommon to get this error when you first test a new package or
+class you've written with Netscape.  If you've only tested it with
+the applet viewer or an IDE, then the applet viewer or the IDE may
+have included the current directory in the CLASSPATH where Netscape
+does not. Therefore the applet viewer can find the right class, but
+Netscape can't. Explicitly add the path containing your class or
+package to the CLASSPATH as specified in the previous question. <p>
+
+</p><h3>11.6: <a name="xtocid2672657">Other Netscape Problems</a></h3>
+
+As of version 3.0, Netscape has many problems handling Java
+applets.In no particular order they are: <p>
+
+</p><ul>
+<li>Netscape can only run applets that are compiled with the Java
+1.0 beta compilers through the Java 1.0.2 compiler. It cannot handle
+.class files compiled for the various alpha versions of Java or Java
+1.1.  As a  general rule, make sure you're using Sun's javac
+1.0.2 to compile all applets you distribute.  (Microsoft and Natural
+Intelligence's compilers have non-trivial bugs of their own.)<p>
+
+</p></li><li>Not all versions of Netscape support Java. Notably the Windows
+3.1 version does not, though a beta version that does has recently 
+become available.
+<p>
+</p></li><li>Netscape will not import any user-defined packages from the local
+CLASSPATH.<p>
+
+</p></li><li>Netscape does not flush classes when you reload a page.  If you
+need to reload a changed applet, for instance if you made a change to the
+applet source code and regenerated the .class file, there are
+a number of things you can try. On some platforms holding down the shift key
+and pressing the reload button will get Netscape to reload the .class file. 
+You can also try manually clearing both the memory
+and disk caches, in order to reload an applet. Turning Java off and
+then on again in the <tt>Options/Security Preferences...</tt> menu
+may also do the trick.  If none of these work, you'll simply have to quit and relaunch
+Netscape.<p>
+
+
+</p></li><li>Netscape  calls your <code>init()</code> method many times more than the
+appletviewer will.   In particular Netscape calls <code>init()</code> anytime
+your reload, resize or otherwise restart your applet.  I am not sure
+whether or not this is a bug, but it does indicate that you should
+try to keep  your <code>init()</code> methods as small and quick as possible.
+Similarly it may call <code>destroy()</code> when  the applet viewer would only
+call <code>stop()</code>.<p>
+
+</p></li><li>Netscape won't run any applet that calls <code>Object.clone()</code>.<p>
+
+</p></li><li>Netscape can't print applets.<p>
+</p></li></ul>
+
+<h3>11.7: <a name="xtocid1902948">I keep getting access privilege violations, " Java tried to read file foo.class in directory bar."</a></h3>
+
+This happens when you try to load a class from a local hard
+disk instead of a server, the class is not a subclass of
+Applet, and the directory where the class resides is not in
+the HotJava read path.  The solution is to move the class
+file into a directory in the HotJava read path.  On Unix one
+such directory is ~/public_html/classes (where ~ is your
+home directory).  Alternatively you can change the
+HOT_JAVA_READPATH environment variable to point to the
+directory containing your classes directory.<p>
+
+</p><h3>11.8: <a name="xtocid68951">Javac keeps insisting that it can't 
+find the right constructor function in my class, but I'm sure it's in a 
+file I imported. Why is it even looking in my class instead of the 
+imported file?</a></h3>
+
+You cannot construct instances of a class on the fly using syntax like<p>
+
+<code>System.out.println(Double(0.56).toString());</code>
+</p><p>
+
+You must use the <code>new</code> operator like:</p><p>
+
+</p><pre><code>Double myDouble = new Double(0.56);
+System.out.println(myDouble.toString());</code></pre>
+or
+<pre><code>
+System.out.println((new Double(0.56)).toString());</code></pre>
+
+In other words, constructors are only called after a
+<code>new</code> operator.<p>
+
+
+</p><h3>11.9: <a name="xtocid900075">NullPointerExceptions with arrays of objects</a></h3>
+
+
+When you allocate an array of objects, each component of the array is
+initialized to <code>null</code>. The individual components of the array 
+must still be initialized with a constructor or an
+assignment statement.  For example, consider this statement:<p>
+
+</p><pre><code>Integer[] scores = new Integer[10];
+int m = scores[5].intValue(); // throws NullPointerException</code>
+</pre>
+
+This creates an array called scores containing ten references
+to <code>Integer</code> objects. Then it tries to get the value of the fifth component. 
+However, each of those references is initially set to <code>null</code>.
+Thus when you try to call a method on one of the components of the array or pass
+the component to a method that expects a non-null argument, 
+a <code>NullPointerException</code> is thrown. <p>
+
+To fix this, you need to initialize the components of the array,
+either with constructors or with assignment statements  For example:</p><p>
+
+</p><pre><code>Integer[] scores = new Integer[10];
+for (int i = 0; i &lt; scores.length; i++) scores[i] = new Integer(i);
+int m = scores[5].intValue(); </code>
+</pre>
+
+You do not need to initialize all the components of the array though
+it's a good idea to do so. You can initialize just those you'll use,
+or you can make sure you catch and handle
+<code>NullPointerException</code>s in the appropriate places.<p>
+
+This is different from how Java handles uninitialized non-array
+reference variables. By way of contrast when you write,</p><p>
+
+</p><pre><code>Integer score;
+int m = score.intValue();</code>
+</pre>
+
+the compiler catches the <code>null</code> reference in
+<code>score</code> and complains. You have to fix the problem before
+you can compile the program.  However in general the compiler has no
+way to know whether an array component has or has not been
+initialized. Therefore the check for the non-nullness of an array
+component is deferred till runtime when the
+<code>NullPointerException</code> may be thrown.<p>
+
+</p><h3>11.10: <a name="staticref">Can't make static reference to method <i>type myMethod</i> in class <i>myClass</i></a></h3>
+
+This common error occurs when you attempt to call an instance method from
+a static method, most commonly <code>main()</code>.  For example,<p>
+
+</p><pre><code>class StaticTest {
+
+  public static void main(String[] args) {
+
+    int i = getX();
+
+  }
+
+  public int getX() {
+  
+    return 3;
+    
+  }
+
+}</code></pre>
+
+The static method, <code>main()</code>, belongs to the class. However,
+<code>getX()</code> belongs to an object in the class. The compiler
+doesn't know on which object it's invoking the <code>getX()</code> method.<p>
+
+There are a couple of ways around this problem. You could declare that <code>getX()</code> is 
+also <code>static</code>; that is:</p><p>
+
+<code>  public static int getX() {</code></p><p>
+
+Alternately, you can instantiate an object in the StaticTest class 
+in the <code>main()</code> method and
+invoke that object's <code>getX()</code> method, like this:</p><p>
+
+</p><pre><code>  public static void main(String[] args) {
+
+    StaticTest st = new StaticTest();
+    int i = st.getX();
+
+  }
+</code></pre>
+
+<h3>11.11: <a name="stringcomparison">Why do I have trouble when using == to compare Strings?</a></h3>
+
+When used on objects, <code>==</code> tests whether the two objects
+are the same object, not whether they have the same value. 
+Consider this code fragment:<p>
+
+</p><pre><code>	String s1 = new String("Hello World");
+	String s2 = new String("Hello World");
+	if (s1 == s2) {
+	  System.out.println("The strings are the same.");
+	}
+	else {
+	  System.out.println("The strings are different.");
+	}
+</code></pre>
+
+This prints "The strings are different." <p>
+
+To compare to objects for equality, rather than identity,
+you should use the <code>equals()</code> method, like this:</p><p>
+
+</p><pre><code>	String s1 = new String("Hello World");
+	String s2 = new String("Hello World");
+	if (s1.equals(s2)) {
+	  System.out.println("The strings are the same.");
+	}
+	else {
+	  System.out.println("The strings are different.");
+	}
+</code></pre>
+
+This prints "The strings are the same." The default <code>equals()</code> method
+all objects inherit from <code>java.lang.Object</code> just tests for object identity 
+with <code>==</code>. However many classes, including <code>java.lang.String</code>, override
+<code>equals()</code> to test the state of the object.<p>
+
+However, the issue is a little confused when string literals
+are considered. Consider this code fragment:</p><p>
+
+</p><pre><code>	String s1 = "Hello World";
+	String s2 = "Hello World";
+	if (s1 == s2) {
+	  System.out.println("The strings are the same");
+	}
+	else {
+	  System.out.println("The strings are different");
+	}
+</code></pre>
+
+This prints "The strings are the same". The compiler recognizes
+that the two string literals have the same value and it performs
+a simple optimization of only creating one <code>String</code> object. Thus
+<code>s1</code> and <code>s2</code> both refer to the same object 
+and are therefore equal. 
+The Java Language Specification requires this behavior. However, 
+not all compilers get this right so in practice this behavior here 
+is implementation dependent.<p>
+
+
+</p><h2>12: <a name="xtocid75753">Security</a></h2>
+
+<h3>12.1: <a name="xtocid75754">System Level Security</a></h3>
+
+On a system level Java applets live in a cage.  They can do
+pretty much anything they want inside their cage, but they
+cannot get outside the cage and do damage unless the user unlocks
+the door to the cage.  Even then they wear shackles that
+prevent them from doing things like writing to arbitrary
+addresses in memory.<p>
+
+In Netscape the user doesn't even get the keys to the cage so you
+can't let the applets out into your system even if you
+wanted to.  With the Applet Viewer it is possible to give your applets
+more access to the network.  However they still can't do
+everything a C program can do.</p><p>
+
+Specifically a Java applet cannot write anything to a hard
+drive.  It cannot write directly to
+memory, and it cannot introduce a virus into your system.  A
+Java applet can use a lot of your CPU time though not 100%
+of it.  It cannot crash your system (though a Java enabled
+browser can).</p><p>
+
+
+</p><h3>12.2: <a name="xtocid75755">User Level Security</a></h3>
+
+A Java applet can trick the user into doing something stupid
+such as revealing their root password though there are
+efforts to avoid this.  A Java applet can also send this
+information back to the applet's server.<p>
+
+Finally an applet can display pictures or text or play
+sounds which the user may find annoying or offensive, but
+this hardly qualifies as a security flaw and is not unique
+to Java enabled browsers.</p><p>
+
+</p><h2>13: <a name="xtocid1902949">Tools</a></h2>
+
+<h3>13.1: <a name="xtocid1902950">IDE</a></h3>
+
+Symantec publishes <a href="http://cafe.symantec.com/">Cafe</a> and Visual Cafe, an applet
+development environment for Windows 95, NT and the Mac.   It
+includes a source code editor and a class browser, and
+a just-in-time compiler. It is still beta quality at best.
+I do not recommend it. <p>
+
+Natural Intelligence's <a href="http://www.natural.com/pages/products/roaster/flyer.html">
+Roaster</a> is a Macintosh hosted applet development
+environment. It is also still beta quality. I do not recommend it.</p><p>
+
+<a href="http://www.metrowerks.com/">Metrowerks</a> includes Java  support in Code
+Warrior Gold. Metrowerks has
+licensed Sun's source code. The Java support is alpha quality,
+and is not by itself worth the price of Code Warrior,
+even the $99 Java only edition. However
+if you also need a C compiler it doesn't cost you anymore to
+get Java support. </p><p>
+
+Sun publishes a payware IDE called
+Java Workshop. It is 
+fairly cheap, ($99) but again not yet worth the download time.
+Java Workshop is similar to Sun's
+existing Workshop products for Fortran and C++.  However it
+is written entirely in Java. You'll need at least a Pentium Pro 
+to squeeze adequate performance out of this system.</p><p>
+
+Microsoft's Visual J++ is one of the faster VM/JIT combinations available.
+However the compiler has some bugs that prevent it from compiling
+certain legal Java code. Once again
+this is beta software at best, and is not worth spending money on.</p><p>
+
+Borland's <a href="http://www.borland.com/jbuilder/">JBuilder</a> 
+has gotten some nice reviews, but I've yet to try 
+it personally. Furthermore, their 
+<a href="http://www.brouhaha.com/%7Eeric/computers/mocha.html#suppress">lawyers 
+seem to be out of control</a>.</p><p>
+
+The bottom line is that you should use Sun's JDK (or your local platform's
+equivalent) and the text editor 
+of your choice.  None of the available IDEs are worth what they cost.
+All will cause you more problems than they solve.  Unless you enjoy paying
+to beta test products, there's no reason to purchase any of these products
+at this time.</p><p>
+
+</p><h3>13.2: <a name="xtocid1902951">Debugger</a></h3>
+
+A preliminary jdb is available with Java Developer's Kit from Sun.
+Various payware IDEs include debuggers of beta quality at best.<p>
+
+</p><h3>13.3: <a name="xtocid1902952">Editors</a></h3>
+
+I use BBEdit 4.0 on the Mac. The free, light version works well too although it
+doesn't include syntax coloring. See<p>
+
+<a href="http://www.barebones.com/bbedit.html">http://www.barebones.com/bbedit.html</a></p><p>
+
+ However, in general any normal
+text or programmer's editor should be fine.</p><p>
+
+The Windows Notepad program, however, is not fine. It appends the extension
+".txt" to all files it saves.  Java source code files must end in ".java".
+If you must use Notepad, enclose the filename in double quotes when you save it;
+that is don't just type HelloWorld.java but rather "HelloWorld.java". This will
+force Notepad not to append a ".txt" extension to the file.</p><p>
+
+</p><h3>13.4: <a name="xtocid1902953">YACC grammar</a></h3>
+
+An LALR grammar for Java is included in <a href="http://java.sun.com/doc/language_specification/">The Java
+Language Specification</a>. <p>
+
+</p><h3>13.5: <a name="xtocid1902954">Profilers</a></h3>
+
+Using the -prof option to the java interpreter produces basic 
+profile information in a file called java.prof. That is,<p>
+
+<code>% java -prof HelloWorld.class</code></p><p>
+
+</p><h2>14: <a name="xtocid1902955">The Java Virtual Machine and Byte Codes</a></h2>
+
+
+The most recent Java Class File / Java Virtual Machine specs are
+available in various formats from 
+<a href="http://java.sun.com/reference/index.html">http://java.sun.com/reference/index.html</a><p>
+
+</p><h3>14.1: <a name="xtocid1902956">Can I program directly in byte code?</a></h3>
+
+Yes, you can.  Jonathan Meyer's <a href="http://found.cs.nyu.edu/meyer/jasmin/">Jasmin</a> Java
+assembler is a small assembler for Java byte code, and would be of
+great assistance to you in such an endeavor. The Java interpreter
+will check your byte codes to make sure they don't violate security.
+ If you write security violating byte codes the interpreter won't
+run them.<p>
+
+</p><h2>14.2: <a name="xtocid1902957">Optimizing Java</a></h2>
+
+<ol>
+<li>Make your classes final.<p>
+</p></li><li>Use the -O flag to the compiler.<p>
+</p></li><li>If you're reading data off a disk read it in as large a chunk as possible.
+Do not read it a byte at a time.  If you need to process the data a byte at a time
+read it into a temporary buffer first.<p>
+</p></li><li>Creating objects is expensive.  Try to reuse objects rather than
+creating new ones, especially for temporary objects that exist only to support
+a calculation.<p>
+</p></li><li>Avoid synchronization where possible.
+</li></ol>
+<p>
+
+</p><h2>14.3: <a name="obfuscation">Disassembly, Decompilation, and Obfuscation</a></h2>
+
+Compiled Java byte code is comparatively trivial to disassemble, and it's not that much
+harder to decompile. The <tt>javap</tt> program included in the JDK disassembles .class files
+into reasonably legible, assembly like code. For example,<p>
+
+</p><pre><code>% javap -c HelloWorld
+Compiled from HelloWorld.java
+class HelloWorld extends java.lang.Object {
+    public static void main(java.lang.String[]);
+    public HelloWorld();
+}
+
+
+Method void main(java.lang.String[])
+   0 getstatic #7 &lt;Field java.io.PrintStream out&gt;
+   3 ldc #1 &lt;String "Hello World!"&gt;
+   5 invokevirtual #6 &lt;Method void println(java.lang.String)&gt;
+   8 return
+
+
+Method HelloWorld()
+   0 aload_0
+   1 invokespecial #8 &lt;Method java.lang.Object()&gt;
+   4 return
+   </code></pre>
+
+
+While this isn't the original source code, it's enough for experienced programmers
+to understand, especially if they have a copy of the 
+<a href="http://www.amazon.com/exec/obidos/ISBN%3D020163452X/cafeaulaitA/">Java 
+Virtual Machine Specification</a>
+in hand. <p>
+
+There are also third party decompilers that go a step further and produce
+something very close to the actual source code. The first was 
+<a href="http://www.brouhaha.com/%7Eeric/computers/mocha.html">Mocha</a> by the
+late HanPeter van Vliet, although this is beginning to show its age.  
+(In yet <a href="http://www.brouhaha.com/%7Eeric/computers/mocha.html#suppress">another 
+tale of lawyers run wild</a>, Borland is trying to 
+retroactively change the Mocha license agreement.)
+SourceTec's <a href="http://members.tripod.com/%7ESourceTec/index.htm">Jasmine</a> 
+is a $29.80 shareware decompiler. 
+Wingsoft's <a href="http://www.wingsoft.com/">WingDIS</a> is a 
+$39.95 payware decompiler. 
+A free copy of  WingDIS 2.0.3
+is included in the CD with my book <a href="http://www.cafeaulait.org/books/javasecrets.html">Java Secrets</a>
+(IDG Books, 1997).
+</p><p>
+
+Obfuscator or shrouder 
+tools play various tricks with the compiled byte code in a .class file,
+especially with private field and method names, to attempt to confuse 
+these tools. However Java's late binding places severe limits on how much
+these tools can do, especially in class libraries and other component software.
+</p><p>
+To the best of my knowledge the first such tool 
+developed was HanPeter van Vliet's payware
+<a href="http://java.cern.ch/Crema/DOC/Index.html">Crema</a>, though there's
+evidence that IBM may have developed a similar tool internally 
+around the same time but never released it to the public.
+A version of 
+Crema has been incorporated into Borland's 
+<a href="http://www.borland.com/jbuilder/">JBuilder</a>.
+</p><p>
+Other obfuscators include K.B. Sriram's
+<a href="http://www.sbktech.org/hashjava.html">Hashjava</a> (distributed under
+the GNU Library General Public License (LGPL).), Eron Jokipii's
+<a href="http://www.primenet.com/%7Eej/index.html">Jobe</a> (free for non-commercial use),
+and Eastridge Technology's $45 
+payware <a href="http://www.e-t.com/jshrink.html">Jshrink</a>. 
+</p><p>
+
+</p><h2>15: <a name="xtocid1902958">Legal Issues</a></h2>
+
+Some portions of Java and HotJava are neither in the public domain
+nor copylefted. However no license is required to write and
+distribute most Java applications and applets.  Nor is any license
+from Sun is required to distribute the Java or HotJava in binary
+form.<p>
+
+The source code for Java is freely available for non-commercial use
+though a license must be signed. Source code for the java packages
+is included with the various versions of the JDK, including 1.1. 
+However, if you want to license the Java
+source code for commercial use,
+you will need to negotiate a source code license with Sun. 
+Complete details are at <a href="http://www.javasoft.com/java.sun.com/source.html">http://www.javasoft.com/java.sun.com/source.html</a>.</p><p>
+
+Furthermore whether your product is commercial or non-commercial you
+may not use the trademark "Java" to describe your product
+unless you pass an as yet unreleased verification and test suite.</p><p>
+
+
+</p><h2>16: <a name="xtocid1902959">FAQ's about the FAQ</a></h2>
+
+<h3>16.1: <a name="xtocid1902960">Who is this Elliotte guy, and just what qualified him to write a Java FAQ anyway?</a></h3>
+
+He was willing to do it.  Seriously, months on the Java mailing lists made
+it obvious that a FAQ was needed and since none seemed to be forthcoming
+from those more qualified than I, I boldly and with a complete disregard for
+my absolute lack of qualifications stepped forward and volunteered.
+I do have some hope that my previous experience with FAQ lists, 
+the World Wide Web and a variety of programming languages may somehow cover up the fact that
+I have no idea what I'm doing.  You've read the FAQ list by now.  Did I succeed?<p>
+
+Why am I taking on such a Herculean task? It's often said that you never 
+really understand a subject until you teach it. I'm going to endeavor 
+to learn Java and understand it by teaching it. The result should be 
+interesting at least. Since I'm very new to Java and clearly do not 
+yet understand the language, I'll have a perspective on the issues 
+that should be helpful to newcomers.</p><p>
+
+Are there mistakes here? Absolutely.  I hope people here and
+elsewhere will correct me gently and help lead me on the path to
+true Java enlightenment when I err. And if they aren't so gentle,
+well, I've developed a pretty thick skin after six years of
+Usenet.</p><p>
+
+My <a href="http://www.cafeaulait.org/javatutorial.html">companion tutorial</a> in how to write Java is going to reflect the
+programs I'm actually writing. As I learn to do a Hello World
+program, I'll write about Hello World. (OK, I've actually already
+gotten beyond Hello World but not much beyond.)  How fast the FAQ
+list grows will depend in large part on how fast my skills grow.
+You'll get to watch me learn, make mistakes, correct mistakes and so
+on. </p><p>
+
+There may be an advantage to this approach.  People who want to
+learn Java will be coming from almost identical places as me. I
+always hate having to write down or talk down to people, and I don't
+do it very well. Similarly I find it frustrating to try to
+communicate with people who are way beyond me (as obviously some
+people on the Java mailing lists are). This means that I can write for people
+without much prior experience without boring myself or, hopefully,
+my audience, to tears.</p><p>
+
+Finally I'll emphasize that I'm not trying to prevent anyone else or 
+any other team of people from taking on a similar project. I hope 
+someone does. I'll probably learn from what they do, and they'll learn from 
+what I do, even if it's only to learn the sorts of things novices are 
+confused about. And of course not everyone shares the same learning 
+style so while some people may enjoy my approach to Java I am sure 
+others will find it dense, incoherent, and ultimately 
+incomprehensible. More choices are better.</p><p>
+
+Ultimately I'm doing this because I think Java is very, very cool and 
+I am convinced I need to learn it sooner rather than later.  I think 
+this project will propel my Java knowledge forward, and if it does 
+that I'll consider my project a success. If I can help a few other 
+lost souls to climb out of the pit with me at the same time, so much 
+the better.</p><p>
+
+</p><h3>16.2: <a name="xtocid1902961">Why don't you include X in your FAQ?</a></h3>
+
+Please do make suggestions about topics for FAQ list inclusion.
+You can email them to <a href="mailto:elharo%40metalab%2Eunc%2Eedu">elharo@metalab.unc.edu</a>.
+I do follow the various comp.lang.java groups as best I can, and have
+a pretty good idea of what's discussed there.<p>
+
+</p><h3>16.3: <a name="xtocid1902962">This is really cool.  Can I republish or translate it?</a></h3>
+
+This FAQ list and its entire contents are copyright 1995-1997 by
+Elliotte Rusty Harold. If you have specific desires to
+republish it in whole or part contact me at <a href="mailto:elharo@metalab.unc.edu">elharo@metalab.unc.edu</a>
+and tell me exactly what you want to do. I'm generally
+receptive to non-profits that want to make it available to
+the public at no charge and to anyone who's willing to make
+reasonable payment arrangements.<p>
+
+However I do not allow the FAQ list, either the text or HTML
+version, to be placed on any web or ftp sites but my own.  
+Mirroring HTML files is a fundamentally bad idea that is at
+cross-purposes with the design of the web.  Among other
+problems it makes maintaining up-to-date copies phenomenally
+difficult.  If you think this file would be a useful
+addition to your web site, then link to it.  That's the way
+the web is designed.  Not all information needs to reside in
+one central location. No permission is needed to link to
+this or any other of my HTML files.  In fact I'd prefer it
+if you'd not ask me, since then I don't have to spend time
+answering you.  </p><p>
+
+Although there's more reason to want to translate the
+document rather than merely mirror it, I regret that I do
+not have the time or resources to support any translation
+efforts, and therefore do not currently allow this
+FAQ list to be translated into other languages.  
+This document will be available in English only
+for the foreseeable future.</p><p>
+
+If you want to use the source code samples included here, please do.
+I consider the source code (though not the FAQ list itself!) to be public
+domain.  No permission is necessary to reuse, edit, modify or publish 
+any of the source code contained in this FAQ list.
+
+</p><p>
+
+</p><hr>
+<div style="text-align: center;">[ <a href="http://www.cafeaulait.org/">Cafe au Lait</a> | <a href="http://www.cafeaulait.org/books.html">Books</a> 
+| <a href="http://www.cafeaulait.org/course/index.html">Course</a> 
+| <a href="http://www.cafeaulait.org/examples/index.html">Examples</a>  
+| <a href="http://www.cafeaulait.org/exercises/index.html">Exercises</a> 
+| <a href="http://www.cafeaulait.org/tradeshows.html">Trade Shows</a> 
+| <a href="http://www.cafeaulait.org/links.html">Links</a> 
+| <a href="http://www.cafeaulait.org/javatutorial.html">Tutorial</a> 
+| <a href="http://www.cafeaulait.org/usergroups.html">User Groups</a> ]</div>
+<hr>
+Copyright 1995-1997 <a href="http://www.elharo.com/"><au>Elliotte Rusty Harold</au></a> <br>
+<a href="mailto:elharo%40metalab%2Eunc%2Eedu">elharo@metalab.unc.edu</a><br>
+ Last Modified October 6, 1997
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="javafaq_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3903621-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body></html>
